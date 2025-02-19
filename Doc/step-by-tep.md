@@ -7,3 +7,4 @@
 * `npm install --save-dev @types/react @types/styled-components`
 
 ## Styled Components  Suport in Next.js
+* `npm install babel-plugin-styled-components`
