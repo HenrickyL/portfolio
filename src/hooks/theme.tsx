@@ -1,4 +1,4 @@
-import { createContext, useContext, useMemo, useState } from "react";
+import { createContext, useCallback, useContext, useMemo, useState } from "react";
 import GlobalStyle from "@/styles/globalStyle";
 import { ThemeProvider as StyledThemeProvider } from 'styled-components'
 
@@ -14,13 +14,13 @@ const ThemeContext = createContext<ThemeContextData>({} as ThemeContextData);
 export const ThemeProvider = ({children}:{children:React.ReactNode})=>{
     const [theme, setTheme] = useState<Theme>(darkTheme)
 
-    function toggle():void{
-        changeToTheme(theme === lightTheme? 'dark' : 'light' )
-    }
+    const toggle = useCallback(():void => {
+      changeToTheme(theme === lightTheme? 'dark' : 'light' )
+  }, [theme]);
 
-    function changeToTheme(theme: 'dark'|'light'): void{
-        setTheme(theme === 'dark'? darkTheme : lightTheme)
-    }
+  const changeToTheme = useCallback((theme: 'dark'|'light'): void => {
+      setTheme(theme === 'dark'? darkTheme : lightTheme)
+  }, []);
     
     const providerData = useMemo<ThemeContextData>(
         () => ({
