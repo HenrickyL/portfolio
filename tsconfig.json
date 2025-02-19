@@ -24,7 +24,9 @@
       "@containers/*": ["./src/containers/*"],
       "@utils/*": ["./src/utils/*"],
       "@hooks/*": ["./src/hooks/*"],
-      "@stores/*": ["./src/stores/*"]
+      "@styles/*": ["./src/styles/*"],
+      "@stores/*": ["./src/stores/*"],
+      "@lib/*": ["./src/lib/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
