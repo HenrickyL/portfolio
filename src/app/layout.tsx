@@ -1,13 +1,14 @@
 // import "./globals.css";
 import { Metadata } from "next";
-import GlobalStyles from '@/styles/globalStyle'; // Importe o GlobalStyles
 import StyledComponentsRegistry from "@/lib/registry";
+import { Providers } from "@/hooks";
+import TestTheme from "@/hooks/test";
 
-StyledComponentsRegistry
 export const metadata: Metadata = {
   title: "Meu Portfólio",
   description: "Meu portfólio pessoal.",
 };
+
 
 export default function RootLayout({
   children,
@@ -18,8 +19,10 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <StyledComponentsRegistry>
-            <GlobalStyles />
-            {children}
+            <Providers>
+              {children}
+              <TestTheme />
+            </Providers>
         </StyledComponentsRegistry>
       </body>
     </html>

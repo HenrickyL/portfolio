@@ -1,27 +1,25 @@
+// src/lib/registry.tsx
 "use client";
 
 import React from "react";
 import { ServerStyleSheet } from "styled-components";
 
-// Este componente é para garantir a correção do SSR
+// Este componente agora gerencia a coleta dos estilos sem sobrescrever createElement
 export default function StyledComponentsRegistry({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  if (typeof window === "undefined") {
-    const sheet = new ServerStyleSheet();
-    const originalRender = React.createElement;
+  const sheet = new ServerStyleSheet();
 
-    // React.createElement = (...args: any[]) => {
-    //   const element = originalRender(...args);
-    //   sheet.collectStyles(element);
-    //   return element;
-    // };
+  if (typeof window === "undefined") {
+    // Colete os estilos enquanto renderiza os filhos
+    const collectedStyles = sheet.collectStyles(<>{children}</>);
 
     return (
       <>
-        {children}
+        {collectedStyles}
+        {/* Adiciona os estilos gerados no SSR */}
         <style
           dangerouslySetInnerHTML={{
             __html: sheet.getStyleTags(),
@@ -31,5 +29,6 @@ export default function StyledComponentsRegistry({
     );
   }
 
+  // No lado do cliente, basta renderizar normalmente
   return <>{children}</>;
 }
