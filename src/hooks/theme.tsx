@@ -12,7 +12,7 @@ const ThemeContext = createContext<ThemeContextData>({} as ThemeContextData);
 
 
 export const ThemeProvider = ({children}:{children:React.ReactNode})=>{
-    const [theme, setTheme] = useState<Theme>(lightTheme)
+    const [theme, setTheme] = useState<Theme>(darkTheme)
 
     function toggle():void{
         changeToTheme(theme === lightTheme? 'dark' : 'light' )
@@ -85,6 +85,7 @@ interface ThemeNotificationFields{
   
     notification: ThemeNotification,
     background: string;
+    noise: string;
     backgroundSnd: string;
     backgroundTer: string;
     black: string;
@@ -106,6 +107,7 @@ interface ThemeNotificationFields{
     contrast: '#000',
     contrastLight: '#888',
     text: '#000',
+    noise:"noise3.png",
     background: '#fff',
     backgroundSnd: '#dff0df',
     backgroundTer: '#F6B756ff',
@@ -154,6 +156,7 @@ interface ThemeNotificationFields{
     contrast: '#fff',
     contrastLight: '#777',
     background: '#25252b',
+    noise:"noise2.png",
     backgroundSnd: '#2a2d39',
     backgroundTer: '#666',
     black: '#000',

@@ -5,7 +5,7 @@ import { Providers } from "@/hooks";
 import TestTheme from "@/hooks/test";
 
 export const metadata: Metadata = {
-  title: "Meu Portfólio",
+  title: "Henricky Dev",
   description: "Meu portfólio pessoal.",
 };
 

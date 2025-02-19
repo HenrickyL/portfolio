@@ -20,7 +20,7 @@ const GlobalStyles = createGlobalStyle`
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    background-image: url(noise2.png);
+    background-image: url(noise2.png);//url(${(props) => props.theme.noise});
   }
 
   #root{
