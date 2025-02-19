@@ -13,14 +13,15 @@ const ThemeContext = createContext<ThemeContextData>({} as ThemeContextData);
 
 export const ThemeProvider = ({children}:{children:React.ReactNode})=>{
     const [theme, setTheme] = useState<Theme>(darkTheme)
-
+    
+    const changeToTheme = useCallback((theme: 'dark'|'light'): void => {
+        setTheme(theme === 'dark'? darkTheme : lightTheme)
+    }, []);
+    
     const toggle = useCallback(():void => {
       changeToTheme(theme === lightTheme? 'dark' : 'light' )
-  }, [theme]);
+  }, [theme, changeToTheme]);
 
-  const changeToTheme = useCallback((theme: 'dark'|'light'): void => {
-      setTheme(theme === 'dark'? darkTheme : lightTheme)
-  }, []);
     
     const providerData = useMemo<ThemeContextData>(
         () => ({
@@ -28,7 +29,7 @@ export const ThemeProvider = ({children}:{children:React.ReactNode})=>{
             toggle,
             changeToTheme
         }),
-        [theme]
+        [theme, toggle, changeToTheme]
     );
     return (
         <ThemeContext.Provider value={providerData}>
@@ -194,10 +195,14 @@ interface ThemeNotificationFields{
       }
     }
   };
+
+  interface NotificationFieldProps {
+    theme: Theme;  // Usando o tipo 'Theme' definido acima
+  }
   
 export const notificationColors = {
-  success: (props: any) => props.theme.notification.success,
-  warning: (props: any) => props.theme.notification.warning,
-  error: (props: any) => props.theme.notification.error,
-  report: (props: any) => props.theme.notification.report
+  success: (props: NotificationFieldProps) => props.theme.notification.success,
+  warning: (props: NotificationFieldProps) => props.theme.notification.warning,
+  error: (props: NotificationFieldProps) => props.theme.notification.error,
+  report: (props: NotificationFieldProps) => props.theme.notification.report
 };
