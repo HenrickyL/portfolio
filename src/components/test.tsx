@@ -1,6 +1,6 @@
 "use client";
+import { useTheme } from "@/hooks/ThemeProvider";
 import { styled } from "styled-components"
-import { useTheme } from "./theme"
 
 const STY = styled.div`
   position: absolute;
@@ -21,7 +21,9 @@ const TestTheme = ()=>{
   const  {toggle} = useTheme()
   return(
     <STY>
-      <button onClick={toggle}>T</button>
+      <button onClick={
+        ()=>{console.log("troca");toggle()}
+        }>T</button>
     </STY>
   )
 }
