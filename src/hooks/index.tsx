@@ -1,5 +1,5 @@
 "use client";
-import {ThemeProvider} from './theme';
+import { ThemeProvider } from "@/styles/theme";
 
 
 export const Providers = ({ children }: { children: React.ReactNode })=>{
