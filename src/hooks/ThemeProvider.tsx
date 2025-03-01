@@ -3,46 +3,33 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useState } 
 import GlobalStyle from "@/styles/globalStyle";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
 import { Theme, ThemeContextData, ThemeType } from "@/types/theme";
-import { darkTheme, lightTheme } from "./themes";
+import { darkTheme, lightTheme } from "@/styles/themes";
 
 
 
 const ThemeContext = createContext<ThemeContextData>({} as ThemeContextData);
 
-export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-    const [theme, setTheme] = useState<Theme>(() => {
-        if (typeof window !== "undefined") {
-            const savedTheme = localStorage.getItem("theme");
-            return savedTheme === ThemeType.Light ? lightTheme : darkTheme;
-        }
-        return darkTheme;
-    });
 
+export const ThemeProvider = ({children}:{children:React.ReactNode})=>{
+    const [theme, setTheme] = useState<Theme>(darkTheme)
+    
     const changeToTheme = useCallback((theme: ThemeType): void => {
-        setTheme(theme === "dark" ? darkTheme : lightTheme);
-        localStorage.setItem("theme", theme);
+        setTheme(theme === 'dark'? darkTheme : lightTheme)
     }, []);
+    
+    const toggle = useCallback(():void => {
+      changeToTheme(theme === lightTheme? ThemeType.Dark : ThemeType.Light )
+  }, [theme, changeToTheme]);
 
-    const toggle = useCallback((): void => {
-        changeToTheme(theme === lightTheme ? ThemeType.Dark : ThemeType.Light);
-    }, [theme, changeToTheme]);
-
-    useEffect(() => {
-        const savedTheme = localStorage.getItem("theme");
-        if (savedTheme) {
-            setTheme(savedTheme === "light" ? lightTheme : darkTheme);
-        }
-    }, []);
-
+    
     const providerData = useMemo<ThemeContextData>(
         () => ({
             theme,
             toggle,
-            changeToTheme,
+            changeToTheme
         }),
         [theme, toggle, changeToTheme]
     );
-
     return (
         <ThemeContext.Provider value={providerData}>
             <StyledThemeProvider theme={providerData.theme}>
@@ -50,14 +37,16 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
                 {children}
             </StyledThemeProvider>
         </ThemeContext.Provider>
-    );
-};
+    )
+}
 
-export const useTheme = (): ThemeContextData => {
+
+export const useTheme = () :ThemeContextData =>{
     const context = useContext(ThemeContext);
-    if (!context) throw new Error("useTheme must be used within a ThemeProvider");
+    if (!context)
+        throw new Error('useTheme must be used within an ThemeProvider');
     return context;
-};
+}
 
 
 

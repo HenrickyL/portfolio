@@ -1,5 +1,5 @@
 "use client";
-import { useTheme } from "@/styles/theme";
+import { useTheme } from "@/hooks/ThemeProvider";
 import { styled } from "styled-components"
 
 const STY = styled.div`
