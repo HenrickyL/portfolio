@@ -1,5 +1,5 @@
 "use client";
-import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
+import { createContext, useCallback, useContext, useMemo, useState } from "react";
 import GlobalStyle from "@/styles/globalStyle";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
 import { Theme, ThemeContextData, ThemeType } from "@/types/theme";
