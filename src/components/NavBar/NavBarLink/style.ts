@@ -37,6 +37,7 @@ export const NavBarLinkSty = styled(Link)<NavBarLinkStyProp>`
         transition: 0.5s;
         opacity: 0.2;
         border-radius: 8px;
+        background-image: url(${(props) => props.theme.noiseContrast});
     }
 
     &::after {
@@ -55,6 +56,7 @@ export const NavBarLinkSty = styled(Link)<NavBarLinkStyProp>`
         transform: translateY(1.5rem) rotateX(90deg);
         transition:  0.4s ease-in-out;
         backface-visibility: hidden; 
+        background-image: url(${(props) => props.theme.noiseContrast});
     }
 
 
@@ -64,7 +66,6 @@ export const NavBarLinkSty = styled(Link)<NavBarLinkStyProp>`
             width: 100%;
             height: 100%;
             background-color: ${prop=>prop.theme.primary};
-            background-image: url(${(props) => props.theme.noise});
             opacity: 1;
         }
 
@@ -77,15 +78,13 @@ export const NavBarLinkSty = styled(Link)<NavBarLinkStyProp>`
     }
 
     &.active{
-        background-color: red;
-        /* &::before{
+        &::before{
             content: "";
             width: 100%;
             height: 100%;
             background-color: ${prop=>prop.theme.primaryLight};
-            background-image: url(${(props) => props.theme.noise});
             opacity: 1;
-        } */
+        }
     }
     
 `

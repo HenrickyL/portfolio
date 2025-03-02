@@ -36,6 +36,7 @@ export interface Theme {
     input: ThemeInputsSettings;
     notification: ThemeNotification;
     noise: string;
+    noiseContrast: string;
     background: string;
     backgroundSnd: string;
     backgroundTer: string;

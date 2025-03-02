@@ -1,53 +1,54 @@
 import { Theme } from "@/types/theme";
 
 export const lightTheme: Theme = {
-    text: '#181921',
-    text2: '#D1C7E4',
-    contrast: '#000',
-    contrastLight: '#888',
-    noise:"noise3.png",
-    background: '#F4F5F6',
-    backgroundSnd: '#FFF',
-    backgroundTer: '#F6B756ff',
-    black: '#000',
-    black2: '#3a3a3a',
-    black3: '#5a5a5a',
-    white: '#FEFFFE',
-    white2: '#F0F0F0',
-    white3: '#EFEFEF',
-    gray: '#6C6C6D',
-    primary: '#252541',
-    primaryLight: '#9757D7',
-    secondary: '#926386ff',
-    secondaryLight: '#936625ff',
-    tertiary: '#FB8C50ff',
-  
-    input: {
-      background: "#f0f0f0",
+  text: '#181921',
+  text2: '#D1C7E4',
+  contrast: '#000',
+  contrastLight: '#888',
+  noise: "noise3.png",
+  noiseContrast: "noise2.png",
+  background: '#F4F5F6',
+  backgroundSnd: '#FFF',
+  backgroundTer: '#F6B756ff',
+  black: '#000',
+  black2: '#3a3a3a',
+  black3: '#5a5a5a',
+  white: '#FEFFFE',
+  white2: '#F0F0F0',
+  white3: '#EFEFEF',
+  gray: '#6C6C6D',
+  primary: '#252541',
+  primaryLight: '#9757D7',
+  secondary: '#926386ff',
+  secondaryLight: '#936625ff',
+  tertiary: '#FB8C50ff',
+
+  input: {
+    background: "#f0f0f0",
+  },
+  settings: {
+    normalTransition: 400,
+    iconSize: 20
+  },
+  notification: {
+    success: {
+      default: '#2ecc71',
+      background: '#F0FFF0'
     },
-    settings:{
-      normalTransition: 400,
-      iconSize: 20
+    warning: {
+      default: '#f39c12',
+      background: '#fffff0'
     },
-    notification:{
-      success: {
-        default: '#2ecc71',
-        background: '#F0FFF0' 
-      },
-      warning: {
-          default: '#f39c12',
-          background: '#fffff0' 
-      },
-      error: {
-          default: '#e74c3c',
-          background: '#fff0f0' 
-      },
-      report: {
-          default: '#3498db',
-          background: '#f0f0ff'
-      }
+    error: {
+      default: '#e74c3c',
+      background: '#fff0f0'
+    },
+    report: {
+      default: '#3498db',
+      background: '#f0f0ff'
     }
-  };
+  },
+};
   
   export const darkTheme: Theme = {
     text: '#f8f8f8',
@@ -55,6 +56,7 @@ export const lightTheme: Theme = {
     contrast: '#fff',
     contrastLight: '#777',
     noise:"noise2.png",
+    noiseContrast: "noise2.png",
     background: '#141516',
     backgroundSnd: '#272829',
     backgroundTer: '#666',

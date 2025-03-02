@@ -36,7 +36,7 @@ const menuItems: MenuItem[] = [
   {
     title: "Formação",
     icon: FormationIcon,
-    href: "/"
+    href: "/formation"
   },
   {
     title: "Contato",
@@ -74,6 +74,7 @@ const TestNavsSty = styled.div`
     justify-content: center;
     border-bottom: 1px solid ${prop=>prop.theme.contrast};
     padding: 4px;
+    gap: 2rem;
 `
 
 

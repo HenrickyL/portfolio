@@ -2,6 +2,7 @@
 import { IconType } from "react-icons"
 import { NavBarLinkSty } from "./style"
 import { FaQuestion as Question } from "react-icons/fa6";
+import { usePathname } from "next/navigation";
 
 interface NavBarLinkProp {
     href: string
@@ -10,9 +11,12 @@ interface NavBarLinkProp {
 }
 
 export const NavBarLink = ({href, icon, title}:NavBarLinkProp)=>{
+    const pathname = usePathname();
+    const isActive = pathname === href? "active" : "";
+    
     const IconComponent: IconType = icon || Question;
     return(
-        <NavBarLinkSty href={href} title={title}>
+        <NavBarLinkSty href={href} title={title} className={isActive}>
             <IconComponent/>
         </NavBarLinkSty>
     )
