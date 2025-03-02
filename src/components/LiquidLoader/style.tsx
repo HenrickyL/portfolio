@@ -3,8 +3,8 @@ import styled, { keyframes } from "styled-components";
 
 const spin = (count: number, color:string)=>keyframes`
   0%,10% {
-    width: 6.25rem;
-    height: 6.25rem;
+    width: 6.3rem;
+    height: 6.3rem;
     transform: rotate(0deg) translateX(7.5rem);
   }
 
@@ -15,9 +15,22 @@ const spin = (count: number, color:string)=>keyframes`
     box-shadow: 0 0 0 10px ${color};
   }
   90%,100% {
-    width: 6.25rem;
-    height: 6.25rem;
+    width: 6.3rem;
+    height: 6.3rem;
     transform: rotate(0deg) translateX(7.5rem);
+  }
+`;
+
+const animate = keyframes`
+  0%,10% {
+    opacity: 0;
+  }
+
+  40%,70% {
+    opacity: 1;
+  }
+  90%,100% {
+    opacity: 0;
   }
 `;
 
@@ -36,6 +49,9 @@ export const LiquidLoaderSty = styled.div<LiquidLoaderStyProps>`
         color: #fff;
         font-size: 1.75em;
         font-weight: 500;
+        animation: ${animate} 5s ease-in-out infinite;
+        opacity: 1;
+        transition: 0.3s;
     }
 
     svg{    

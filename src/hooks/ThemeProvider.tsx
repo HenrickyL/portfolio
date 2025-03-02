@@ -4,20 +4,20 @@ import GlobalStyle from "@/styles/globalStyle";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
 import { Theme, ThemeContextData, ThemeType } from "@/types/theme";
 import { darkTheme, lightTheme } from "@/styles/themes";
-import { LiquidLoader } from "@/components/LiquidLoader";
-import { Container } from "@/components/Container";
-import { Logo } from "@/components/Logo";
+// import { LiquidLoader } from "@/components/LiquidLoader";
+// import { Container } from "@/components/Container";
+// import { Logo } from "@/components/Logo";
 
 const ThemeContext = createContext<ThemeContextData>({} as ThemeContextData);
 
 export const ThemeProvider = ({children}:{children:React.ReactNode})=>{
     const [theme, setTheme] = useState<Theme>(darkTheme);
-    const [isMounted, setIsMounted] = useState(false);
+    // const [isMounted, setIsMounted] = useState(false);
 
     useEffect(() => {
         const savedTheme = localStorage.getItem("theme");
         setTheme(savedTheme === ThemeType.Light ? lightTheme : darkTheme);
-        setIsMounted(true);
+        // setIsMounted(true);
     }, []);
 
     useEffect(() => {
@@ -47,14 +47,15 @@ export const ThemeProvider = ({children}:{children:React.ReactNode})=>{
         <ThemeContext.Provider value={providerData}>
             <StyledThemeProvider theme={providerData.theme}>
                 <GlobalStyle />
-                { !isMounted ? 
+                {/* { !isMounted ? 
                     <Container.Root>
                         <Container.Center>
-                            <LiquidLoader />
+                            <LiquidLoader children={<Logo/>}/>
                         </Container.Center>
                     </Container.Root> :
                 children
-            }
+                } */}
+                {children}
             </StyledThemeProvider>
         </ThemeContext.Provider>
     )

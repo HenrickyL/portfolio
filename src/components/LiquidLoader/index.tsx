@@ -11,12 +11,12 @@ export const LiquidLoader = ({children,color, spinCount = 8}:LiquidLoaderProp)=>
     
     return(
         <LiquidLoaderSty count={spinCount} color={color}>
+            <h2>{children}</h2>
             <main>
                 {Array.from({ length: spinCount }, (_, index) => (
                     <span key={index} style={{ "--i": index } as React.CSSProperties}></span>
                 ))}
             </main>
-            {children}
             <svg>
                 <filter id='Gooey'>
                     <feGaussianBlur in="SourceGraphic" stdDeviation="10" />
