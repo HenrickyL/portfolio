@@ -50,7 +50,7 @@ export const NavBarLinkSty = styled(Link)<NavBarLinkStyProp>`
         padding: 4px;
         border-radius: 8px;
         min-width: 2.5rem;
-        width: 100%;
+        width: fit-content;
         opacity: 0;
         transform: translateY(1.5rem) rotateX(90deg);
         transition:  0.4s ease-in-out;
@@ -75,4 +75,17 @@ export const NavBarLinkSty = styled(Link)<NavBarLinkStyProp>`
             background-color: ${prop=>prop.theme.backgroundSnd};
         }
     }
+
+    &.active{
+        background-color: red;
+        /* &::before{
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-color: ${prop=>prop.theme.primaryLight};
+            background-image: url(${(props) => props.theme.noise});
+            opacity: 1;
+        } */
+    }
+    
 `
