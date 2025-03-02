@@ -1,25 +1,36 @@
 "use client";
-import { createContext, useCallback, useContext, useMemo, useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import GlobalStyle from "@/styles/globalStyle";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
 import { Theme, ThemeContextData, ThemeType } from "@/types/theme";
 import { darkTheme, lightTheme } from "@/styles/themes";
-
-
+// import { LiquidLoader } from "@/components/LiquidLoader";
+// import { Container } from "@/components/Container";
+// import { Logo } from "@/components/Logo";
 
 const ThemeContext = createContext<ThemeContextData>({} as ThemeContextData);
 
-
 export const ThemeProvider = ({children}:{children:React.ReactNode})=>{
-    const [theme, setTheme] = useState<Theme>(darkTheme)
+    const [theme, setTheme] = useState<Theme>(darkTheme);
+    // const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        const savedTheme = localStorage.getItem("theme");
+        setTheme(savedTheme === ThemeType.Light ? lightTheme : darkTheme);
+        // setIsMounted(true);
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem("theme", theme === darkTheme ? ThemeType.Dark : ThemeType.Light);
+      }, [theme]);
     
     const changeToTheme = useCallback((theme: ThemeType): void => {
-        setTheme(theme === 'dark'? darkTheme : lightTheme)
+        setTheme(theme === ThemeType.Dark ? darkTheme : lightTheme)
     }, []);
     
     const toggle = useCallback(():void => {
       changeToTheme(theme === lightTheme? ThemeType.Dark : ThemeType.Light )
-  }, [theme, changeToTheme]);
+    }, [theme, changeToTheme]);
 
     
     const providerData = useMemo<ThemeContextData>(
@@ -30,16 +41,25 @@ export const ThemeProvider = ({children}:{children:React.ReactNode})=>{
         }),
         [theme, toggle, changeToTheme]
     );
+
+   
     return (
         <ThemeContext.Provider value={providerData}>
             <StyledThemeProvider theme={providerData.theme}>
                 <GlobalStyle />
+                {/* { !isMounted ? 
+                    <Container.Root>
+                        <Container.Center>
+                            <LiquidLoader children={<Logo/>}/>
+                        </Container.Center>
+                    </Container.Root> :
+                children
+                } */}
                 {children}
             </StyledThemeProvider>
         </ThemeContext.Provider>
     )
 }
-
 
 export const useTheme = () :ThemeContextData =>{
     const context = useContext(ThemeContext);

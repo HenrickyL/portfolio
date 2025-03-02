@@ -17,10 +17,12 @@ const GlobalStyles = createGlobalStyle`
     color: ${prop=>prop.theme.text};
     background-color: ${(props) => props.theme.background};;
     display: flex;
+    flex-direction: column;
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    background-image: url(noise2.png);//url(${(props) => props.theme.noise});
+    background-image: url(${(props) => props.theme.noise});
+    /* background-size: 110%; */
   }
 
   #root{
