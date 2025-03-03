@@ -61,7 +61,7 @@ const Nav2 = ()=>{
   return(
     <Menu.Root>
         {menuItems.map((item,i)=>
-          <Menu.Item key={i} href={item.href} title={item.title} icon={item.icon} />
+          <Menu.Item index={i} key={i} href={item.href} title={item.title} icon={item.icon} />
         )}
     </Menu.Root>
   )
