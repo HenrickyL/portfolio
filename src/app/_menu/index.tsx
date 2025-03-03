@@ -9,8 +9,6 @@ import { BsFillFolderFill as ProjectIcon } from "react-icons/bs";
 import { BsEnvelopeFill as ContactIcon } from "react-icons/bs";
 import styled from "styled-components";
 
-
-
 interface MenuItem{
   title: string,
   icon: IconType
@@ -72,7 +70,7 @@ const TestNavsSty = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-bottom: 1px solid ${prop=>prop.theme.contrast};
+    /* border-bottom: 1px solid ${prop=>prop.theme.contrast}; */
     padding: 4px;
     gap: 2rem;
 `
