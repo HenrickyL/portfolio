@@ -79,7 +79,7 @@ const TestNavsSty = styled.div`
 export const TestNavs = ()=>{
     return(
     <TestNavsSty>
-        <Nav />
+        {/* <Nav /> */}
         <Nav2 />
     </TestNavsSty>
     )

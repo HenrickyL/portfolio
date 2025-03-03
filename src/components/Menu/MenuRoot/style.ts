@@ -51,6 +51,7 @@ export const Indicator = styled.div<{index:number, title:string}>`
         height: fit-content;
         width: fit-content;
         padding: 2px 4px;
+        color: ${prop=>prop.theme.contrast};
         background-color: ${prop=>prop.theme.primary};
         opacity: 1;
     }

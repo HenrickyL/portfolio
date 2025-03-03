@@ -17,7 +17,7 @@ export const lightTheme: Theme = {
   white2: '#F0F0F0',
   white3: '#EFEFEF',
   gray: '#6C6C6D',
-  primary: '#252541',
+  primary: '#9757D7',
   primaryLight: '#9757D7',
   secondary: '#926386ff',
   secondaryLight: '#936625ff',
