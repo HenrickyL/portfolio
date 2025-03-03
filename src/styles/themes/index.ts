@@ -54,7 +54,7 @@ export const lightTheme: Theme = {
     text: '#f8f8f8',
     text2: "#B3B3B3",
     contrast: '#fff',
-    contrastLight: '#777',
+    contrastLight: '#333',
     noise:"noise2.png",
     noiseContrast: "noise2.png",
     background: '#141516',

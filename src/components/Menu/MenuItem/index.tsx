@@ -29,6 +29,7 @@ export const MenuItem = ({index, href,title, icon: Icon}:MenuItemProp)=>{
     return(
         <MenuItemSty 
             href={href}
+            title={title}
             onClick={HandleClick}
             className={isActive}>
                 <Icon className="icon"/>

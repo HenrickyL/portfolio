@@ -1,4 +1,4 @@
-import styled, { ExecutionProps, FastOmit } from "styled-components";
+import styled from "styled-components";
 
 export const MenuRootSty =styled.nav`
     position: relative;
@@ -8,8 +8,10 @@ export const MenuRootSty =styled.nav`
     min-width: 3rem;
     background-color: ${prop=>prop.theme.backgroundSnd};
     border-radius:10px;
-    padding: 8px;
+    padding: 8px 12px;
     gap: 8px;
+    background-image: url(${(props) => props.theme.noise});
+    border: 1px solid ${prop=>prop.theme.contrastLight};
 `
 
 export const Indicator = styled.div<{index:number, title:string}>`
@@ -31,17 +33,17 @@ export const Indicator = styled.div<{index:number, title:string}>`
         padding: none;
         width: 8px;
         height: 8px;
-        bottom: 12px;
-        background-color: ${prop=>prop.theme.primary};
+        bottom: 0.4rem;
+        background-color: ${prop=>prop.theme.primaryLight};
         border-radius: 10px;
         /*  */
         font-weight: 600;
-        font-size: 0.5em;
+        font-size: 0.6rem;
         color: ${prop=>prop.theme.contrast};
-        transition: 0.5s;
+        transition: 0.4s;
         letter-spacing: 0.05em;
         text-transform: uppercase;
-        opacity: 0.5;
+        opacity: 0.;
     }
 
     &.transition-end::before {
@@ -49,6 +51,7 @@ export const Indicator = styled.div<{index:number, title:string}>`
         height: fit-content;
         width: fit-content;
         padding: 2px 4px;
+        background-color: ${prop=>prop.theme.primary};
         opacity: 1;
     }
 

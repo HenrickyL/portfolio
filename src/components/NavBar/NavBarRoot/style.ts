@@ -5,7 +5,7 @@ export const NavBarRootSty = styled.nav`
     align-items: center;
     justify-content: space-between;
     position: relative;
-    border: 1px solid black;
+    border: 1px solid ${prop=>prop.theme.contrastLight};
     border-radius: 8px;
     padding: 0 1rem;
     height: 3rem;
