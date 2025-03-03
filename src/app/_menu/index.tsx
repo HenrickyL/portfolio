@@ -1,6 +1,5 @@
 "use client";
 import { Menu } from "@/components/Menu";
-import { NavBar } from "@/components/NavBar";
 import { IconType } from "react-icons";
 import { BsFillMortarboardFill as FormationIcon } from "react-icons/bs";
 import { BsBriefcaseFill as ExperienceIcon } from "react-icons/bs";
@@ -45,15 +44,15 @@ const menuItems: MenuItem[] = [
 ]
 
 
-const Nav = ()=>{
-  return(
-    <NavBar.Root>
-        {menuItems.map((item,i)=>
-          <NavBar.Link key={i} href={item.href} title={item.title} icon={item.icon} />
-        )}
-    </NavBar.Root>
-  )
-}
+// const Nav = ()=>{
+//   return(
+//     <NavBar.Root>
+//         {menuItems.map((item,i)=>
+//           <NavBar.Link key={i} href={item.href} title={item.title} icon={item.icon} />
+//         )}
+//     </NavBar.Root>
+//   )
+// }
 
 const Nav2 = ()=>{
   return(
