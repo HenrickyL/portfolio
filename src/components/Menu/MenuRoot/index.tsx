@@ -31,7 +31,7 @@ export const MenuRoot = ({children}:MenuRootProp)=>{
             <MenuRootSty>
                 {children}
                 <Indicator 
-                    index={activeIndex-2} 
+                    $index={activeIndex} 
                     title={activeTitle}
                     className={isTransitioning ? "" : "transition-end"}
                     onTransitionEnd={handleTransitionEnd}

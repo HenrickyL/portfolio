@@ -1,5 +1,12 @@
 import Link from "next/link";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+
+const swing = keyframes`
+    0% { transform: rotateZ(-4deg); }
+    50% { transform: rotateZ(4deg); }
+    100% { transform: rotateZ(-4deg); }
+`;
 
 export const MenuItemSty = styled(Link)<{title:string}>`
     position: relative;
@@ -20,6 +27,7 @@ export const MenuItemSty = styled(Link)<{title:string}>`
         font-size: 1.5em;
         color: ${prop=>prop.theme.contrast};
         transition: 0.3s;
+        transform-origin: top center;
     }
 
     &::after {
@@ -65,6 +73,7 @@ export const MenuItemSty = styled(Link)<{title:string}>`
         & > .icon{
             transform: translateY(-4px);
             color: ${prop=>prop.theme.primary};
+            animation: ${swing} 5s ease-in-out infinite;
         }
         &:hover::after {
             content: "";
