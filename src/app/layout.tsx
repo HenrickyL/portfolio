@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import StyledComponentsRegistry from "@/lib/registry";
 import { Providers } from "@/hooks";
 import TestTheme from "@/components/test";
+import { TestNavs } from "./_menu";
 
 export const metadata: Metadata = {
   title: "Henricky Dev",
@@ -21,6 +22,7 @@ export default function RootLayout({
       <body>
         <StyledComponentsRegistry>
             <Providers>
+              <TestNavs />
               {children}
               <TestTheme />
             </Providers>
