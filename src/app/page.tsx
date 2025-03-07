@@ -25,9 +25,10 @@ const Home = () => {
       <h1>Home</h1>
       <StyleDiv >
         <Input.Root>
-          <Input.Field>
-            AAAA
-          </Input.Field>
+            <Input.Label text="Nome"/>
+            <Input.Field>
+              <Input.Input name="name"/>
+            </Input.Field>
         </Input.Root>
       </StyleDiv>
     </>

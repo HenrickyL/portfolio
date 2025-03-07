@@ -9,6 +9,7 @@ export const InputFieldSty = styled.main<InputFieldStyProp>`
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
     position: relative;
     width: 100%;
     gap: 4px;
@@ -23,15 +24,14 @@ export const InputFieldSty = styled.main<InputFieldStyProp>`
     transition: 0.3s;
 
     &:hover{
-        background-color: ${prop=> 
-            prop.theme.background};
+        background-color: ${prop=> prop.theme.background};
     }
 
     &:focus-within{
         background-color: ${prop=> 
             prop.theme.background};
         border: 2px solid ${prop=> prop.theme.contrast};
-        /* InputLabelSty{
+        /* InputLabelSty}{
             position:absolute;
             top: -25%;
             border-radius:8px;
