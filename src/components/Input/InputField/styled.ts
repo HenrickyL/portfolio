@@ -20,12 +20,18 @@ export const InputFieldSty = styled.main<InputFieldStyProp>`
     padding: 12px;
     background: ${prop=> prop.$error ? 
         prop.theme.notification.error.background :
-        prop.theme.input.background};
+        prop.theme.backgroundSnd};
     transition: 0.3s;
 
     &:hover{
         background-color: ${prop=> prop.theme.background};
     }
+    
+    &:has(input:disabled) {
+        border: 2px solid ${prop=>prop.theme.gray};
+        cursor: not-allowed;
+    }
+
 
     &:focus-within{
         background-color: ${prop=> 

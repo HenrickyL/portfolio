@@ -78,7 +78,7 @@ export const lightTheme: Theme = {
       iconSize: 20
     },
     input:{
-      background: '#4a5a4a'
+      background: '#272829'
     },
     notification:{
       success: {

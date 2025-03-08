@@ -4,13 +4,15 @@ import { InputIcon } from "./InputIcon";
 import { InputInput } from "./InputInput";
 import { InputLabel } from "./InputLabel";
 import { InputRoot } from "./InputRoot";
+import { InputPassword } from "./InputPassword";
 
 export const Input = {
     Root: InputRoot,
     Field: InputField,
     Input: InputInput,
     Label: InputLabel,
-    Icon: InputIcon
+    Icon: InputIcon,
+    Password: InputPassword
 }
 
 export type AllowedChildren =
@@ -18,3 +20,4 @@ export type AllowedChildren =
     | ReactElement<typeof Input.Input>
     | ReactElement<typeof Input.Label>
     | ReactElement<typeof Input.Icon>
+    | ReactElement<typeof Input.Password>

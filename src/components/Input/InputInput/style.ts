@@ -22,6 +22,11 @@ export const InputInputSty = styled.div<InputSty>`
             background-color: ${prop => prop.background || prop.theme.primary };
             font-weight: bold;
         }
+
+        &:disabled{
+            color: ${prop=>prop.theme.gray};
+            cursor: not-allowed;
+        }
     }
 
     span{
