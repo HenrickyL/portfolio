@@ -2,7 +2,7 @@
 import { Input } from "@/components/Input";
 import React from "react";
 import styled from "styled-components";
-
+import { IoMdLock as PasswordIcon } from "react-icons/io";
 
 const StyleDiv = styled.div`
   display: flex;
@@ -27,6 +27,7 @@ const Home = () => {
         <Input.Root>
             <Input.Label text="Nome"/>
             <Input.Field>
+              <Input.Icon icon={PasswordIcon}/>
               <Input.Input name="name"/>
             </Input.Field>
         </Input.Root>

@@ -30,7 +30,7 @@ export const InputFieldSty = styled.main<InputFieldStyProp>`
     &:focus-within{
         background-color: ${prop=> 
             prop.theme.background};
-        border: 2px solid ${prop=> prop.theme.contrast};
+        border: 2px solid ${prop=> prop.theme.primary};
         /* InputLabelSty}{
             position:absolute;
             top: -25%;
