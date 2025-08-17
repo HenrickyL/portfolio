@@ -1,13 +1,13 @@
 "use client";
-import { ReactElement, ReactNode } from "react"
+import { ReactElement } from "react"
 import { FooterRootSty } from "./style";
 import { Footer } from "..";
 
 
-type AllowedChildren = ReactElement<typeof Footer.Root>;
+type AllowedChildren = ReactElement<typeof Footer.Text>;
 
 interface FooterRootProps{
-    children: AllowedChildren[]
+    children: AllowedChildren
 }
 
 export const FooterRoot = ({children}:FooterRootProps)=>{
