@@ -53,6 +53,9 @@ export interface Theme {
     secondaryLight?: string;
     tertiary?: string;
     tertiaryLight?: string;
+    link: string;
+    linkHover: string;
+    linkVisited: string;
 }
 
 export interface ThemeContextData {

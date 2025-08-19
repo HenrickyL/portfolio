@@ -22,7 +22,9 @@ export const lightTheme: Theme = {
   secondary: '#926386ff',
   secondaryLight: '#936625ff',
   tertiary: '#FB8C50ff',
-
+  link: '#A15BF2', // Mais claro para melhor contraste no escuro
+  linkHover: '#C18AFF', // Brilho suave no hover
+  linkVisited: '#8A4CE6', // Mesmo do light como base
   input: {
     background: "#f0f0f0",
   },
@@ -72,7 +74,9 @@ export const lightTheme: Theme = {
     secondary: '#5bc0de',
     secondaryLight: '#5bc0de',
     tertiary: '#5bc0de',
-  
+    link: '#8A4CE6', // Um roxo vibrante mas não cansativo
+    linkHover: '#6E3AB5', // Um pouco mais escuro no hover
+    linkVisited: '#5A2D99', // Para links já visitados
     settings:{
       normalTransition: 400,
       iconSize: 20
