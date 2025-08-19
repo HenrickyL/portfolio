@@ -1,0 +1,10 @@
+[
+	{
+		"id": "pj-portfolio",
+		"name": "Portfólio Pessoal",
+		"summary": "Site em Next.js usando Compound Components e styled-components.",
+		"tags": ["Next.js", "TypeScript", "Styled-Components"],
+		"url": "https://seu-dominio.com"
+	}
+]
+

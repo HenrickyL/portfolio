@@ -1,0 +1,46 @@
+[
+  {
+    "id": "xp-2025-springboot",
+    "role": "Desenvolvedor Backend Java",
+    "company": "Projeto Acadêmico / TCC",
+    "startDate": "2025-03-01",
+    "endDate": null,
+    "location": "Remoto",
+    "description": "Atuação com desenvolvimento backend em Java, utilizando Spring Boot e microserviços, integração assíncrona via RabbitMQ e bancos de dados relacionais.",
+    "tags": ["Java", "Spring Boot", "Microserviços", "RabbitMQ", "PostgreSQL"],
+    "url": ""
+  },
+  {
+    "id": "xp-2022-dotnet",
+    "role": "Desenvolvedor Backend .NET",
+    "company": "FASTEF",
+    "startDate": "2019-03-01",
+    "endDate": "2022-12-31",
+    "location": "Remoto",
+    "description": "Atuação por 3 anos como bolsista e desenvolvedor backend .NET, utilizando arquitetura DDD, testes unitários e acesso a dados com SQL Server. Experiência com metodologias ágeis (Scrum).",
+    "tags": [".NET", "C#", "DDD", "SQL Server", "Scrum"],
+    "url": ""
+  },
+  {
+    "id": "xp-2021-empreende",
+    "role": "Participante Programa Empreende UFC",
+    "company": "Universidade Federal do Ceará",
+    "startDate": "2021-08-01",
+    "endDate": "2021-12-31",
+    "location": "Quixadá,CE, Brasil",
+    "description": "Vivência em inovação e empreendedorismo acadêmico, desenvolvendo habilidades de liderança, comunicação e trabalho em equipe em projetos interdisciplinares.",
+    "tags": ["Empreendedorismo", "Inovação", "Soft Skills"],
+    "url": ""
+  },
+  {
+    "id": "xp-2019-monitoria",
+    "role": "Monitor de Programação",
+    "company": "Universidade Federal do Ceará",
+    "startDate": "2019-08-01",
+    "endDate": "2019-12-31",
+    "location": "Quixadá, CE, Brasil",
+    "description": "Auxílio a alunos em disciplinas de programação, reforçando fundamentos de lógica e estruturas de dados. Desenvolvimento de comunicação e didática.",
+    "tags": ["C++", "Java", "Estruturas de Dados", "Lógica de Programação"],
+    "url": ""
+  }
+]
