@@ -6,11 +6,11 @@ export const MenuRootSty =styled.nav`
     justify-content: center;
     align-items: center;
     min-width: 3rem;
-    background-color: ${prop=>prop.theme.backgroundSnd};
     border-radius:10px;
     padding: 8px 12px;
     gap: 8px;
     background-image: url(${(props) => props.theme.noise});
+    background-color: ${prop=>prop.theme.backgroundSnd};
     /* border: 1px solid ${prop=>prop.theme.contrastLight}; */
     margin-top:4px;
 `
