@@ -3,7 +3,6 @@ import styled, {keyframes} from "styled-components";
 
 type ItemContainerProp = {
     $alternate?: boolean
-    index: number
 }
 
 
@@ -17,6 +16,9 @@ const TimelineItemMoveDownSty = keyframes`
         transform: translateY(0px);
     }
 `
+
+
+
 
 
 export const TimelineItemTextBoxSty = styled.div<{$alternate?: boolean}>`
@@ -98,19 +100,12 @@ export const TimelineInfoSty = styled.div`
 
 
 
-export const TimelineItemSty = styled.div<ItemContainerProp & { total: number }>`
-    padding: 0.625rem 3.125rem;
-    position: relative;
-    width: 50%;
-    transition: 0.3s;
+export const TimelineItemSty = styled.div<ItemContainerProp>`
     
-    animation: ${TimelineItemMoveDownSty} 0.5s ease-out forwards;
-    opacity: 0;
-    ${({ index, total }) => `
-        animation-delay: ${(index - 1) * (total / total)}s;
-    `}
+    padding: 0.5rem 2rem;
 
-    left: ${({ $alternate }) => ($alternate ? "50%" : "0")};
+    /* left: ${({ $alternate }) => ($alternate ? "20rem" : "-20rem")}; // pelo tamanho maximo de 40rem */
+    transform: ${({ $alternate }) => $alternate ? "translateX(50%)" : "translateX(-50%)"};
 
     &::after{
         content: "";
@@ -135,17 +130,36 @@ export const TimelineItemSty = styled.div<ItemContainerProp & { total: number }>
             border: 2px solid ${p=>p.theme.primary};
         }
     }
+`
+
+
+export const TimelineItemWrapper = styled.div<{index: number, total: number}>`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 40rem;
+    width: 40%;
+    min-width: 360px;
+    transition: 0.3s;
+    opacity: 0;
+    animation: ${TimelineItemMoveDownSty} 0.6s ease forwards;
+
+    ${({ index }) => `
+        animation-delay: ${(index - 1)}s;
+    `}
 
 
     @media screen and (max-width: 680px){
-		&{
-            width:100%;
-            padding-left:80px;
-            padding-right:25px;
-            left: 0;
 
+        
+
+		${TimelineItemSty}{
+            transform: translateX(0);
+            min-width: 200px;
             &::after{
-                left: 19px;
+                left: -4%;
             }
 		}
 

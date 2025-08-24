@@ -11,14 +11,16 @@ const TimelineLineAnimation = keyframes`
 `
 
 export const TimelineContainer = styled.div<{size: number}>`
-	list-style: none;
-	padding: 12px 0; 
-	display: grid;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: start;
 	grid-template-columns: 1fr;
 	row-gap: 1.5rem;
 	position: relative;
-	margin: 6.25rem auto;
-	max-width: 75rem;
+	flex: 1;
+	padding: 12px 0; 
+	margin: 8px 0;
 
 	&::after{
 		content: '';
