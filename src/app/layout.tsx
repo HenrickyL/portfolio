@@ -25,16 +25,14 @@ export default function RootLayout({
       <body>
         <StyledComponentsRegistry>
             <Providers>
+              <TestNavs />
+              <TestTheme />
               <Container.Root>
-                  <TestNavs />
-                    {children}
-                  <TestTheme />
-                <Container.Bottom>
-                  <Footer.Root>
-                    <Footer.Text>Made by <UrlLink href="https://www.linkedin.com/in/henrickyl/">HenrickyL</UrlLink> | 2025</Footer.Text>
-                  </Footer.Root>
-                </Container.Bottom>
+                {children}
               </Container.Root>
+              <Footer.Root>
+                <Footer.Text>Made by <UrlLink href="https://www.linkedin.com/in/henrickyl/">HenrickyL</UrlLink> | 2025</Footer.Text>
+              </Footer.Root>
             </Providers>
         </StyledComponentsRegistry>
       </body>
