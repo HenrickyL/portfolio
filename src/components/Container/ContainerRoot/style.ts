@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ContainerRootSty = styled.div`
+export const ContainerRootSty = styled.main`
     display: flex;
     overflow-y: auto;
     flex-direction: column;

@@ -6,4 +6,14 @@ export const FooterRootSty = styled.footer`
     padding: 4px;
     background-color: ${p=>p.theme.backgroundSnd};
     background-image: url(${(props) => props.theme.noise});
+    width: 100%;
+
+
+    @media screen and (max-width: 680px){
+        &{
+            position: absolute;
+            bottom: 0;
+            font-size: 9px;
+        }
+    }
 `
