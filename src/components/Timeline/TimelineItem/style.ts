@@ -35,6 +35,7 @@ export const TimelineItemTextBoxSty = styled.div<{$alternate?: boolean}>`
     gap: 4px;
     border: 2px solid transparent;
     transition: 0.3s;
+    width: 100%;
 
     h2{
         font-weight: 600;
@@ -101,6 +102,8 @@ export const TimelineInfoSty = styled.div`
 
 
 export const TimelineItemSty = styled.div<ItemContainerProp>`
+    display: flex;
+    width: 100%;
     padding: 0.5rem 2rem;
 
     /* left: ${({ $alternate }) => ($alternate ? "20rem" : "-20rem")}; // pelo tamanho maximo de 40rem */
@@ -138,9 +141,9 @@ export const TimelineItemWrapper = styled.div<{index: number, total: number}>`
     align-items: center;
     justify-content: center;
     position: relative;
-    max-width: 40rem;
-    width: 40%;
-    min-width: 360px;
+    max-width: 38rem;
+    width: 100%;
+    min-width: 340px;
     transition: 0.3s;
     opacity: 0;
     animation: ${TimelineItemMoveDownSty} 0.6s ease forwards;
