@@ -37,8 +37,6 @@ export const TimelineRootSty = styled.div`
 	row-gap: 1.5rem;
 	position: relative;
 	flex: 1;
-	padding: 12px 0; 
-	margin: 8px 0;
 
 
 	@media screen and (max-width: 680px){
