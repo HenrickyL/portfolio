@@ -2,17 +2,12 @@
 import { Metadata } from "next";
 import StyledComponentsRegistry from "@/lib/registry";
 import { Providers } from "@/hooks";
-import TestTheme from "@/components/test";
-import { TestNavs } from "./_menu";
-import { Container } from "@/components/Container";
-import { Footer } from "@/components/Footer";
-import { UrlLink } from "@/components/UrlLink";
+import { LayoutComponent } from "@/components/Layout";
 
 export const metadata: Metadata = {
   title: "Henricky Dev",
   description: "Meu portfólio pessoal.",
 };
-
 
 
 export default function RootLayout({
@@ -22,19 +17,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
+      <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Noto+Sans+Duployan:wght@400;700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body>
         <StyledComponentsRegistry>
             <Providers>
-              <Container.Root>
-                  <TestNavs />
-                    {children}
-                  <TestTheme />
-                <Container.Bottom>
-                  <Footer.Root>
-                    <Footer.Text>Made by <UrlLink href="https://www.linkedin.com/in/henrickyl/">HenrickyL</UrlLink> | 2025</Footer.Text>
-                  </Footer.Root>
-                </Container.Bottom>
-              </Container.Root>
+              <LayoutComponent>
+                {children}
+              </LayoutComponent>              
             </Providers>
         </StyledComponentsRegistry>
       </body>

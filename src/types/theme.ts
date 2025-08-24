@@ -28,7 +28,7 @@ export interface ThemeInputsSettings {
   
 export interface Theme {
     text: string;
-    text2?: string;
+    text2: string;
     text3?: string;
     contrast: string;
     contrastLight?: string;
