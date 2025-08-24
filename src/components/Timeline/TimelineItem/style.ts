@@ -53,7 +53,7 @@ export const TimelineItemTextBoxSty = styled.div<{$alternate?: boolean}>`
     }
 
 
-    &::after{
+    &::after{  /* Triangle */
         content: '';
         width: 0;
         position: absolute;
@@ -101,13 +101,12 @@ export const TimelineInfoSty = styled.div`
 
 
 export const TimelineItemSty = styled.div<ItemContainerProp>`
-    
     padding: 0.5rem 2rem;
 
     /* left: ${({ $alternate }) => ($alternate ? "20rem" : "-20rem")}; // pelo tamanho maximo de 40rem */
     transform: ${({ $alternate }) => $alternate ? "translateX(50%)" : "translateX(-50%)"};
 
-    &::after{
+    &::after{ /*Dot timeline */
         content: "";
         position: absolute;
         top: 38px;
@@ -116,7 +115,7 @@ export const TimelineItemSty = styled.div<ItemContainerProp>`
 		background-color: ${prop=>prop.theme.primaryLight};
 
         border-radius: 50%;
-        left: ${({ $alternate }) => ($alternate ? "calc(-12px)" : "calc(100% - 12px)")};
+        left: ${({ $alternate }) => ($alternate ? "calc(-9px)" : "calc(100% - 9px)")};
         z-index: 3;
     }
 
@@ -150,13 +149,17 @@ export const TimelineItemWrapper = styled.div<{index: number, total: number}>`
         animation-delay: ${(index - 1)}s;
     `}
 
-
     @media screen and (max-width: 680px){
 
-        
+        &{
+            max-width: 100%;
+            width: 100%;
+            min-width: unset;
+        }
 
 		${TimelineItemSty}{
             transform: translateX(0);
+            max-width: 18rem;
             min-width: 200px;
             &::after{
                 left: -4%;

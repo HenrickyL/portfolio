@@ -10,7 +10,25 @@ const TimelineLineAnimation = keyframes`
 	}
 `
 
-export const TimelineContainer = styled.div<{size: number}>`
+export const TimelineLineSty = styled.span<{size: number}>`
+		position: absolute;
+		width: 6px;
+		height: 0;
+		top: 0;
+		z-index: -1;
+		background-color: ${prop=>prop.theme.contrastLight};
+		border-radius: 4px;
+		animation: ${TimelineLineAnimation} ${p=>p.size}s ease-out forwards;
+`
+
+export const TimelineItemsSty = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+`
+
+export const TimelineRootSty = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -22,29 +40,15 @@ export const TimelineContainer = styled.div<{size: number}>`
 	padding: 12px 0; 
 	margin: 8px 0;
 
-	&::after{
-		content: '';
-		position: absolute;
-		width: 6px;
-		height: 100%;
-		top: 0;
-		left: 50%;
-		margin-left: -3px;
-		z-index: -1;
-		background-color: ${prop=>prop.theme.contrastLight};
-		border-radius: 4px;
-		animation: ${TimelineLineAnimation} ${p=>p.size}s ease-out forwards;
-	}
-
-
 
 	@media screen and (max-width: 680px){
 		&{
-			margin: 50px auto;
+			flex-direction: row;
+			justify-content: center;
 		}
 
-		&::after{
-			left: 31px;
+		${TimelineItemsSty}{ 
+			transform: translateX(4px);
 		}
 	}
 
