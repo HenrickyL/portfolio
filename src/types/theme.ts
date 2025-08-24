@@ -28,7 +28,7 @@ export interface ThemeInputsSettings {
   
 export interface Theme {
     text: string;
-    text2?: string;
+    text2: string;
     text3?: string;
     contrast: string;
     contrastLight?: string;
@@ -53,6 +53,9 @@ export interface Theme {
     secondaryLight?: string;
     tertiary?: string;
     tertiaryLight?: string;
+    link: string;
+    linkHover: string;
+    linkVisited: string;
 }
 
 export interface ThemeContextData {

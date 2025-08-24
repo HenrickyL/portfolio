@@ -1,8 +1,9 @@
 import { Theme } from "@/types/theme";
 
 export const lightTheme: Theme = {
-  text: '#181921',
-  text2: '#D1C7E4',
+  text: '#2D2D2D',
+  text2: '#5A5A5A',
+  text3: '#888',
   contrast: '#000',
   contrastLight: '#888',
   noise: "noise3.png",
@@ -22,7 +23,9 @@ export const lightTheme: Theme = {
   secondary: '#926386ff',
   secondaryLight: '#936625ff',
   tertiary: '#FB8C50ff',
-
+  link: '#A15BF2', // Mais claro para melhor contraste no escuro
+  linkHover: '#C18AFF', // Brilho suave no hover
+  linkVisited: '#8A4CE6', // Mesmo do light como base
   input: {
     background: "#f0f0f0",
   },
@@ -52,7 +55,8 @@ export const lightTheme: Theme = {
   
   export const darkTheme: Theme = {
     text: '#f8f8f8',
-    text2: "#B3B3B3",
+    text2: '#C5C5C5',
+    text3: '#888', 
     contrast: '#fff',
     contrastLight: '#333',
     noise:"noise2.png",
@@ -72,13 +76,15 @@ export const lightTheme: Theme = {
     secondary: '#5bc0de',
     secondaryLight: '#5bc0de',
     tertiary: '#5bc0de',
-  
+    link: '#8A4CE6', // Um roxo vibrante mas não cansativo
+    linkHover: '#6E3AB5', // Um pouco mais escuro no hover
+    linkVisited: '#5A2D99', // Para links já visitados
     settings:{
       normalTransition: 400,
       iconSize: 20
     },
     input:{
-      background: '#4a5a4a'
+      background: '#272829'
     },
     notification:{
       success: {

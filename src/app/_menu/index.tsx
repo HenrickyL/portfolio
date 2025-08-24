@@ -72,6 +72,13 @@ const TestNavsSty = styled.div`
     /* border-bottom: 1px solid ${prop=>prop.theme.contrast}; */
     padding: 4px;
     gap: 2rem;
+
+
+    @media screen and (max-width: 680px){
+        &{
+            margin-bottom: 1.2rem;
+        }
+    }
 `
 
 

@@ -1,0 +1,48 @@
+import styled from "styled-components";
+
+
+interface InputFieldStyProp{
+    $error?: boolean | string | undefined;
+}
+
+export const InputFieldSty = styled.main<InputFieldStyProp>`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    gap: 4px;
+    border: 2px solid ${prop=> prop.$error ? 
+        prop.theme.notification.error.default : 
+        prop.theme.contrastLight};
+    border-radius: 8px;
+    padding: 12px;
+    background: ${prop=> prop.$error ? 
+        prop.theme.notification.error.background :
+        prop.theme.backgroundSnd};
+    transition: 0.3s;
+
+    &:hover{
+        background-color: ${prop=> prop.theme.background};
+    }
+    
+    &:has(input:disabled) {
+        border: 2px solid ${prop=>prop.theme.gray};
+        cursor: not-allowed;
+    }
+
+
+    &:focus-within{
+        background-color: ${prop=> 
+            prop.theme.background};
+        border: 2px solid ${prop=> prop.theme.primary};
+        /* InputLabelSty}{
+            position:absolute;
+            top: -25%;
+            border-radius:8px;
+            padding:4px;
+            background-color: ${prop=>prop.theme.primary}
+        } */
+    }
+`
