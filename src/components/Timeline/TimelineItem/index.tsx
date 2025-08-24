@@ -7,12 +7,14 @@ import { MdLocationOn as LocationIcon, MdCalendarMonth as CalendarIcon } from "r
 type TimelineItemProps = {
     experience: Experience
     $alternate?: boolean;
+    index: number,
+    size: number
 }
 
 
-export const TimelineItem = ({experience:xp, $alternate}:TimelineItemProps)=>{
+export const TimelineItem = ({experience:xp, $alternate, index, size }:TimelineItemProps)=>{
     return(
-        <TimelineItemSty $alternate={$alternate}>
+        <TimelineItemSty index={index} total={size} $alternate={$alternate}>
             <TimelineItemTextBoxSty $alternate={$alternate}>
                 <h2>{xp.company}</h2>
                 <h3>{xp.role}</h3>

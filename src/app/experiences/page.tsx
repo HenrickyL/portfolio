@@ -9,10 +9,12 @@ const Experiences = async ()=>{
     return(
         <>
             <h1>Experiências</h1>
-            <Timeline.Root>
+            <Timeline.Root size={experiences.length}>
                 {experiences.map((xp,i) => (
                     <Timeline.Item 
-                        key={xp.id} 
+                        key={xp.id}
+                        size={experiences.length}
+                        index={i+1} 
                         experience={xp} 
                         $alternate={i%2 === 1}
                         />

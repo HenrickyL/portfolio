@@ -1,14 +1,35 @@
 "use client";
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 
 type ItemContainerProp = {
     $alternate?: boolean
+    index: number
 }
 
-export const TimelineItemSty = styled.div<ItemContainerProp>`
+
+const TimelineItemMoveDownSty = keyframes`
+    0%{
+        opacity: 0.7;
+        transform: translateY(-30px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+`
+
+
+export const TimelineItemSty = styled.div<ItemContainerProp & { total: number }>`
     padding: 0.625rem 3.125rem;
     position: relative;
     width: 50%;
+    transition: 0.3s;
+    
+    animation: ${TimelineItemMoveDownSty} 0.5s ease-out forwards;
+    opacity: 0;
+    ${({ index, total }) => `
+        animation-delay: ${(index - 1) * (total / total)}s;
+    `}
 
     left: ${({ $alternate }) => ($alternate ? "50%" : "0")};
 
@@ -26,7 +47,7 @@ export const TimelineItemSty = styled.div<ItemContainerProp>`
     }
 `
 
-export const TimelineItemTextBoxSty = styled.div<ItemContainerProp>`
+export const TimelineItemTextBoxSty = styled.div<{$alternate?: boolean}>`
     display: flex;
     flex-direction: column;
     justify-content: center;

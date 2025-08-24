@@ -1,8 +1,18 @@
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 
-export const TimelineContainer = styled.ul`
+
+const TimelineLineAnimation = keyframes`
+	0% {
+		height: 0;
+	}
+	100% {
+		height: 100%;
+	}
+`
+
+export const TimelineContainer = styled.div<{size: number}>`
 	list-style: none;
-	padding: 0;
+	padding: 12px 0; 
 	display: grid;
 	grid-template-columns: 1fr;
 	row-gap: 1.5rem;
@@ -21,7 +31,10 @@ export const TimelineContainer = styled.ul`
 		z-index: -1;
 		background-color: ${prop=>prop.theme.contrastLight};
 		border-radius: 4px;
+		animation: ${TimelineLineAnimation} ${p=>p.size}s ease-out forwards;
 	}
 
 `;
+
+
 
