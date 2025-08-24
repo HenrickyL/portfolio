@@ -4,17 +4,17 @@ import { TimelineInfoSty, TimelineItemContainer, TimelineItemSty, TimelineItemTe
 import { MdLocationOn as LocationIcon, MdCalendarMonth as CalendarIcon } from "react-icons/md";
 
 
-type TimelineItemProps = {
+export type TimelineItemProps = {
     experience: Experience
     $alternate?: boolean;
     index: number,
-    size: number
+    total: number
 }
 
 
-export const TimelineItem = ({experience:xp, $alternate, index, size }:TimelineItemProps)=>{
+export const TimelineItem = ({experience:xp, $alternate, index, total }:TimelineItemProps)=>{
     return(
-        <TimelineItemWrapper index={index} total={size}>
+        <TimelineItemWrapper index={index} total={total}>
             <TimelineItemSty $alternate={$alternate}>
                 <TimelineItemTextBoxSty $alternate={$alternate}>
                     <h2>{xp.company}</h2>

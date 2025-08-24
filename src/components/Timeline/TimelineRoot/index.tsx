@@ -1,23 +1,24 @@
 "use client";
 import React, { ReactNode } from "react";
 import { TimelineRootSty, TimelineLineSty, TimelineItemsSty } from "./style";
+import { TimelineItemProps } from "../TimelineItem";
 
-type TimelineRootProps = {
+export type TimelineRootProps = {
 	children: ReactNode;
-	size?: number;
+	total?: number;
 };
 
-export const TimelineRoot = ({ children, size = 4 }: TimelineRootProps) => {
+export const TimelineRoot = ({ children, total = 4 }: TimelineRootProps) => {
 	return (
 		<TimelineRootSty >
 			<div>
-				<TimelineLineSty size={size}/>
+				<TimelineLineSty total={total}/>
 			</div>
 			<TimelineItemsSty>
 				{Array.isArray(children) &&
-					children.map((child, i) =>
-					React.cloneElement(child as React.ReactElement<any>, {
-						total: size,
+					children.map((child) =>
+					React.cloneElement(child as React.ReactElement<TimelineItemProps>, {
+						total: total,
 					})
 				)}
 			</TimelineItemsSty>

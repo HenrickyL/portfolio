@@ -10,7 +10,7 @@ const TimelineLineAnimation = keyframes`
 	}
 `
 
-export const TimelineLineSty = styled.span<{size: number}>`
+export const TimelineLineSty = styled.span<{total: number}>`
 		position: absolute;
 		width: 6px;
 		height: 0;
@@ -18,7 +18,7 @@ export const TimelineLineSty = styled.span<{size: number}>`
 		z-index: -1;
 		background-color: ${prop=>prop.theme.contrastLight};
 		border-radius: 4px;
-		animation: ${TimelineLineAnimation} ${p=>p.size}s ease-out forwards;
+		animation: ${TimelineLineAnimation} ${p=>p.total}s ease-out forwards;
 `
 
 export const TimelineItemsSty = styled.div`

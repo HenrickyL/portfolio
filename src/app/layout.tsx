@@ -26,7 +26,9 @@ export default function RootLayout({
       <body>
         <StyledComponentsRegistry>
             <Providers>
-              <LayoutComponent  children={children}/>              
+              <LayoutComponent>
+                {children}
+              </LayoutComponent>              
             </Providers>
         </StyledComponentsRegistry>
       </body>
