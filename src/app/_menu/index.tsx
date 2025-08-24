@@ -76,7 +76,7 @@ const TestNavsSty = styled.div`
 
     @media screen and (max-width: 680px){
         &{
-            margin-bottom: 1.2rem;
+            margin-bottom: 2rem;
         }
     }
 `
