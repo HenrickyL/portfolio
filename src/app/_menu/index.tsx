@@ -76,7 +76,8 @@ const TestNavsSty = styled.div`
 
     @media screen and (max-width: 680px){
         &{
-            margin-bottom: 2rem;
+            /* margin-bottom: 2.5rem; */
+            padding-bottom: 60px;
         }
     }
 `
@@ -85,7 +86,6 @@ const TestNavsSty = styled.div`
 export const TestNavs = ()=>{
     return(
     <TestNavsSty>
-        {/* <Nav /> */}
         <Nav2 />
     </TestNavsSty>
     )
