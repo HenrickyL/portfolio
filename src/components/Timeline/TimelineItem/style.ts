@@ -31,6 +31,8 @@ export const TimelineItemTextBoxSty = styled.div<{$alternate?: boolean}>`
     border-radius:8px;
     font-size: 16px;
     gap: 4px;
+    border: 2px solid transparent;
+    transition: 0.3s;
 
     h2{
         font-weight: 600;
@@ -116,11 +118,22 @@ export const TimelineItemSty = styled.div<ItemContainerProp & { total: number }>
         top: 38px;
         width: 1.5rem;
         height: 1.5rem;
-		background-color: ${prop=>prop.theme.primary};
+		background-color: ${prop=>prop.theme.primaryLight};
 
         border-radius: 50%;
         left: ${({ $alternate }) => ($alternate ? "calc(-12px)" : "calc(100% - 12px)")};
         z-index: 3;
+    }
+
+
+    &:hover{
+
+        &::after{
+            background-color:${p=>p.theme.primary};
+        }
+        ${TimelineItemTextBoxSty}{
+            border: 2px solid ${p=>p.theme.primary};
+        }
     }
 
 
