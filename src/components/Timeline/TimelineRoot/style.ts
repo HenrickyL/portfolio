@@ -34,6 +34,18 @@ export const TimelineContainer = styled.div<{size: number}>`
 		animation: ${TimelineLineAnimation} ${p=>p.size}s ease-out forwards;
 	}
 
+
+
+	@media screen and (max-width: 680px){
+		&{
+			margin: 50px auto;
+		}
+
+		&::after{
+			left: 31px;
+		}
+	}
+
 `;
 
 

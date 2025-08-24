@@ -19,34 +19,6 @@ const TimelineItemMoveDownSty = keyframes`
 `
 
 
-export const TimelineItemSty = styled.div<ItemContainerProp & { total: number }>`
-    padding: 0.625rem 3.125rem;
-    position: relative;
-    width: 50%;
-    transition: 0.3s;
-    
-    animation: ${TimelineItemMoveDownSty} 0.5s ease-out forwards;
-    opacity: 0;
-    ${({ index, total }) => `
-        animation-delay: ${(index - 1) * (total / total)}s;
-    `}
-
-    left: ${({ $alternate }) => ($alternate ? "50%" : "0")};
-
-    &::after{
-        content: "";
-        position: absolute;
-        top: 38px;
-        width: 1.5rem;
-        height: 1.5rem;
-		background-color: ${prop=>prop.theme.primary};
-
-        border-radius: 50%;
-        left: ${({ $alternate }) => ($alternate ? "calc(-12px)" : "calc(100% - 12px)")};
-        z-index: 3;
-    }
-`
-
 export const TimelineItemTextBoxSty = styled.div<{$alternate?: boolean}>`
     display: flex;
     flex-direction: column;
@@ -84,18 +56,16 @@ export const TimelineItemTextBoxSty = styled.div<{$alternate?: boolean}>`
         top: 28px;
         z-index: 1;
         
-        ${({ $alternate, theme }) =>
-    $alternate
-      ? `
-        left: -15px;
+
         border-top: 15px solid transparent;
         border-bottom: 15px solid transparent;
+        ${({ $alternate, theme }) =>$alternate? 
+      `
+        left: -15px;
         border-right: 15px solid ${theme.backgroundSnd};
       `
       : `
         right: -15px;
-        border-top: 15px solid transparent;
-        border-bottom: 15px solid transparent;
         border-left: 15px solid ${theme.backgroundSnd};
       `}
     }
@@ -105,9 +75,8 @@ export const TimelineItemTextBoxSty = styled.div<{$alternate?: boolean}>`
 export const TimelineItemContainer = styled.div`
     display: flex;
     flex-direction: row;
-    gap: 0.25rem;
+    gap: 4px;
     color: ${prop=>prop.theme.text2};
-
 `
 
 
@@ -115,7 +84,7 @@ export const TimelineItemContainer = styled.div`
 export const TimelineInfoSty = styled.div`
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: start;
     justify-content: space-between;
     padding: 0 4px;
     width: 100%;
@@ -123,4 +92,62 @@ export const TimelineInfoSty = styled.div`
     span, svg{
         color: ${prop=>prop.theme.text3};
     }
+`
+
+
+
+export const TimelineItemSty = styled.div<ItemContainerProp & { total: number }>`
+    padding: 0.625rem 3.125rem;
+    position: relative;
+    width: 50%;
+    transition: 0.3s;
+    
+    animation: ${TimelineItemMoveDownSty} 0.5s ease-out forwards;
+    opacity: 0;
+    ${({ index, total }) => `
+        animation-delay: ${(index - 1) * (total / total)}s;
+    `}
+
+    left: ${({ $alternate }) => ($alternate ? "50%" : "0")};
+
+    &::after{
+        content: "";
+        position: absolute;
+        top: 38px;
+        width: 1.5rem;
+        height: 1.5rem;
+		background-color: ${prop=>prop.theme.primary};
+
+        border-radius: 50%;
+        left: ${({ $alternate }) => ($alternate ? "calc(-12px)" : "calc(100% - 12px)")};
+        z-index: 3;
+    }
+
+
+    @media screen and (max-width: 680px){
+		&{
+            width:100%;
+            padding-left:80px;
+            padding-right:25px;
+            left: 0;
+
+            &::after{
+                left: 19px;
+            }
+		}
+
+        ${TimelineItemTextBoxSty}{
+            font-size:13px;
+
+            &::after{
+                left: -15px;
+                border-right: 15px solid ${prop=>prop.theme.backgroundSnd};
+                border-left: none;
+            }
+
+            ${TimelineInfoSty}{
+                font-size:11px;
+            }
+        }
+	}
 `
