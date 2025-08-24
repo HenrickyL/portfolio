@@ -20,11 +20,11 @@ export const TimelineItem = ({experience:xp, $alternate, index, size }:TimelineI
                 <h3>{xp.role}</h3>
                 <TimelineInfoSty>
                     <TimelineItemContainer>
-                        <LocationIcon/>
+                        <CalendarIcon />
                         <span>{xp.startDate} - {xp.endDate?? "Atualmente"}</span>
                     </TimelineItemContainer>
                     <TimelineItemContainer>
-                        <CalendarIcon/>
+                        <LocationIcon/>
                         <span>{xp.location}</span>
                     </TimelineItemContainer>
                 </TimelineInfoSty>
