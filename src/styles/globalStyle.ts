@@ -20,7 +20,7 @@ const GlobalStyles = createGlobalStyle`
     display: flex;
     flex-direction: column;
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     overflow: hidden;
     background-image: url(${(props) => props.theme.noise});
     /* background-size: 110%; */
