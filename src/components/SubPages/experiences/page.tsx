@@ -3,7 +3,7 @@ import { Experience } from "@/types/Experience";
 import { Timeline } from "@components/Timeline";
 
 
-const Experiences = async ()=>{
+const ExperiencesField = async ()=>{
     const experiences:Experience[] = await getExperiences();
 
     return(
@@ -24,4 +24,4 @@ const Experiences = async ()=>{
     )
 }
 
-export default Experiences;
+export default ExperiencesField;
