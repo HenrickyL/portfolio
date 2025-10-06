@@ -2,10 +2,10 @@
 import { Menu } from "@/components/Menu";
 import { IconType } from "react-icons";
 import { BsFillMortarboardFill as FormationIcon } from "react-icons/bs";
-import { BsBriefcaseFill as ExperienceIcon } from "react-icons/bs";
 import { BsFillHouseFill as HomeIcon } from "react-icons/bs";
 import { BsFillFolderFill as ProjectIcon } from "react-icons/bs";
 import { BsEnvelopeFill as ContactIcon } from "react-icons/bs";
+import { IoGameController as GameIcon } from "react-icons/io5";
 import styled from "styled-components";
 
 interface MenuItem{
@@ -21,26 +21,26 @@ const menuItems: MenuItem[] = [
     href: "/"
   },
   {
+    title: "Academico",
+    icon: FormationIcon,
+    href: "/scholar"
+  },
+  {
+    title: "GameDev",
+    icon: GameIcon,
+    href: "/game-dev"
+  },
+  
+  {
     title: "Projetos",
     icon: ProjectIcon,
     href: "/projects"
-  },
-  {
-    title: "Experiências",
-    icon: ExperienceIcon,
-    href: "/experiences"
-  },
-  {
-    title: "Formação",
-    icon: FormationIcon,
-    href: "/formation"
   },
   {
     title: "Contato",
     icon: ContactIcon,
     href: "/contact"
   },
-
 ]
 
 
