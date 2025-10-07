@@ -33,10 +33,8 @@ export const TimelineRootSty = styled.div`
 	flex-direction: column;
 	align-items: center;
 	justify-content: start;
-	grid-template-columns: 1fr;
-	row-gap: 1.5rem;
 	position: relative;
-	flex: 1;
+	transform: scale(0.9);
 
 
 	@media screen and (max-width: 680px){
