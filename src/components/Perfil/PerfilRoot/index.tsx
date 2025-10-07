@@ -2,7 +2,6 @@
 import { PerfilRootSty } from "./style";
 
 
-
 interface PerfilRootProp{
     children?: React.ReactNode
 }

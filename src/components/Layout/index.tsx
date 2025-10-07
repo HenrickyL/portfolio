@@ -2,7 +2,7 @@
 import { ReactNode } from "react"
 import { LayoutWrapperSty } from "./style"
 import { TestNavs } from "@/app/_menu"
-import TestTheme from "../test"
+import ThemeToggle from "../ThemeToggle"
 import { Container } from "../Container"
 import { Footer } from "../Footer"
 import { UrlLink } from "../UrlLink"
@@ -16,7 +16,7 @@ export const LayoutComponent = ({children}:LayoutComponentProps)=>{
     return(
         <LayoutWrapperSty>
             <TestNavs />
-            <TestTheme />
+            <ThemeToggle />
             <div style={{display: "flex", position:"absolute", top:"30px", right:"0", flexDirection:"column", alignItems:"center", justifyContent: "center"}}>
                 <h2>Em construção ...</h2>
             </div>
