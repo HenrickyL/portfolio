@@ -1,16 +1,17 @@
-// "use client";
+import { HomeHelper } from "@/components/Helper/HomeHelpert";
 import { ExperiencesField } from "@/components/SubPages";
 import React from "react";
 
 
 const Home = () => {
   return (
-    <>
-    <div style={{display: "flex", alignItems:"center", justifyContent: "center"}}>
-      <h1>Em construção ...</h1>
+    <div className="home-styles">
+      <HomeHelper/>
+      <div className="container">
+        <h1>Profissional</h1>
+        <ExperiencesField/>
+      </div>
     </div>
-      <ExperiencesField/>
-    </>
   );
 };
 

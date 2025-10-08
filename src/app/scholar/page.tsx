@@ -1,11 +1,11 @@
+import { ScholarHelper } from "@/components/Helper/ScholarHelper";
 
-const ScholarPage = async ()=>{
-
+const ScholarPage = ()=>{
     return(
-        <>
-            <h1>Trabalhos Acadêmicos</h1>
-        </>
+        <div className="container">
+            <h1>Acadêmico</h1>
+            <ScholarHelper/>
+        </div>
     )
 }
-
 export default ScholarPage;

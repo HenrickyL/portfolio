@@ -38,10 +38,12 @@ export const TimelineItemTextBoxSty = styled.div<{$alternate?: boolean}>`
     width: 100%;
 
     h2{
+        font-size: 24px;
         font-weight: 600;
         color: ${prop=>prop.theme.text2};
     }
     h3{
+        font-size: 18px;
         color: ${prop=>prop.theme.text};
         font-size: 20px;
     }
