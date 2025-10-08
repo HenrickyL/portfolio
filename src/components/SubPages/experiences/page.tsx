@@ -7,7 +7,7 @@ const ExperiencesField = async ()=>{
 
     return(
         <div className="container">
-            <h1>Experiências</h1>
+            <h2>Experiências</h2>
             <Timeline.Root total={experiences.length}>
                 {experiences.map((xp,i) => (
                     <Timeline.Item 

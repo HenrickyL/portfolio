@@ -22,7 +22,7 @@ export const LayoutComponent = ({children}:LayoutComponentProps)=>{
             <TestNavs />
             <ThemeToggle />
             <div style={{display: "flex", position:"absolute", top:"30px", right:"0", flexDirection:"column", alignItems:"center", justifyContent: "center"}}>
-                <h2>Em construção ...</h2>
+                <h3>Em construção ...</h3>
             </div>
             <Container.Root>
                 <Container.Row>

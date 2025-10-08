@@ -3,7 +3,7 @@ import { ScholarHelper } from "@/components/Helper/ScholarHelper";
 const ScholarPage = ()=>{
     return(
         <div className="container">
-            <h1>Trabalhos Acadêmicos</h1>
+            <h1>Acadêmico</h1>
             <ScholarHelper/>
         </div>
     )

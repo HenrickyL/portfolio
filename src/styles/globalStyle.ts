@@ -34,6 +34,7 @@ const GlobalStyles = createGlobalStyle`
 
   h1 {
     font-size: 60px;
+    color: ${p=>p.theme.primary};
 
     @media screen and (max-width: 680px){
         &{
@@ -43,19 +44,29 @@ const GlobalStyles = createGlobalStyle`
     }
   }
 
+  h2 {
+  font-size: 48px;
+
+  @media screen and (max-width: 680px){
+      &{
+        font-size: 24px;
+
+      }
+  }
+}
+
   /* home style */
   .home-styles {
     position: relative;
     display: flex;
     flex-direction: column;
-    
   }
 
   .container {
-    
     display: flex;
     position: relative;
     flex-direction: column;
+    gap: 1rem;
   }
 
 

@@ -7,7 +7,7 @@ export const PerfilSocialSty = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     gap: 8px;
-    width: 80%;
+    width: 60%;
     min-width: 10rem;
     height: 4.5rem;
 `
