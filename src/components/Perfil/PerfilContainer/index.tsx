@@ -1,13 +1,13 @@
-import { PerfilContainerSty } from "./style"
+import { PerfilCardSty } from "./style"
 
 interface PerfilContainerProps{
     children: React.ReactNode
 }
 
-export const PerfilContainer = ({children}:PerfilContainerProps)=>{
+export const PerfilCard = ({children}:PerfilContainerProps)=>{
     return(
-        <PerfilContainerSty>
+        <PerfilCardSty>
             {children}
-        </PerfilContainerSty>
+        </PerfilCardSty>
     )
 }

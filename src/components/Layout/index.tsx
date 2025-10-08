@@ -8,6 +8,7 @@ import { Footer } from "../Footer"
 import { UrlLink } from "../UrlLink"
 import { Perfil } from "../Perfil";
 import { usePageInfo } from "@/hooks/PageInfoProvidere";
+import { SocialMedias } from "@/Data/SocialMedia";
 
 interface LayoutComponentProps {
     children : ReactNode
@@ -26,11 +27,12 @@ export const LayoutComponent = ({children}:LayoutComponentProps)=>{
             <Container.Root>
                 <Container.Row>
                     <Perfil.Root>
-                        <Perfil.Container>
+                        <Perfil.Card>
                             <Perfil.Image src="/perfil.jpg" />
                             <Perfil.Title text="Henricky Monteiro" />
                             <Perfil.Description text={pageInfo.perfilDescription}/>
-                        </Perfil.Container>
+                            <Perfil.Social items={SocialMedias}/>
+                        </Perfil.Card>
                     </Perfil.Root>
                     {/* <Container.Root> */}
                         {children}
