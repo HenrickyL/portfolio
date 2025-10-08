@@ -31,6 +31,45 @@ const GlobalStyles = createGlobalStyle`
     height: 100%;
   }
 
+
+  h1 {
+    font-size: 60px;
+    color: ${p=>p.theme.primary};
+
+    @media screen and (max-width: 680px){
+        &{
+          font-size: 32px;
+
+        }
+    }
+  }
+
+  h2 {
+  font-size: 48px;
+
+  @media screen and (max-width: 680px){
+      &{
+        font-size: 24px;
+
+      }
+  }
+}
+
+  /* home style */
+  .home-styles {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+
   /* Redefinindo estilos específicos para inputs */
   input {
     font-family: inherit;
@@ -113,6 +152,7 @@ const GlobalStyles = createGlobalStyle`
   box-shadow: 0 0 12px rgba(0,0,0,0.5),
     inset 0 0 12px rgba(0,0,0,0.7);
 }
+
 `;
 
 export default GlobalStyles;

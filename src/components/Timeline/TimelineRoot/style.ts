@@ -32,24 +32,23 @@ export const TimelineRootSty = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: start;
-	grid-template-columns: 1fr;
-	row-gap: 1.5rem;
 	position: relative;
-	flex: 1;
+	/* transform: scale(0.9); */
+	transform: scale(calc(calc(100vw*0.75)/100vw));
+
 
 
 	@media screen and (max-width: 680px){
 		&{
 			flex-direction: row;
 			justify-content: center;
+			transform: scale(1);
 		}
 
 		${TimelineItemsSty}{ 
 			transform: translateX(4px);
 		}
 	}
-
 `;
 
 

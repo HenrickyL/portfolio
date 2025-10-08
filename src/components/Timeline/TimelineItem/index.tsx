@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import { Experience } from "@/types/Experience"
 import { TimelineInfoSty, TimelineItemContainer, TimelineItemSty, TimelineItemTextBoxSty, TimelineItemWrapper } from "./style";
 import { MdLocationOn as LocationIcon, MdCalendarMonth as CalendarIcon } from "react-icons/md";

@@ -2,13 +2,12 @@ import { getExperiences } from "@/lib/content";
 import { Experience } from "@/types/Experience";
 import { Timeline } from "@components/Timeline";
 
-
 const ExperiencesField = async ()=>{
     const experiences:Experience[] = await getExperiences();
 
     return(
-        <>
-            <h1>Experiências</h1>
+        <div className="container">
+            <h2>Experiências</h2>
             <Timeline.Root total={experiences.length}>
                 {experiences.map((xp,i) => (
                     <Timeline.Item 
@@ -20,7 +19,7 @@ const ExperiencesField = async ()=>{
                         />
                 ))}
             </Timeline.Root>
-        </>
+        </div>
     )
 }
 

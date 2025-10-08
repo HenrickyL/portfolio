@@ -16,7 +16,7 @@ interface MenuItem{
 
 const menuItems: MenuItem[] = [
   {
-    title: "Home",
+    title: "Dev",
     icon: HomeIcon,
     href: "/"
   },
