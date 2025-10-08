@@ -13,8 +13,8 @@ interface ThemeSwapProp{
 const STY = styled.div<ThemeSwapProp>`
   position: absolute;
   display: flex;
-  top: 4px;
-  right: 4px;
+  bottom: 1rem;
+  right: 8px;
   z-index: 5;
 
   button{

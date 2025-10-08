@@ -7,12 +7,15 @@ import { Container } from "../Container"
 import { Footer } from "../Footer"
 import { UrlLink } from "../UrlLink"
 import { Perfil } from "../Perfil";
+import { usePageInfo } from "@/hooks/PageInfoProvidere";
 
 interface LayoutComponentProps {
     children : ReactNode
 }
 
 export const LayoutComponent = ({children}:LayoutComponentProps)=>{
+    const { pageInfo } = usePageInfo();
+    
     return(
         <LayoutWrapperSty>
             <TestNavs />
@@ -26,7 +29,7 @@ export const LayoutComponent = ({children}:LayoutComponentProps)=>{
                         <Perfil.Container>
                             <Perfil.Image src="/perfil.jpg" />
                             <Perfil.Title text="Henricky Monteiro" />
-                            <Perfil.Description text="Desenvolvedor Fullstack"/>
+                            <Perfil.Description text={pageInfo.perfilDescription}/>
                         </Perfil.Container>
                     </Perfil.Root>
                     {/* <Container.Root> */}

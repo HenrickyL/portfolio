@@ -10,6 +10,14 @@ export const PerfilContainerSty = styled.div`
     border-radius: 16px;
     min-width: 16rem;
     min-height: 32rem;
-
+    width: 100%;
+    max-width: 20rem;
+    max-height: 36rem;
     gap: 8px;
+
+
+     /* @media screen and (max-width: 680px){
+        &{
+        }
+    } */
 `

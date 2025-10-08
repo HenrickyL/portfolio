@@ -1,8 +1,11 @@
+import { GameHelper } from "@/components/Helper/GameHelper";
+
 const GameDevPage = ()=>{
     return(
-        <>
+        <div className="container">
             <h1>Desenvolvimento de Jogos</h1>
-        </>
+            <GameHelper/>
+        </div>
     )
 }
 

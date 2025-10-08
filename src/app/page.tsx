@@ -1,11 +1,13 @@
+import { HomeHelper } from "@/components/Helper/HomeHelpert";
 import { ExperiencesField } from "@/components/SubPages";
 import React from "react";
 
 
-const Home = async () => {
+const Home = () => {
   return (
     <div className="home-styles">
       <ExperiencesField/>
+      <HomeHelper/>
     </div>
   );
 };
