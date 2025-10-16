@@ -66,7 +66,7 @@ const GlobalStyles = createGlobalStyle`
     display: flex;
     position: relative;
     flex-direction: column;
-    gap: 1rem;
+    /* gap: 8px; */
   }
 
 
