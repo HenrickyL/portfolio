@@ -1,12 +1,10 @@
 "use client";
-import { DevStacksTypes, GameDevStacksTypes, ScholarStacksTypes } from '@/types/stacks';
+import { StacksTypes } from '@/types/stacks';
 import { createContext, useContext, useState, ReactNode } from 'react';
+import { useLocalization } from './LocalizationProvider';
+import { PerfilInfo } from '@/types/PerfilInfo';
 
-export interface PerfilInfo {
-  perfilDescription: string,
-  stacks: (DevStacksTypes | ScholarStacksTypes | GameDevStacksTypes)[]
 
-}
 interface PageContextType {
   pageInfo: PerfilInfo;
   setPageInfo: (info: PerfilInfo) => void;
@@ -15,10 +13,9 @@ interface PageContextType {
 const PageInfoContext = createContext<PageContextType | undefined>(undefined);
 
 export function PageInfoProvider({ children }: { children: ReactNode }) {
-  const [pageInfo, setPageInfo] = useState<PerfilInfo>({
-    perfilDescription: "Desenvolvedor Fullstack",
-    stacks: []
-  });
+  const {content:{pages}} =useLocalization()
+
+  const [pageInfo, setPageInfo] = useState<PerfilInfo>(pages.professional.info);
 
   return (
     <PageInfoContext.Provider value={{ pageInfo, setPageInfo }}>

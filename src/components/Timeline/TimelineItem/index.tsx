@@ -8,13 +8,12 @@ export type TimelineItemProps = {
     experience: Experience
     $alternate?: boolean;
     index: number,
-    total: number
 }
 
 
-export const TimelineItem = ({experience:xp, $alternate, index, total }:TimelineItemProps)=>{
+export const TimelineItem = ({experience:xp, $alternate, index }:TimelineItemProps)=>{
     return(
-        <TimelineItemWrapper index={index} total={total}>
+        <TimelineItemWrapper index={index}>
             <TimelineItemSty $alternate={$alternate}>
                 <TimelineItemTextBoxSty $alternate={$alternate}>
                     <h2>{xp.company}</h2>

@@ -1,5 +1,6 @@
 "use client";
 import { Menu } from "@/components/Menu";
+import { useLocalization } from "@/hooks/LocalizationProvider";
 import { IconType } from "react-icons";
 import { BsFillMortarboardFill as FormationIcon } from "react-icons/bs";
 import { BsFillHouseFill as HomeIcon } from "react-icons/bs";
@@ -14,55 +15,51 @@ interface MenuItem{
   href: string
 }
 
-const menuItems: MenuItem[] = [
-  {
-    title: "Dev",
-    icon: HomeIcon,
-    href: "/"
-  },
-  {
-    title: "Academico",
-    icon: FormationIcon,
-    href: "/scholar"
-  },
-  {
-    title: "GameDev",
-    icon: GameIcon,
-    href: "/game-dev"
-  },
-  
-  {
-    title: "Projetos",
-    icon: ProjectIcon,
-    href: "/projects"
-  },
-  {
-    title: "Contato",
-    icon: ContactIcon,
-    href: "/contact"
-  },
-]
+const Nav2 = () => {
+  const { content: { pages } } = useLocalization();
 
+  const menuItems: MenuItem[] = [
+    {
+      title: pages.professional.label,
+      icon: HomeIcon,
+      href: "/"
+    },
+    {
+      title: pages.scholar.label,
+      icon: FormationIcon,
+      href: "/scholar"
+    },
+    {
+      title: pages.gameDev.label,
+      icon: GameIcon,
+      href: "/game-dev"
+    },
+    {
+      title: pages.projects.label,
+      icon: ProjectIcon,
+      href: "/projects"
+    },
+    {
+      title: pages.contact.label,
+      icon: ContactIcon,
+      href: "/contact"
+    },
+  ];
 
-// const Nav = ()=>{
-//   return(
-//     <NavBar.Root>
-//         {menuItems.map((item,i)=>
-//           <NavBar.Link key={i} href={item.href} title={item.title} icon={item.icon} />
-//         )}
-//     </NavBar.Root>
-//   )
-// }
-
-const Nav2 = ()=>{
-  return(
+  return (
     <Menu.Root>
-        {menuItems.map((item,i)=>
-          <Menu.Item index={i} key={i} href={item.href} title={item.title} icon={item.icon} />
-        )}
+      {menuItems.map((item, i) => (
+        <Menu.Item
+          index={i}
+          key={i}
+          href={item.href}
+          title={item.title}
+          icon={item.icon}
+        />
+      ))}
     </Menu.Root>
-  )
-}
+  );
+};
 
 const TestNavsSty = styled.div`
     display:flex;

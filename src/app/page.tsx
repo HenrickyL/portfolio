@@ -1,14 +1,20 @@
-import { HomeHelper } from "@/components/Helper/HomeHelpert";
+"use client";
 import { ExperiencesField } from "@/components/SubPages";
-import React from "react";
-
+import { useLocalization } from "@/hooks/LocalizationProvider";
+import { usePageInfo } from "@/hooks/PageInfoProvidere";
+import React, { useEffect } from "react";
 
 const Home = () => {
+  const {content:{pages:{professional}}} = useLocalization();
+  const { setPageInfo } = usePageInfo();  
+  useEffect(() => {
+      setPageInfo(professional.info);
+  }, [professional]);
+
   return (
     <div className="home-styles">
-      <HomeHelper/>
       <div className="container">
-        <h1>Profissional</h1>
+        <h1>{professional.header}</h1>
         <ExperiencesField/>
       </div>
     </div>

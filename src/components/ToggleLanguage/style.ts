@@ -17,10 +17,10 @@ export const ToggleLanguageSty = styled.div<{$isActive: boolean}>`
     transition: 300ms ease-in;
 
         &:nth-child(1){
-            color: ${p=>p.$isActive?   p.theme.contrastLight: p.theme.white};
+            color: ${p=>p.$isActive?  p.theme.white : p.theme.contrastLight};
         }
         &:nth-child(2){
-            color: ${p=>p.$isActive?  p.theme.white : p.theme.contrastLight};
+            color: ${p=>p.$isActive?   p.theme.contrastLight: p.theme.white};
         }
     }
 
@@ -36,10 +36,10 @@ export const ToggleLanguageSty = styled.div<{$isActive: boolean}>`
         
         border: -2px -2px red;
         ${p=>p.$isActive ? `
-            transform: rotate(20deg) translateX(50%);
+            transform: rotate(20deg) translateX(-50%);
 
         `:`
-            transform: rotate(20deg) translateX(-50%);
+            transform: rotate(20deg) translateX(50%);
         `}
     }
 

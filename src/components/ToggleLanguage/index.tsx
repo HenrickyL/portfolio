@@ -1,16 +1,20 @@
 "use client"
-
-import { useState } from "react"
+import { useEffect, useState } from "react";
 import { LiquidGlass } from "../LiquidGlass";
 import { ToggleLanguageSty } from "./style";
-
+import { useLocalization } from "@/hooks/LocalizationProvider";
+import { LocalizationSupported } from "@/types/LocalizationSupported";
 
 export const ToggleLanguage = ()=>{
-    const [isPt,setPt] = useState<boolean>(true);
+    const {currentLanguage, setLanguage} = useLocalization();
+    const isPt = currentLanguage === LocalizationSupported.PT;
 
-    const handleClick = ()=>{
-        setPt(!isPt);
-    }
+    const handleClick = () => {
+        const nextLang = isPt ? LocalizationSupported.EN : LocalizationSupported.PT;
+        setLanguage(nextLang);
+    };
+
+
     return(
         <LiquidGlass.Root onClick={handleClick}> 
             <ToggleLanguageSty $isActive={isPt} >
