@@ -137,7 +137,7 @@ export const TimelineItemSty = styled.div<ItemContainerProp>`
 `
 
 
-export const TimelineItemWrapper = styled.div<{index: number, total: number}>`
+export const TimelineItemWrapper = styled.div<{index: number}>`
     display: flex;
     flex-direction: column;
     align-items: center;

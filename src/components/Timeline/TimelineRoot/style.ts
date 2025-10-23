@@ -33,6 +33,7 @@ export const TimelineRootSty = styled.div`
 	flex-direction: column;
 	align-items: center;
 	position: relative;
+	margin: -4rem;
 	/* transform: scale(0.9); */
 	transform: scale(calc(calc(100vw*0.75)/100vw));
 
@@ -43,6 +44,7 @@ export const TimelineRootSty = styled.div`
 			flex-direction: row;
 			justify-content: center;
 			transform: scale(1);
+			margin: 1rem;
 		}
 
 		${TimelineItemsSty}{ 
