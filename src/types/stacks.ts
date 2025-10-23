@@ -1,14 +1,8 @@
-export enum DevStacksTypes{
+export enum StacksTypes{
     ReactJs, NodeJs, DotNet, SpringBoot,
-    CSharp,  Python, CPP, Typescript, Java
-}
+    CSharp,  Python, CPP, Typescript, Java,
 
+    Alg, CG, AI, Game,
 
-export enum ScholarStacksTypes{
-    Alg, CG, AI, Game
-}
-
-
-export enum GameDevStacksTypes{
     Unity, Blender
 }

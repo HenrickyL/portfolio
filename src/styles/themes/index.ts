@@ -53,51 +53,51 @@ export const lightTheme: Theme = {
   },
 };
   
-  export const darkTheme: Theme = {
-    text: '#f8f8f8',
-    text2: '#C5C5C5',
-    text3: '#888', 
-    contrast: '#fff',
-    contrastLight: '#333',
-    noise:"noise2.png",
-    noiseContrast: "noise2.png",
-    background: '#141516',
-    backgroundSnd: '#272829',
-    backgroundTer: '#666',
-    black: '#000',
-    black2: '#3a3a3a',
-    black3: '#5a5a5a',
-    white: '#FFF',
-    white2: '#F0F0F0',
-    white3: '#EFEFEF',
-    gray: '#888',
-    primary: '#914BF1',
-    primaryLight: '#7942C0',
-    secondary: '#5bc0de',
-    secondaryLight: '#5bc0de',
-    tertiary: '#5bc0de',
-    link: '#8A4CE6', // Um roxo vibrante mas não cansativo
-    linkHover: '#6E3AB5', // Um pouco mais escuro no hover
-    linkVisited: '#5A2D99', // Para links já visitados
-    settings:{
-      normalTransition: 400,
-      iconSize: 20
+export const darkTheme: Theme = {
+  text: '#f8f8f8',
+  text2: '#C5C5C5',
+  text3: '#888', 
+  contrast: '#fff',
+  contrastLight: '#333',
+  noise:"noise2.png",
+  noiseContrast: "noise2.png",
+  background: '#141516',
+  backgroundSnd: '#272829',
+  backgroundTer: '#666',
+  black: '#000',
+  black2: '#3a3a3a',
+  black3: '#5a5a5a',
+  white: '#FFF',
+  white2: '#F0F0F0',
+  white3: '#EFEFEF',
+  gray: '#888',
+  primary: '#914BF1',
+  primaryLight: '#A366F4',
+  secondary: '#FF6B9D',
+  secondaryLight: '#FF8AB0',
+  tertiary: '#00D4FF',
+  link: '#8A4CE6', // Um roxo vibrante mas não cansativo
+  linkHover: '#6E3AB5', // Um pouco mais escuro no hover
+  linkVisited: '#5A2D99', // Para links já visitados
+  settings:{
+    normalTransition: 400,
+    iconSize: 20
+  },
+  input:{
+    background: '#272829'
+  },
+  notification:{
+    success: {
+      default: '#2ecc71',
     },
-    input:{
-      background: '#272829'
+    warning: {
+        default: '#f39c12',
     },
-    notification:{
-      success: {
-        default: '#2ecc71',
-      },
-      warning: {
-          default: '#f39c12',
-      },
-      error: {
-          default: '#e74c3c',
-      },
-      report: {
-          default: '#3498db',
-      }
+    error: {
+        default: '#e74c3c',
+    },
+    report: {
+        default: '#3498db',
     }
-  };
+  }
+};

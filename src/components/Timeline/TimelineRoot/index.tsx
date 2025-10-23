@@ -18,7 +18,6 @@ export const TimelineRoot = ({ children, total = 4 }: TimelineRootProps) => {
 				{Array.isArray(children) &&
 					children.map((child) =>
 					React.cloneElement(child as React.ReactElement<TimelineItemProps>, {
-						total: total,
 					})
 				)}
 			</TimelineItemsSty>

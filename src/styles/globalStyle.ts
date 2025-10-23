@@ -66,8 +66,16 @@ const GlobalStyles = createGlobalStyle`
     display: flex;
     position: relative;
     flex-direction: column;
-    gap: 1rem;
+    gap: 8px;
   }
+
+
+  .content {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 1rem;
+  justify-content: flex-start;
+}
 
 
   /* Redefinindo estilos específicos para inputs */

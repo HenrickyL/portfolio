@@ -9,6 +9,7 @@ import { UrlLink } from "../UrlLink"
 import { Perfil } from "../Perfil";
 import { usePageInfo } from "@/hooks/PageInfoProvidere";
 import { SocialMedias } from "@/Data/SocialMedia";
+import { ToggleLanguage } from "../ToggleLanguage";
 
 interface LayoutComponentProps {
     children : ReactNode
@@ -22,7 +23,8 @@ export const LayoutComponent = ({children}:LayoutComponentProps)=>{
             <TestNavs />
             <ThemeToggle />
             <div style={{display: "flex", position:"absolute", top:"30px", right:"0", flexDirection:"column", alignItems:"center", justifyContent: "center"}}>
-                <h3>Em construção ...</h3>
+                <h3>Under construction. ...</h3>
+                <ToggleLanguage/>
             </div>
             <Container.Root>
                 <Container.Row>
@@ -30,7 +32,7 @@ export const LayoutComponent = ({children}:LayoutComponentProps)=>{
                         <Perfil.Card>
                             <Perfil.Image src="/perfil.jpg" />
                             <Perfil.Title text="Henricky Monteiro" />
-                            <Perfil.Description text={pageInfo.perfilDescription}/>
+                            <Perfil.Description text={pageInfo.title} region={pageInfo.region}/>
                             <Perfil.Social items={SocialMedias}/>
                         </Perfil.Card>
                     </Perfil.Root>
