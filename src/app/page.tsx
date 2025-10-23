@@ -16,8 +16,11 @@ const Home = () => {
     <div className="home-styles">
       <div className="container">
 
-        <Card src="Recipe.png" title="Recipe for Ruin" subtitle="Game" date="2025"/>
+        <div>
+          <Card src="Recipe.png" title="Recipe for Ruin" subtitle="Game" date="2025" url="https://www.instagram.com/perikan_studio/"/>
 
+          <Card src="Recipe.png" title="Recipe for Ruin" subtitle="Game" date="2025"/>
+        </div>
         <h1>{professional.header}</h1>
         <ExperiencesField/>
       </div>

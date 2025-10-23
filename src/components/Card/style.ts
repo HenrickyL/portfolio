@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { FaArrowRight as ArrowIcon} from "react-icons/fa";
 
 
 export const CardImageSty = styled.div`
@@ -37,15 +37,26 @@ export const CardContainer = styled.div`
     gap: 0.5rem;
 `
 
+export const CardArrow = styled(ArrowIcon)`
+    position: absolute;
+    color: ${p=>p.theme.white};
+    top: 1rem;
+    right: 1rem;
+    font-size: 20px;
+    z-index: 2;
+    transition: 0.3s ease-in-out;
+`
+
 export const CardSty = styled.div`
+    position: relative;
+    
+    width: 20rem;
+    height: 20rem;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-    width: 20rem;
-    height: 20rem;
-
     border-radius: 12px;
     overflow: hidden;
     border: 2px solid transparent;
@@ -58,8 +69,23 @@ export const CardSty = styled.div`
             color: ${p=>p.theme.primary};
         }
 
+        ${CardArrow}{
+            transform: rotateZ(-30deg);
+            color: ${p=>p.theme.primary};
+        }
+
         ${CardImageSty} img{
             transform: scale(1.1);
         }
     }
 `
+
+export const CardLink = styled.a`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;   
+`
+

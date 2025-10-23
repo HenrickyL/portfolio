@@ -1,15 +1,16 @@
-import { CardContainer, CardImageSty, CardSty, CardSubTitle, CardTitleSty } from "./style"
+import { CardArrow, CardContainer, CardImageSty, CardLink, CardSty, CardSubTitle, CardTitleSty } from "./style"
 
 interface CardProps{
     src: string
     title: string
     subtitle?: string,
-    date?: string
+    date?: string,
+    url?: string 
 }
 
-export const Card = ({src, title, subtitle}:CardProps)=>{
+const Content = ({src, title, subtitle}:CardProps)=>{
     return(
-        <CardSty>
+        <>
             <CardImageSty>
                 <img src={src} alt="" />
             </CardImageSty>
@@ -17,6 +18,26 @@ export const Card = ({src, title, subtitle}:CardProps)=>{
                 <CardTitleSty>{title}</CardTitleSty>
                 {subtitle && <CardSubTitle>{subtitle}</CardSubTitle>}
             </CardContainer>
-        </CardSty>
+        </>
+    )
+}
+
+export const Card = ({url, ...rest}:CardProps)=>{
+    return(
+        <>
+        {url?
+                <CardSty>
+                    <CardLink href={url} target="_blank" rel="noopener noreferrer">
+                        <CardArrow />
+                        <Content {...rest}/>
+                    </CardLink>
+                </CardSty>
+                :
+                <CardSty>
+                    <Content {...rest}/>
+                </CardSty> 
+            }
+        </>
+        
     )
 }
