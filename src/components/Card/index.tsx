@@ -2,6 +2,7 @@ import Link from "next/link"
 import { 
     CardArrow, 
     CardContainer, 
+    CardDateSty, 
     CardImageSty, 
     CardLink, 
     CardSty, 
@@ -10,28 +11,32 @@ import {
 } from "./style"
 
 interface CardProps{
-    src: string
+    img: string
     title: string
     subtitle?: string
     date?: string
-    url?: string 
+    url?: string
+    isDownload?: boolean
 }
 
-const Content = ({src, title, subtitle}:CardProps)=>{
+const Content = ({img, title, subtitle, date}:CardProps)=>{
     return(
         <>
             <CardImageSty>
-                <img src={src} alt="" />
+                <img src={img} alt="" />
             </CardImageSty>
             <CardContainer>
-                <CardTitleSty>{title}</CardTitleSty>
+                {date && <CardDateSty>{date}</CardDateSty>}
+                <CardTitleSty>
+                    {title}
+                </CardTitleSty>
                 {subtitle && <CardSubTitle>{subtitle}</CardSubTitle>}
             </CardContainer>
         </>
     )
 }
 
-export const Card = ({ url, ...rest }: CardProps) => {
+export const Card = ({ url, isDownload, ...rest }: CardProps) => {
     const isExtern:boolean = Boolean(url && url[0] !== "/");
     
     const content = (
@@ -41,12 +46,11 @@ export const Card = ({ url, ...rest }: CardProps) => {
         </>
     );
 
-
     return (
-        <CardSty $isExtern={isExtern}>
+        <CardSty $isExtern={isExtern} $isDownload={isDownload}>
         {url ? (
             isExtern ? (
-            <CardLink href={url} target="_blank" rel="noopener noreferrer">
+            <CardLink href={url} target="_blank" rel="noopener noreferrer" download={isDownload}>
                 {content}
             </CardLink>
             ) : (

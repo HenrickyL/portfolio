@@ -17,7 +17,14 @@ export const CardTitleSty = styled.span`
     font-size: 28px;
     font-weight: bold;
     transition: 0.3s ease;
+`
 
+export const CardDateSty = styled.span`
+    position: absolute;
+    bottom: 8px;
+    right: 1rem;
+    font-size: 14px;
+    color: ${p=> p.theme.text3};
 `
 
 export const CardSubTitle = styled.span`
@@ -27,18 +34,19 @@ export const CardSubTitle = styled.span`
 `
 
 export const CardContainer = styled.div`
+position: relative;
     display: flex;
     flex-direction: column;
     background-color: ${p=>p.theme.backgroundSnd};
     background-image: url(${(props) => props.theme.noise});
-    padding: 1.2rem 1.8rem;
+    padding: 1.2rem 8px 1rem 1.2rem;
     width: 100%;
-    gap: 0.5rem;
+    gap: 4px;
 `
 
 export const CardArrow = styled(ArrowIcon)`
     position: absolute;
-    color: ${p=>p.theme.white};
+    color: ${p=>p.theme.gray};
     top: 1rem;
     right: 1rem;
     font-size: 20px;
@@ -47,7 +55,9 @@ export const CardArrow = styled(ArrowIcon)`
 `
 
 interface CardStyProps {
-  $isExtern: boolean;
+  $isExtern?: boolean;
+  $isDownload?: boolean;
+
 }
 export const CardSty = styled.div<CardStyProps>`
     position: relative;
@@ -64,6 +74,13 @@ export const CardSty = styled.div<CardStyProps>`
     border: 2px solid transparent;
     transition: 0.3s ease-in-out;
 
+
+    ${CardArrow}{
+        ${p=>p.$isDownload && `
+            transform: rotateZ(90deg);
+            font-size:28px;
+        `}
+    }
     &:hover{
         border: 2px solid ${p=>p.theme.primaryLight};
         
@@ -72,8 +89,13 @@ export const CardSty = styled.div<CardStyProps>`
         }
 
         ${CardArrow}{
-            transform: rotateZ(${p=>p.$isExtern? `-30deg`  : `30deg`});
-            color: ${p=> p.$isExtern ? p.theme.primary: p.theme.primaryLight};
+            ${p=>p.$isDownload ? `
+                transform: rotateZ(90deg) scale(1.2);
+            `:
+            `
+                transform: rotateZ(${p.$isExtern? `-30deg`  : `30deg`});
+            `}
+            color: ${p=>p.theme.primaryLight};
         }
 
         ${CardImageSty} img{
@@ -88,5 +110,5 @@ export const CardLink = styled.a`
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 100%;   
+    height: 100%;
 `
