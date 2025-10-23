@@ -15,13 +15,12 @@ const Home = () => {
   return (
     <div className="home-styles">
       <div className="container">
-
-        <div>
-          <Card src="Recipe.png" title="Recipe for Ruin" subtitle="Game" date="2025" url="https://www.instagram.com/perikan_studio/"/>
-          <Card src="Recipe.png" title="Recipe for Ruin" subtitle="Game" date="2025" url="/projects" />
-          <Card src="Recipe.png" title="Recipe for Ruin" subtitle="Game" date="2025"/>
-        </div>
         <h1>{professional.header}</h1>
+        
+
+        <div className="content">
+            <Card img="/img/curriculum.png" title="Curriculum" subtitle="Fullstack" date="2025" url="/archives/Curriculo___Fullstack.pdf" isDownload/>
+        </div>
         <ExperiencesField/>
       </div>
     </div>
