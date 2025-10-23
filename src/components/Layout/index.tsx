@@ -32,7 +32,7 @@ export const LayoutComponent = ({children}:LayoutComponentProps)=>{
                         <Perfil.Card>
                             <Perfil.Image src="/perfil.jpg" />
                             <Perfil.Title text="Henricky Monteiro" />
-                            <Perfil.Description text={pageInfo.title}/>
+                            <Perfil.Description text={pageInfo.title} region={pageInfo.region}/>
                             <Perfil.Social items={SocialMedias}/>
                         </Perfil.Card>
                     </Perfil.Root>

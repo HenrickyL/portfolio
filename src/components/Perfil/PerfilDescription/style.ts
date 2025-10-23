@@ -4,6 +4,7 @@ export const PerfilDescriptionSty = styled.span`
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction:column;
     font-size: 18px;
     color: ${t=>t.theme.text2};
     display: flex;
@@ -16,4 +17,14 @@ export const PerfilDescriptionSty = styled.span`
     white-space: normal;
     overflow-wrap: break-word;
     text-align: center;
+    gap: 2px;
+
+    & span{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        font-size: 14px;
+        gap: 4px;
+    }
 `

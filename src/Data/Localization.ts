@@ -10,6 +10,7 @@ export const LocalizationPT: LocalizationTexts = {
             header: "Profissional",
             info:{
               title: "Fullstack Developer",
+              region: "Fortaleza, CE, Brasil",
               stacks: [StacksTypes.DotNet, StacksTypes.ReactJs, StacksTypes.NodeJs, StacksTypes.SpringBoot, StacksTypes.Python]
             },
             experiences: "Experiências",
@@ -19,6 +20,7 @@ export const LocalizationPT: LocalizationTexts = {
             header: "Acadêmico",
             info:{
               title: "Bacharel em Ciência da Computação",
+              region: "Fortaleza, CE, Brasil",
               stacks: [StacksTypes.CPP]
             },
             label: "Acadêmico"
@@ -27,6 +29,7 @@ export const LocalizationPT: LocalizationTexts = {
             header: "Desenvolvedor de Jogos",
             info:{
               title: "Desenvolvedor de Jogos",
+              region: "Fortaleza, CE, Brasil",
               stacks: [ StacksTypes.CSharp, StacksTypes.Unity, StacksTypes.Blender, StacksTypes.CPP]
             },
             label: "GameDev"
@@ -52,6 +55,7 @@ export const LocalizationEN: LocalizationTexts = {
       header: "Professional", // Header h1 page
       info:{
         title: "Fullstack Developer",
+        region: "Fortaleza, CE, Brazil",
         stacks: [StacksTypes.DotNet, StacksTypes.ReactJs, StacksTypes.NodeJs, StacksTypes.SpringBoot, StacksTypes.Python]
       },
       experiences: "Experiences", // subtitle
@@ -61,6 +65,7 @@ export const LocalizationEN: LocalizationTexts = {
       header: "Academic",
       info:{
         title: "Bachelor in Computer Science",
+        region: "Fortaleza, CE, Brazil",
         stacks: [StacksTypes.CPP ]
       },
       label: "Academic"
@@ -69,6 +74,7 @@ export const LocalizationEN: LocalizationTexts = {
       header: "Game Developer",
       info:{
         title: "Game Developer",
+        region: "Fortaleza, CE, Brazil",
         stacks: [ StacksTypes.CSharp, StacksTypes.Unity, StacksTypes.Blender, StacksTypes.CPP]
       },
       label: "GameDev"
