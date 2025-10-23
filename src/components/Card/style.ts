@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { FaArrowRight as ArrowIcon} from "react-icons/fa";
 
-
 export const CardImageSty = styled.div`
     width: 100%;
     height: 100%;
@@ -47,7 +46,10 @@ export const CardArrow = styled(ArrowIcon)`
     transition: 0.3s ease-in-out;
 `
 
-export const CardSty = styled.div`
+interface CardStyProps {
+  $isExtern: boolean;
+}
+export const CardSty = styled.div<CardStyProps>`
     position: relative;
     
     width: 20rem;
@@ -70,8 +72,8 @@ export const CardSty = styled.div`
         }
 
         ${CardArrow}{
-            transform: rotateZ(-30deg);
-            color: ${p=>p.theme.primary};
+            transform: rotateZ(${p=>p.$isExtern? `-30deg`  : `30deg`});
+            color: ${p=> p.$isExtern ? p.theme.primary: p.theme.primaryLight};
         }
 
         ${CardImageSty} img{
@@ -88,4 +90,3 @@ export const CardLink = styled.a`
     width: 100%;
     height: 100%;   
 `
-

@@ -18,7 +18,7 @@ const Home = () => {
 
         <div>
           <Card src="Recipe.png" title="Recipe for Ruin" subtitle="Game" date="2025" url="https://www.instagram.com/perikan_studio/"/>
-
+          <Card src="Recipe.png" title="Recipe for Ruin" subtitle="Game" date="2025" url="/projects" />
           <Card src="Recipe.png" title="Recipe for Ruin" subtitle="Game" date="2025"/>
         </div>
         <h1>{professional.header}</h1>

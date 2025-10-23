@@ -1,10 +1,19 @@
-import { CardArrow, CardContainer, CardImageSty, CardLink, CardSty, CardSubTitle, CardTitleSty } from "./style"
+import Link from "next/link"
+import { 
+    CardArrow, 
+    CardContainer, 
+    CardImageSty, 
+    CardLink, 
+    CardSty, 
+    CardSubTitle, 
+    CardTitleSty, 
+} from "./style"
 
 interface CardProps{
     src: string
     title: string
-    subtitle?: string,
-    date?: string,
+    subtitle?: string
+    date?: string
     url?: string 
 }
 
@@ -22,22 +31,32 @@ const Content = ({src, title, subtitle}:CardProps)=>{
     )
 }
 
-export const Card = ({url, ...rest}:CardProps)=>{
-    return(
+export const Card = ({ url, ...rest }: CardProps) => {
+    const isExtern:boolean = Boolean(url && url[0] !== "/");
+    
+    const content = (
         <>
-        {url?
-                <CardSty>
-                    <CardLink href={url} target="_blank" rel="noopener noreferrer">
-                        <CardArrow />
-                        <Content {...rest}/>
-                    </CardLink>
-                </CardSty>
-                :
-                <CardSty>
-                    <Content {...rest}/>
-                </CardSty> 
-            }
+        <CardArrow />
+        <Content {...rest} />
         </>
-        
-    )
-}
+    );
+
+
+    return (
+        <CardSty $isExtern={isExtern}>
+        {url ? (
+            isExtern ? (
+            <CardLink href={url} target="_blank" rel="noopener noreferrer">
+                {content}
+            </CardLink>
+            ) : (
+            <Link href={url} passHref legacyBehavior>
+                <CardLink>{content}</CardLink>
+            </Link>
+            )
+        ) : (
+            <Content {...rest} />
+        )}
+        </CardSty>
+    );
+};
