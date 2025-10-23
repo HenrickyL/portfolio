@@ -1,4 +1,5 @@
 "use client";
+import { Card } from "@/components/Card";
 import { ExperiencesField } from "@/components/SubPages";
 import { useLocalization } from "@/hooks/LocalizationProvider";
 import { usePageInfo } from "@/hooks/PageInfoProvidere";
@@ -14,6 +15,9 @@ const Home = () => {
   return (
     <div className="home-styles">
       <div className="container">
+
+        <Card src="Recipe.png" title="Recipe for Ruin" subtitle="Game" date="2025"/>
+
         <h1>{professional.header}</h1>
         <ExperiencesField/>
       </div>
