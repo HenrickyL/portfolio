@@ -19,7 +19,7 @@ const Home = () => {
         
 
         <div className="content">
-            <Card img="/img/curriculum.png" title="Curriculum" subtitle="Fullstack" date="2025" url="/archives/Curriculo___Fullstack.pdf" isDownload/>
+            <Card src="/img/curriculum.png" title="Curriculum" subtitle="Fullstack" date="2025" url="/archives/Curriculo___Fullstack.pdf" isDownload/>
         </div>
         <ExperiencesField/>
       </div>

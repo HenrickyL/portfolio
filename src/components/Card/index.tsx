@@ -11,7 +11,7 @@ import {
 } from "./style"
 
 interface CardProps{
-    img: string
+    src: string
     title: string
     subtitle?: string
     date?: string
@@ -19,7 +19,7 @@ interface CardProps{
     isDownload?: boolean
 }
 
-const Content = ({img, title, subtitle, date}:CardProps)=>{
+const Content = ({src: img, title, subtitle, date}:CardProps)=>{
     return(
         <>
             <CardImageSty>

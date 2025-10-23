@@ -1,5 +1,4 @@
 "use client";
-import { StacksTypes } from '@/types/stacks';
 import { createContext, useContext, useState, ReactNode } from 'react';
 import { useLocalization } from './LocalizationProvider';
 import { PerfilInfo } from '@/types/PerfilInfo';

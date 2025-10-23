@@ -1,5 +1,4 @@
 "use client"
-import { useEffect, useState } from "react";
 import { LiquidGlass } from "../LiquidGlass";
 import { ToggleLanguageSty } from "./style";
 import { useLocalization } from "@/hooks/LocalizationProvider";
