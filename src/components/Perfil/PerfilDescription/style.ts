@@ -21,6 +21,7 @@ export const PerfilDescriptionSty = styled.span`
 
     & span{
         display: flex;
+        color: ${t=>t.theme.text3};
         align-items: center;
         justify-content: center;
         flex-direction: row;
