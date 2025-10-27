@@ -39,6 +39,7 @@ export const SocialMedias: SocialMedia[] = [
         name: "Email",
         Icon: MailIcon,
         url: "mailto:Henrickyl1@gmail.com",
+        resume:"Henrickyl1@gmail.com"
     },
     {
         name: "Lattes",
