@@ -161,6 +161,24 @@ const GlobalStyles = createGlobalStyle`
     inset 0 0 12px rgba(0,0,0,0.7);
 }
 
+/* Clear styles */
+/* Chrome, Edge, Safari */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px ${({ theme }) => theme.background} inset !important;
+  -webkit-text-fill-color: ${({ theme }) => theme.contrast} !important;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: ${({ theme }) => theme.contrast};
+}
+
+/* Firefox */
+input:autofill {
+  box-shadow: 0 0 0px 1000px ${({ theme }) => theme.background} inset !important;
+  -webkit-text-fill-color: ${({ theme }) => theme.contrast} !important;
+}
+
 `;
 
 export default GlobalStyles;
