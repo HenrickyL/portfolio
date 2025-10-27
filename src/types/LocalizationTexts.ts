@@ -28,7 +28,12 @@ export type LocalizationTexts = {
         },
         contact: {
             header: string,
-            label: string
+            label: string,
+            name: string,
+            yourEmail: string
+            subject: string,
+            message: string
+            send: string
         },
     }
 }

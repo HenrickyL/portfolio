@@ -17,11 +17,13 @@ export const InputFieldSty = styled.main<InputFieldStyProp>`
         prop.theme.notification.error.default : 
         prop.theme.contrastLight};
     border-radius: 8px;
-    padding: 12px;
+    padding: 8px 4px;
     background: ${prop=> prop.$error ? 
         prop.theme.notification.error.background :
         prop.theme.backgroundSnd};
     transition: 0.3s;
+    background-image: url(${(props) => props.theme.noise});
+
 
     &:hover{
         background-color: ${prop=> prop.theme.background};

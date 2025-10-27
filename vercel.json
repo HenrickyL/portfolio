@@ -1,0 +1,7 @@
+{
+  "git": {
+    "enabled": true,
+    "branchProtection": true,
+    "allowedBranches": ["main", "develop"]
+  }
+}
