@@ -1,8 +1,11 @@
 // components/ContactForm.tsx
 import { Input } from '@/components/Input';
+import { useLocalization } from '@/hooks/LocalizationProvider';
 import { useState } from 'react';
 
 export const ContactForm = ()=>{
+    const {content:{pages}} =useLocalization()
+  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -22,7 +25,7 @@ export const ContactForm = ()=>{
   return (
     <form onSubmit={handleSubmit}>
       <Input.Root>
-        <Input.Label text='Name'/>
+        <Input.Label text={pages.contact.name}/>
         <Input.Field>
             <Input.Input
             type="text"
@@ -33,7 +36,7 @@ export const ContactForm = ()=>{
             />
         </Input.Field>
       
-        <Input.Label text='Your Email'/>
+        <Input.Label text={pages.contact.yourEmail}/>
         <Input.Field>
             <Input.Input
             name='email'
@@ -44,7 +47,7 @@ export const ContactForm = ()=>{
             />
         </Input.Field>
       
-        <Input.Label text='Subject'/>
+        <Input.Label text={pages.contact.subject}/>
         <Input.Field>
             <Input.Input
             type="text"
@@ -55,7 +58,7 @@ export const ContactForm = ()=>{
             />
         </Input.Field>
       
-        <Input.Label text='Message' />
+        <Input.Label text={pages.contact.message} />
         <Input.Field>
           <Input.TextArea 
             name='message'
@@ -68,7 +71,7 @@ export const ContactForm = ()=>{
         </Input.Field>
       </Input.Root>
         <Input.Root >
-            <Input.Button  type="submit" text='Send'/>
+            <Input.Button  type="submit" text={pages.contact.send}/>
         </Input.Root>
     </form>
   );
