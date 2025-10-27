@@ -41,7 +41,12 @@ export const LocalizationPT: LocalizationTexts = {
         },
         contact: {
             header: "Contato",
-            label: "Contato"
+            label: "Contato",
+            message:"Mensagem",
+            name: "Seu Nome",
+            send:"Enviar",
+            yourEmail: "Seu Email",
+            subject: "Assunto"
         }
     }
 }
@@ -85,7 +90,12 @@ export const LocalizationEN: LocalizationTexts = {
     },
     contact: {
       header: "Contact",
-      label: "Contact"
+      label: "Contact",
+      message:"Message",
+      name: "Your Name",
+      send:"Send",
+      yourEmail: "Your Email",
+      subject: "Subject"
     }
   }
 }

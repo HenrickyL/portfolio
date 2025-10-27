@@ -5,6 +5,8 @@ import { InputInput } from "./InputInput";
 import { InputLabel } from "./InputLabel";
 import { InputRoot } from "./InputRoot";
 import { InputPassword } from "./InputPassword";
+import { InputTextArea } from "./InputTextArea";
+import { InputButton } from "./InputButton";
 
 export const Input = {
     Root: InputRoot,
@@ -12,7 +14,9 @@ export const Input = {
     Input: InputInput,
     Label: InputLabel,
     Icon: InputIcon,
-    Password: InputPassword
+    Password: InputPassword,
+    TextArea: InputTextArea,
+    Button: InputButton
 }
 
 export type AllowedChildren =
@@ -21,3 +25,5 @@ export type AllowedChildren =
     | ReactElement<typeof Input.Label>
     | ReactElement<typeof Input.Icon>
     | ReactElement<typeof Input.Password>
+    | ReactElement<typeof Input.TextArea>
+
