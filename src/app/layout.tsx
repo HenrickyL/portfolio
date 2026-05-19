@@ -1,8 +1,15 @@
+import { Noto_Sans_Duployan } from "next/font/google";
 // import "./globals.css";
 import { Metadata } from "next";
 import StyledComponentsRegistry from "@/lib/registry";
 import { Providers } from "@/hooks";
 import { LayoutComponent } from "@/components/Layout";
+
+const noto = Noto_Sans_Duployan({ 
+  subsets: ['latin'],
+  weight: ['400', '700']
+});
+
 
 export const metadata: Metadata = {
   title: "Henricky Dev",
@@ -18,12 +25,8 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Noto+Sans+Duployan:wght@400;700&display=swap"
-          rel="stylesheet"
-        />
       </head>
-      <body>
+      <body className={noto.className}>
         <StyledComponentsRegistry>
             <Providers>
               <LayoutComponent>
