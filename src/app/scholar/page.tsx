@@ -10,7 +10,7 @@ const ScholarPage = ()=>{
                 
     useEffect(() => {
         setPageInfo(scholar.info);
-    }, [scholar]);
+    }, [scholar, setPageInfo]);
 
     return(
         <div className="container">

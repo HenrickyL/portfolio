@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
     CardArrow,
     CardContainer,
@@ -17,11 +18,11 @@ interface CardProps{
     isDownload?: boolean
 }
 
-const Content = ({src: img, title, subtitle, date}:CardProps)=>{
+const Content = ({src: img_path, title, subtitle, date}:CardProps)=>{
     return(
         <>
             <CardImageSty>
-                <img src={img} alt="" />
+                <Image src={img_path} alt={title} fill />
             </CardImageSty>
             <CardContainer>
                 {date && <CardDateSty>{date}</CardDateSty>}

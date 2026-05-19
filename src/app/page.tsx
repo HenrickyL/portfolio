@@ -10,7 +10,7 @@ const Home = () => {
   const { setPageInfo } = usePageInfo();  
   useEffect(() => {
       setPageInfo(professional.info);
-  }, [professional]);
+  }, [professional, setPageInfo]);
 
   return (
     <div className="home-styles">
