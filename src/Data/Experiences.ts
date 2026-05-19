@@ -2,6 +2,26 @@ import { Experience } from "@/types/Experience";
 
 export const experiencesPT: Experience[] = [
     {
+        id: "xp-2026-python-backend",
+        role: "Analista de Sistemas Júnior (Backend Python)",
+        company: "Fundação Cearense de Pesquisa e Cultura",
+        startDate: "Jan 2026",
+        endDate: null,
+        location: "Remoto",
+        description:
+            "Atuação no desenvolvimento backend utilizando Python e Django, participando da construção e manutenção de sistemas web, criação e consumo de APIs REST, modelagem de dados e implementação de regras de negócio.",
+        tags: [
+            "Python",
+            "Django",
+            "Django REST Framework",
+            "REST APIs",
+            "PostgreSQL",
+            "Clean Architecture",
+            "Testes Unitários"
+        ],
+        url: "",
+    },
+    {
         id: "xp-2025-springboot",
         role: "Desenvolvedor Backend Java",
         company: "FASTEF",
@@ -54,6 +74,26 @@ export const experiencesPT: Experience[] = [
 
 
 export const experiencesEN: Experience[] = [
+    {
+        id: "xp-2026-python-backend",
+        role: "Junior Systems Analyst (Python Backend)",
+        company: "Fundação Cearense de Pesquisa e Cultura",
+        startDate: "Jan 2026",
+        endDate: null,
+        location: "Remote",
+        description:
+            "Working on backend development using Python and Django, contributing to the development and maintenance of web systems, REST API integration, data modeling, and business rule implementation.",
+        tags: [
+            "Python",
+            "Django",
+            "Django REST Framework",
+            "REST APIs",
+            "PostgreSQL",
+            "Clean Architecture",
+            "Unit Testing"
+        ],
+        url: "",
+    },
     {
         id: "xp-2025-springboot",
         role: "Java Backend Developer",
