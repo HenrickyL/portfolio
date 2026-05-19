@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { FaArrowRight as ArrowIcon} from "react-icons/fa";
+import Link from "next/link";
 
 export const CardImageSty = styled.div`
     width: 100%;
@@ -104,11 +105,11 @@ export const CardSty = styled.div<CardStyProps>`
     }
 `
 
-export const CardLink = styled.a`
+export const CardLink = styled(Link)`
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 100%;
-`
+`;
