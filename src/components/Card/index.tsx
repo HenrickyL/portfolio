@@ -1,15 +1,13 @@
-import Link from "next/link"
-import { 
-    CardArrow, 
-    CardContainer, 
-    CardDateSty, 
-    CardImageSty, 
-    CardLink, 
-    CardSty, 
-    CardSubTitle, 
-    CardTitleSty, 
+import {
+    CardArrow,
+    CardContainer,
+    CardDateSty,
+    CardImageSty,
+    CardLink,
+    CardSty,
+    CardSubTitle,
+    CardTitleSty,
 } from "./style"
-
 interface CardProps{
     src: string
     title: string
@@ -54,9 +52,9 @@ export const Card = ({ url, isDownload, ...rest }: CardProps) => {
                 {content}
             </CardLink>
             ) : (
-            <Link href={url} passHref legacyBehavior>
-                <CardLink>{content}</CardLink>
-            </Link>
+            <CardLink href={url}>
+                {content}
+            </CardLink>
             )
         ) : (
             <Content {...rest} />
