@@ -2,7 +2,7 @@
 import { Input } from '@/components/Input';
 import { useLocalization } from '@/hooks/LocalizationProvider';
 import { useState } from 'react';
-import emailjs from 'emailjs-com';
+import emailjs from "@emailjs/browser";
 
 export const ContactForm = ()=>{
     const {content:{pages}} =useLocalization()
@@ -15,6 +15,7 @@ export const ContactForm = ()=>{
     });
 
     const [onError, setOnError] = useState<boolean | null>(null);
+    const [loading, setLoading] = useState(false);
     
 
     const handleChange = (field: string, value: string) => {
@@ -23,7 +24,7 @@ export const ContactForm = ()=>{
 
     const handleSubmit = (e: React.FormEvent) => {
       e.preventDefault();
-
+      setLoading(true);
       emailjs.send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
@@ -43,6 +44,9 @@ export const ContactForm = ()=>{
       .catch((error) => {
         console.error('Erro ao enviar email:', error);
         setOnError(true);
+      })
+      .finally(() => {
+        setLoading(false);
       });
     };
 
@@ -95,7 +99,7 @@ export const ContactForm = ()=>{
           </Input.Field>
         </Input.Root>
         <Input.Root >
-            <Input.Button type="submit" text={pages.contact.send}/>
+            <Input.Button type="submit" text={pages.contact.send} disabled={loading}/>
         </Input.Root>
         {onError !== null && 
           <p style={{ color: onError ? "red" : "green" }}>
