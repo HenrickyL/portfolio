@@ -14,7 +14,10 @@ export const LocalizationPT: LocalizationTexts = {
               stacks: [StacksTypes.DotNet, StacksTypes.ReactJs, StacksTypes.NodeJs, StacksTypes.SpringBoot, StacksTypes.Python]
             },
             experiences: "Experiências",
-            label: "Dev"
+            label: "Dev",
+            curriculum: "/archives/resume-henricky-br.pdf",
+              curriculumTitle: "Currículo",
+              curriculumSubtitle: "Fullstack"
         },
         scholar: {
             header: "Acadêmico",
@@ -64,7 +67,10 @@ export const LocalizationEN: LocalizationTexts = {
         stacks: [StacksTypes.DotNet, StacksTypes.ReactJs, StacksTypes.NodeJs, StacksTypes.SpringBoot, StacksTypes.Python]
       },
       experiences: "Experiences", // subtitle
-      label: "Dev" // menu label
+      label: "Dev", // menu label
+      curriculum: "/archives/resume_henricky_english.pdf",
+      curriculumTitle: "Curriculum",
+      curriculumSubtitle: "Fullstack"
     },
     scholar: {
       header: "Academic",
