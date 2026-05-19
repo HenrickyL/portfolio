@@ -20,11 +20,12 @@ export const MenuItem = ({index, href,title, icon: Icon}:MenuItemProp)=>{
         if(index !== menuContext.index)
             menuContext.setActiveItem(index, title)
     }
-    useEffect(()=>{
-        if(pathname === href){
-            menuContext.setActiveItem(index, title)
-        }
-    },[])
+    
+    useEffect(() => {
+    if (pathname === href && menuContext.index !== index) {
+        menuContext.setActiveItem(index, title);
+    }
+}, [pathname, href, index, title, menuContext]);
 
     return(
         <MenuItemSty 
