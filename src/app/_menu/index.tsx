@@ -66,7 +66,6 @@ const TestNavsSty = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* border-bottom: 1px solid ${prop=>prop.theme.contrast}; */
     padding: 4px;
     gap: 2rem;
 
