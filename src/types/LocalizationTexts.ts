@@ -9,8 +9,11 @@ export type LocalizationTexts = {
         professional: {
             header: string,
             info: PerfilInfo,
-            experiences: string,
-            label: string
+            experiences: string
+            label: string,
+            curriculum: string
+            curriculumTitle: string
+            curriculumSubtitle: string
         },
         scholar: {
             header: string

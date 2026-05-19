@@ -11,7 +11,7 @@ const GameDevPage = ()=>{
                 
     useEffect(() => {
         setPageInfo(pages.gameDev.info);
-    }, [pages]);
+    }, [pages, setPageInfo]);
 
     return(
         <div className="container">

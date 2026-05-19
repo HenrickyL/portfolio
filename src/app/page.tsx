@@ -10,7 +10,7 @@ const Home = () => {
   const { setPageInfo } = usePageInfo();  
   useEffect(() => {
       setPageInfo(professional.info);
-  }, [professional]);
+  }, [professional, setPageInfo]);
 
   return (
     <div className="home-styles">
@@ -19,7 +19,7 @@ const Home = () => {
         
 
         <div className="content">
-            <Card src="/img/curriculum.png" title="Curriculum" subtitle="Fullstack" date="2025" url="/archives/Curriculo___Fullstack.pdf" isDownload/>
+            <Card src="/img/curriculum.png" title={professional.curriculumTitle} subtitle={professional.curriculumSubtitle} date="2025" url={professional.curriculum} isDownload/>
         </div>
         <ExperiencesField/>
       </div>
