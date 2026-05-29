@@ -42,7 +42,15 @@ export const LayoutComponent = ({children}:LayoutComponentProps)=>{
                 </Container.Row>
             </Container.Root>
             <Footer.Root>
-                <Footer.Text>Made by <UrlLink href="https://www.linkedin.com/in/henrickyl/">HenrickyL</UrlLink> | 2025</Footer.Text>
+                <Footer.Text>
+                    <strong>Henricky Monteiro</strong>
+                    <span>Developer</span>
+                    <span>Academic</span>
+                    <span>Gamedev</span>
+                    <span>|</span>
+                    <UrlLink href="https://www.linkedin.com/in/henrickyl/">LinkedIn</UrlLink>
+                    <span>| 2025</span>
+                </Footer.Text>
             </Footer.Root>
 
         </LayoutWrapperSty>
