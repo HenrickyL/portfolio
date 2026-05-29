@@ -6,7 +6,9 @@ export const LayoutWrapperSty = styled.div`
     align-items: center;
     justify-content: start;
     width: 100%;
-    height: 100%;
+    height: 100dvh;
+    min-height: 0;
+    overflow: hidden;
     position: relative;
 
 
@@ -15,4 +17,9 @@ export const LayoutWrapperSty = styled.div`
             flex-direction: column-reverse;
         }
     }
+`
+export const LayoutContentSty = styled.div`
+    min-height: 0;
+    overflow-y: auto;
+    padding-right: 8px;
 `

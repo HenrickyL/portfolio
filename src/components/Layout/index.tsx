@@ -1,6 +1,6 @@
 "use client";
 import { ReactNode } from "react"
-import { LayoutWrapperSty } from "./style"
+import { LayoutContentSty, LayoutWrapperSty } from "./style"
 import { TestNavs } from "@/app/_menu"
 import ThemeToggle from "../ThemeToggle"
 import { Container } from "../Container"
@@ -36,9 +36,9 @@ export const LayoutComponent = ({children}:LayoutComponentProps)=>{
                             <Perfil.Social items={SocialMedias}/>
                         </Perfil.Card>
                     </Perfil.Root>
-                    {/* <Container.Root> */}
+                    <LayoutContentSty>
                         {children}
-                    {/* </Container.Root> */}
+                    </LayoutContentSty>
                 </Container.Row>
             </Container.Root>
             <Footer.Root>
