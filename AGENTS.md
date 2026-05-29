@@ -18,6 +18,7 @@ Aplicação Next.js 15 usando:
 
 - Nunca modificar arquivos `.env`
 - Nunca alterar migrations existentes
+- Nunca faça operações git
 - Nunca usar `any`
 - Preferir Server Components
 - Client Components apenas quando necessário
@@ -65,4 +66,11 @@ Antes de finalizar:
 ```bash
 npm run lint
 npm run type-check
-npm run test
+
+
+## Code modification policy
+
+- Always propose changes as a diff first
+- Never use destructive one-line shell edits
+- Never modify files without showing what will change
+- Ask for confirmation before applying changes
