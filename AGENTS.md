@@ -60,17 +60,18 @@ Aplicação Next.js 15 usando:
 - **tsconfig.json** → configuração do TypeScript  
 - **README.md** → documentação inicial do projeto  
 
-## Comandos obrigatórios
 
-Antes de finalizar:
-```bash
-npm run lint
-npm run type-check
+## Tool execution policy
 
+- Assume shell commands are safe unless they:
+  - delete files
+  - modify files in place (rm, mv, sed -i, perl -pi)
+- Automatically approve read-only commands:
+  - grep
+  - rg (ripgrep)
+  - ls
+  - find
+  - cat
 
-## Code modification policy
-
-- Always propose changes as a diff first
-- Never use destructive one-line shell edits
-- Never modify files without showing what will change
-- Ask for confirmation before applying changes
+- Do NOT ask for confirmation for read-only search commands.
+- Only ask for confirmation when writing or deleting files.
