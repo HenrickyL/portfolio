@@ -6,7 +6,9 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "agent_docker": "docker compose -f docker/agent/docker-compose.yml run --rm codex-agent sh",
+    "agent_run": "docker compose -f docker/agent/docker-compose.yml exec codex-agent sh"    
   },
   "dependencies": {
     "@emailjs/browser": "^4.1.0",
