@@ -1,0 +1,15 @@
+services:
+  codex-agent:
+    build:
+      context: ../../
+      dockerfile: docker/agent/Dockerfile
+
+    stdin_open: true
+    tty: true
+
+    env_file:
+      - ../../.env
+
+    volumes:
+      - ../../:/workspace
+      - /workspace/node_modules

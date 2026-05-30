@@ -3,3 +3,9 @@ node_modules
 .env
 Dockerfile
 docker-compose.yml
+Dockerfile*
+docker-compose*
+.git
+coverage
+dist
+.env.local

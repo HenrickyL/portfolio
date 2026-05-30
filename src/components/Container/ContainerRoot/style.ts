@@ -2,9 +2,11 @@ import styled from "styled-components";
 
 export const ContainerRootSty = styled.main`
     display: flex;
-    overflow-y: auto;
+    overflow: hidden;
+    flex: 1;
+    min-height: 0;
     flex-direction: column;
     width: 100%;
-    height: 100%;
+
     padding: 8px;
 `
