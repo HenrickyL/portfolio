@@ -1,5 +1,4 @@
 "use client";
-import React, { ReactNode } from "react";
 import { TimelineRootSty, TimelineLineSty, TimelineItemsSty, TimeLineItemsContainerSty } from "./style";
 import { TimelineItem } from "../TimelineItem";
 import { Experience } from "@/types/Experience";
@@ -19,23 +18,23 @@ export const TimelineRoot = ({ items }: TimelineRootProps) => {
 		<TimelineRootSty >
 			<TimelineItemsSty>
 				<TimeLineItemsContainerSty>
-					{leftItems.map(xp=>
+					{leftItems.map((xp, index) =>
 						<TimelineItem
 							key={xp.id}
 							$alternate={false}
-							experience={xp} index={0}						
+							experience={xp} index={index}						
 						/>
 					)}
 				</TimeLineItemsContainerSty>
 
 				<TimelineLineSty total={total}/>
 				
-				<TimeLineItemsContainerSty>
-					{rightItems.map(xp=>
+				<TimeLineItemsContainerSty $alternate>
+					{rightItems.map((xp, index) =>
 						<TimelineItem
 							key={xp.id}
 							$alternate={true}
-							experience={xp} index={1}						
+							experience={xp} index={index}						
 						/>
 					)}
 				</TimeLineItemsContainerSty>

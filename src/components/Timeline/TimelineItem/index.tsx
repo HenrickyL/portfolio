@@ -12,6 +12,7 @@ import {
     TimelineItemTextBoxSty,
     TimelineItemWrapperSty,
     TimelineTagListSty,
+    TimelineTagTrackSty,
     TimelineTagSty,
 } from "./style";
 import {
@@ -63,9 +64,11 @@ export const TimelineItem = ({experience:xp, $alternate, index }:TimelineItemPro
                     </TimelineInfoSty>
                     {xp.tags && xp.tags.length > 0 && (
                         <TimelineTagListSty>
-                            {xp.tags.map((tag) => (
-                                <TimelineTagSty key={tag}>{tag}</TimelineTagSty>
-                            ))}
+                            <TimelineTagTrackSty>
+                                {[...xp.tags, ...xp.tags].map((tag, tagIndex) => (
+                                    <TimelineTagSty key={`${tag}-${tagIndex}`}>{tag}</TimelineTagSty>
+                                ))}
+                            </TimelineTagTrackSty>
                         </TimelineTagListSty>
                     )}
                     <TimelineDescriptionSty $isOpen={isOpen}>

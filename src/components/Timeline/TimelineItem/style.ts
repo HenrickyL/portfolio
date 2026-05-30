@@ -16,6 +16,11 @@ const TimelineItemMoveDownSty = keyframes`
     }
 `
 
+const TimelineTagsMoveSty = keyframes`
+    0%{ transform: translateX(0); }
+    100%{ transform: translateX(-50%); }
+`
+
 export const TimelineHeaderSty = styled.div`
     display: grid;
     grid-template-columns: 1fr auto;
@@ -60,6 +65,7 @@ export const TimelineItemTextBoxSty = styled.div<{$alternate?: boolean}>`
     background-image: url(${(props) => props.theme.noise});
     background-color: ${prop=>prop.theme.backgroundSnd};
     position: relative;
+    z-index: 2;
     border-radius: 8px;
     gap: 0.65rem;
     border: 1px solid transparent;
@@ -135,9 +141,22 @@ export const TimelineInfoSty = styled.div`
 
 export const TimelineTagListSty = styled.div`
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
     width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+
+    &:hover > div{
+        animation-play-state: paused;
+    }
+`
+
+export const TimelineTagTrackSty = styled.div`
+    display: flex;
+    flex: 0 0 auto;
+    gap: 0.4rem;
+    width: max-content;
+    animation: ${TimelineTagsMoveSty} 14s linear infinite;
 `
 
 export const TimelineTagSty = styled.span`
@@ -151,6 +170,7 @@ export const TimelineTagSty = styled.span`
     background: rgba(255, 255, 255, 0.04);
     font-size: 0.76rem;
     line-height: 1.15;
+    white-space: nowrap;
 `
 
 export const TimelineDescriptionSty = styled.div<{$isOpen: boolean}>`
@@ -185,6 +205,7 @@ export const TimelineDescriptionSty = styled.div<{$isOpen: boolean}>`
 
 export const TimelineItemSty = styled.div<ItemContainerProp>`
    position: relative;
+   z-index: 3;
     display: flex;
     width: 100%;
     &::after{
@@ -201,7 +222,7 @@ export const TimelineItemSty = styled.div<ItemContainerProp>`
         background-color: ${prop=>prop.theme.primaryLight};
         border: 4px solid ${prop=>prop.theme.background};
         border-radius: 50%;
-        z-index: 3;
+        z-index: 6;
     }
 
     &:hover{
@@ -224,7 +245,7 @@ export const TimelineItemWrapperSty = styled.div<{index: number}>`
     max-width: 46rem;
     transition: 0.25s ease;
     opacity: 0;
-    animation: ${TimelineItemMoveDownSty} 0.45s ease forwards;
+    animation: ${TimelineItemMoveDownSty} 3s ease forwards;
     ${({ index }) => `
         animation-delay: ${(index - 1)}s;
     `}
