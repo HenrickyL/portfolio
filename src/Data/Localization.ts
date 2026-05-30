@@ -10,7 +10,7 @@ export const LocalizationPT: LocalizationTexts = {
             header: "Profissional",
             info:{
               title: "Fullstack Developer",
-              region: "Fortaleza, CE, Brasil",
+              region: "Brasil",
               stacks: [StacksTypes.DotNet, StacksTypes.ReactJs, StacksTypes.NodeJs, StacksTypes.SpringBoot, StacksTypes.Python]
             },
             experiences: "Experiências",
@@ -50,7 +50,7 @@ export const LocalizationPT: LocalizationTexts = {
             header: "Acadêmico",
             info:{
               title: "Bacharel em Ciência da Computação",
-              region: "Fortaleza, CE, Brasil",
+              region: "Brasil",
               stacks: [StacksTypes.CPP]
             },
             label: "Acadêmico"
@@ -59,7 +59,7 @@ export const LocalizationPT: LocalizationTexts = {
             header: "Desenvolvedor de Jogos",
             info:{
               title: "Desenvolvedor de Jogos",
-              region: "Fortaleza, CE, Brasil",
+              region: "Brasil",
               stacks: [ StacksTypes.CSharp, StacksTypes.Unity, StacksTypes.Blender, StacksTypes.CPP]
             },
             label: "GameDev"

@@ -20,6 +20,7 @@ export const LayoutWrapperSty = styled.div`
 `
 export const LayoutContentSty = styled.div`
     min-height: 0;
+    width: 120%;
     overflow-y: auto;
     padding-right: 8px;
 `
