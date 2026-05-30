@@ -4,12 +4,16 @@ export const ContainerRowSty = styled.div`
     display: grid;
     grid-template-columns: 1fr 2fr 0.5fr;
     gap: 1rem;
-    margin-top: 6rem;
-
+    margin-top: 2rem;
+    height: calc(100% - 2rem);
+    min-height: 0;
+    overflow: hidden;
     @media screen and (max-width: 680px){
         &{
             display: flex;
             flex-direction: column;
+            height: 100%;
+            overflow-y: auto;
             margin-top: 1rem;
         }
     }

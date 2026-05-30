@@ -1,36 +1,87 @@
-// "use client";
+"use client";
+
+import { useState } from "react";
 import { Experience } from "@/types/Experience"
-import { TimelineInfoSty, TimelineItemContainer, TimelineItemSty, TimelineItemTextBoxSty, TimelineItemWrapper } from "./style";
-import { MdLocationOn as LocationIcon, MdCalendarMonth as CalendarIcon } from "react-icons/md";
+import {
+    TimelineDescriptionSty,
+    TimelineExpandButtonSty,
+    TimelineHeaderSty,
+    TimelineInfoSty,
+    TimelineItemContainer,
+    TimelineItemSty,
+    TimelineItemTextBoxSty,
+    TimelineItemWrapperSty,
+    TimelineTagListSty,
+    TimelineTagTrackSty,
+    TimelineTagSty,
+} from "./style";
+import {
+    MdCalendarMonth as CalendarIcon,
+    MdKeyboardArrowDown as ChevronIcon,
+    MdLocationOn as LocationIcon,
+} from "react-icons/md";
 
 
 export type TimelineItemProps = {
     experience: Experience
     $alternate?: boolean;
     index: number,
+    $isVisible: boolean,
 }
 
 
-export const TimelineItem = ({experience:xp, $alternate, index }:TimelineItemProps)=>{
+export const TimelineItem = ({experience:xp, $alternate, index, $isVisible }:TimelineItemProps)=>{
+    const [isOpen, setIsOpen] = useState(false);
+    const period = `${xp.startDate} - ${xp.endDate ?? "Atualmente"}`;
+
     return(
-        <TimelineItemWrapper index={index}>
+        <TimelineItemWrapperSty index={index} $isVisible={$isVisible}>
             <TimelineItemSty $alternate={$alternate}>
                 <TimelineItemTextBoxSty $alternate={$alternate}>
-                    <h2>{xp.company}</h2>
-                    <h3>{xp.role}</h3>
+                    <TimelineHeaderSty>
+                        <div>
+                            <h2>{xp.company}</h2>
+                            <h3>{xp.role}</h3>
+                        </div>
+                        <TimelineExpandButtonSty
+                            type="button"
+                            onClick={() => setIsOpen((current) => !current)}
+                            aria-expanded={isOpen}
+                            aria-label={isOpen ? "Recolher experiência" : "Expandir experiência"}
+                            $isOpen={isOpen}
+                        >
+                            <ChevronIcon />
+                        </TimelineExpandButtonSty>
+                    </TimelineHeaderSty>
                     <TimelineInfoSty>
                         <TimelineItemContainer>
                             <CalendarIcon />
-                            <span>{xp.startDate} - {xp.endDate?? "Atualmente"}</span>
+                            <span>{period}</span>
                         </TimelineItemContainer>
-                        <TimelineItemContainer>
+                        <TimelineItemContainer $badge>
                             <LocationIcon/>
                             <span>{xp.location}</span>
                         </TimelineItemContainer>
                     </TimelineInfoSty>
-                    <p>{xp.description}</p>
+                    {xp.tags && xp.tags.length > 0 && (
+                        <TimelineTagListSty>
+                            <TimelineTagTrackSty>
+                                {[...xp.tags, ...xp.tags].map((tag, tagIndex) => (
+                                    <TimelineTagSty key={`${tag}-${tagIndex}`}>{tag}</TimelineTagSty>
+                                ))}
+                            </TimelineTagTrackSty>
+                        </TimelineTagListSty>
+                    )}
+                    <TimelineDescriptionSty $isOpen={isOpen}>
+                        {xp.description && <p>{xp.description}</p>}
+                        {xp.url && (
+                            <a href={xp.url} target="_blank" rel="noreferrer">
+                                Acessar experiência
+                            </a>
+                        )}
+                    </TimelineDescriptionSty>
                 </TimelineItemTextBoxSty>
             </TimelineItemSty>
-        </TimelineItemWrapper>
+        </TimelineItemWrapperSty>
     )
 }

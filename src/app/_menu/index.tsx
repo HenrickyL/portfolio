@@ -9,16 +9,16 @@ import { BsEnvelopeFill as ContactIcon } from "react-icons/bs";
 import { IoGameController as GameIcon } from "react-icons/io5";
 import styled from "styled-components";
 
-interface MenuItem{
+interface NavigationItem{
   title: string,
   icon: IconType
   href: string
 }
 
-const Nav2 = () => {
+const MainNavigationContent = () => {
   const { content: { pages } } = useLocalization();
 
-  const menuItems: MenuItem[] = [
+  const menuItems: NavigationItem[] = [
     {
       title: pages.professional.label,
       icon: HomeIcon,
@@ -48,10 +48,10 @@ const Nav2 = () => {
 
   return (
     <Menu.Root>
-      {menuItems.map((item, i) => (
+      {menuItems.map((item, index) => (
         <Menu.Item
-          index={i}
-          key={i}
+          index={index}
+          key={item.href}
           href={item.href}
           title={item.title}
           icon={item.icon}
@@ -61,7 +61,7 @@ const Nav2 = () => {
   );
 };
 
-const TestNavsSty = styled.div`
+const MainNavigationSty = styled.div`
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -78,10 +78,10 @@ const TestNavsSty = styled.div`
 `
 
 
-export const TestNavs = ()=>{
+export const MainNavigation = ()=>{
     return(
-    <TestNavsSty>
-        <Nav2 />
-    </TestNavsSty>
+    <MainNavigationSty>
+        <MainNavigationContent />
+    </MainNavigationSty>
     )
 }

@@ -11,7 +11,7 @@ export const PerfilDescriptionSty = styled.span`
     align-items: center;
     justify-content: center;
     width: 100%;
-    min-height: 2rem;
+    min-height: 4rem;
     word-wrap: break-word;
     word-break: break-word;
     white-space: normal;

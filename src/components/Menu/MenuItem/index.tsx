@@ -2,7 +2,6 @@ import { IconType } from "react-icons"
 import { MenuItemSty } from "./style"
 import { usePathname } from "next/navigation"
 import { useMenu } from "@/hooks/Menu"
-import { useEffect } from "react"
 
 interface MenuItemProp{
     href: string
@@ -14,18 +13,12 @@ interface MenuItemProp{
 export const MenuItem = ({index, href,title, icon: Icon}:MenuItemProp)=>{
     const pathname = usePathname();
     const isActive = pathname === href? "active" : "";
-    const menuContext = useMenu();
+    const { index: activeIndex, setActiveItem } = useMenu();
 
     const HandleClick = ()=>{
-        if(index !== menuContext.index)
-            menuContext.setActiveItem(index, title)
+        if(index !== activeIndex)
+            setActiveItem(index, title)
     }
-    
-    useEffect(() => {
-    if (pathname === href && menuContext.index !== index) {
-        menuContext.setActiveItem(index, title);
-    }
-}, [pathname, href, index, title, menuContext]);
 
     return(
         <MenuItemSty 
