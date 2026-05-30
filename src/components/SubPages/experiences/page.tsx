@@ -6,16 +6,7 @@ const ExperiencesField = ()=>{
     return(
         <div className="container">
             <h2>{content.pages.professional.experiences}</h2>
-            <Timeline.Root>
-                {content.experiences.map((xp,i) => (
-                    <Timeline.Item 
-                        key={xp.id}
-                        index={i+1} 
-                        experience={xp} 
-                        $alternate={i%2 === 1}
-                        />
-                ))}
-            </Timeline.Root>
+            <Timeline.Root items={content.experiences} total={content.experiences.length} />
         </div>
     )
 }
