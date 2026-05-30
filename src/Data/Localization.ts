@@ -67,7 +67,7 @@ export const LocalizationPT: LocalizationTexts = {
                 { value: "UFC", label: "Ciência da Computação" },
                 { value: "2025.1", label: "Conclusão da monografia" },
                 { value: "3", label: "Materiais disponíveis" },
-                { value: "C++", label: "Base em algoritmos" }
+                // { value: "C++", label: "Base em algoritmos" }
               ],
               areas: [
                 { title: "Engenharia de software", description: "Arquitetura, requisitos, qualidade e manutenção de sistemas." },

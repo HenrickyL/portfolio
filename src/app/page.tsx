@@ -70,7 +70,7 @@ const Home = () => {
               src="/img/curriculum.png"
               title={professional.curriculumTitle}
               subtitle={professional.curriculumSubtitle}
-              date="2025"
+              date="2026"
               url={professional.curriculum}
               isDownload
             />
