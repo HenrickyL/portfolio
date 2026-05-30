@@ -2,6 +2,36 @@ import { Experience } from "./Experience"
 import { PerfilInfo } from "./PerfilInfo"
 import { Project } from "./Project"
 
+type HomeMetric = {
+    value: string,
+    label: string
+}
+
+type HomeSkillGroup = {
+    title: string,
+    skills: string[]
+}
+
+type HomeExpertise = {
+    title: string,
+    description: string
+}
+
+type ProfessionalHome = {
+    eyebrow: string,
+    title: string,
+    intro: string,
+    primaryAction: string,
+    secondaryAction: string,
+    aboutTitle: string,
+    aboutText: string,
+    skillsTitle: string,
+    expertiseTitle: string,
+    metrics: HomeMetric[],
+    skillGroups: HomeSkillGroup[],
+    expertises: HomeExpertise[]
+}
+
 export type LocalizationTexts = {
     experiences: Experience[],
     projects: Project[],
@@ -14,6 +44,7 @@ export type LocalizationTexts = {
             curriculum: string
             curriculumTitle: string
             curriculumSubtitle: string
+            home: ProfessionalHome
         },
         scholar: {
             header: string

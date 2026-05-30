@@ -6,6 +6,7 @@ export const ContainerRootSty = styled.main`
     flex: 1;
     min-height: 0;
     flex-direction: column;
-    width: 100%;
+    width: 100%;
+
     padding: 8px;
 `
