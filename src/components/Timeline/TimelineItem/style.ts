@@ -236,7 +236,7 @@ export const TimelineItemSty = styled.div<ItemContainerProp>`
     }
 `
 
-export const TimelineItemWrapperSty = styled.div<{index: number}>`
+export const TimelineItemWrapperSty = styled.div<{index: number, $isVisible: boolean}>`
     display: flex;
     flex-direction: column;
     position: relative;
@@ -244,10 +244,11 @@ export const TimelineItemWrapperSty = styled.div<{index: number}>`
     min-width: 24rem;
     max-width: 46rem;
     transition: 0.25s ease;
-    opacity: 0;
-    animation: ${TimelineItemMoveDownSty} 3s ease forwards;
-    ${({ index }) => `
-        animation-delay: ${(index - 1)}s;
+    opacity: ${p=>p.$isVisible ? 0 : 1};
+    transform: ${p=>p.$isVisible ? "translateY(-12px)" : "translateY(0)"};
+    animation: ${p=>p.$isVisible ? TimelineItemMoveDownSty : "none"} 0.45s ease forwards;
+    ${({ index, $isVisible }) => $isVisible && `
+        animation-delay: ${index * 0.18}s;
     `}
 
     @media screen and (max-width: 680px){

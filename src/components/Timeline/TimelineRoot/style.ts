@@ -9,15 +9,15 @@ const TimelineLineAnimation = keyframes`
 	}
 `
 
-export const TimelineLineSty = styled.span<{total: number}>`
+export const TimelineLineSty = styled.span<{total: number, $isVisible: boolean}>`
 		position: absolute;
 		top:0;
 		width:6px;
 		z-index: 0;
-		height: 100%;
+		height: ${p=>p.$isVisible ? "100%" : "0"};
 		border-radius: 4px;
 		background-color: ${prop=>prop.theme.contrastLight};
-		animation: ${TimelineLineAnimation} ${p=>p.total}s ease-out forwards;
+		animation: ${p=>p.$isVisible ? TimelineLineAnimation : "none"} ${p=>p.total}s ease-out forwards;
 		pointer-events: none;
 `
 

@@ -26,15 +26,16 @@ export type TimelineItemProps = {
     experience: Experience
     $alternate?: boolean;
     index: number,
+    $isVisible: boolean,
 }
 
 
-export const TimelineItem = ({experience:xp, $alternate, index }:TimelineItemProps)=>{
+export const TimelineItem = ({experience:xp, $alternate, index, $isVisible }:TimelineItemProps)=>{
     const [isOpen, setIsOpen] = useState(false);
     const period = `${xp.startDate} - ${xp.endDate ?? "Atualmente"}`;
 
     return(
-        <TimelineItemWrapperSty index={index}>
+        <TimelineItemWrapperSty index={index} $isVisible={$isVisible}>
             <TimelineItemSty $alternate={$alternate}>
                 <TimelineItemTextBoxSty $alternate={$alternate}>
                     <TimelineHeaderSty>

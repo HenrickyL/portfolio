@@ -1,7 +1,7 @@
 "use client";
 import { ReactNode } from "react"
 import { LayoutContentSty, LayoutWrapperSty } from "./style"
-import { TestNavs } from "@/app/_menu"
+import { MainNavigation } from "@/app/_menu"
 import ThemeToggle from "../ThemeToggle"
 import { Container } from "../Container"
 import { Footer } from "../Footer"
@@ -20,7 +20,7 @@ export const LayoutComponent = ({children}:LayoutComponentProps)=>{
     
     return(
         <LayoutWrapperSty>
-            <TestNavs />
+            <MainNavigation />
             <ThemeToggle />
             <div style={{display: "flex", position:"absolute", top:"30px", right:"0", flexDirection:"column", alignItems:"center", justifyContent: "center"}}>
                 <h3>Under construction. ...</h3>
