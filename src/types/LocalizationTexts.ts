@@ -32,6 +32,39 @@ type ProfessionalHome = {
     expertises: HomeExpertise[]
 }
 
+type ScholarMetric = {
+    value: string,
+    label: string
+}
+
+type ScholarArea = {
+    title: string,
+    description: string
+}
+
+type ScholarMaterial = {
+    title: string,
+    subtitle: string,
+    date: string,
+    src: string,
+    url: string
+}
+
+type ScholarContent = {
+    eyebrow: string,
+    title: string,
+    intro: string,
+    aboutTitle: string,
+    aboutText: string,
+    areasTitle: string,
+    skillsTitle: string,
+    materialsTitle: string,
+    metrics: ScholarMetric[],
+    areas: ScholarArea[],
+    skills: string[],
+    materials: ScholarMaterial[]
+}
+
 export type LocalizationTexts = {
     experiences: Experience[],
     projects: Project[],
@@ -50,6 +83,7 @@ export type LocalizationTexts = {
             header: string
             info: PerfilInfo,
             label: string
+            content: ScholarContent
         },
         gameDev: {
             header: string

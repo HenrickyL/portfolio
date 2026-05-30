@@ -53,7 +53,34 @@ export const LocalizationPT: LocalizationTexts = {
               region: "Brasil",
               stacks: [StacksTypes.CPP]
             },
-            label: "Acadêmico"
+            label: "Acadêmico",
+            content: {
+              eyebrow: "Formação e pesquisa",
+              title: "Ciência da Computação aplicada a software, gráficos e jogos",
+              intro: "Trajetória acadêmica conectada a desenvolvimento, fundamentos de computação e produção de materiais técnicos.",
+              aboutTitle: "Perfil acadêmico",
+              aboutText: "Formação em Ciência da Computação pela UFC, com interesse em engenharia de software, programação, computação gráfica e desenvolvimento de jogos. A base acadêmica fortalece decisões técnicas, análise de problemas e construção de soluções mais consistentes.",
+              areasTitle: "Áreas de interesse",
+              skillsTitle: "Competências",
+              materialsTitle: "Materiais",
+              metrics: [
+                { value: "UFC", label: "Ciência da Computação" },
+                { value: "2025.1", label: "Conclusão da monografia" },
+                { value: "3", label: "Materiais disponíveis" },
+                { value: "C++", label: "Base em algoritmos" }
+              ],
+              areas: [
+                { title: "Engenharia de software", description: "Arquitetura, requisitos, qualidade e manutenção de sistemas." },
+                { title: "Computação gráfica", description: "Álgebra, transformações, renderização e fundamentos visuais." },
+                { title: "Programação e algoritmos", description: "Estruturas de dados, lógica, C++ e resolução de problemas." }
+              ],
+              skills: ["C++", "Algoritmos", "Estruturas de Dados", "Computação Gráfica", "Álgebra Linear", "Pesquisa", "Escrita Técnica", "Didática"],
+              materials: [
+                { title: "Monografia", subtitle: "UFC", date: "2025.1", src: "/img/tcc.png", url: "/archives/TCC_2025.pdf" },
+                { title: "Resumo C++", subtitle: "Material - Slide", date: "2025", src: "/img/cpp-resumo.png", url: "/archives/Resumo_CPP.pdf" },
+                { title: "Revisão de Álgebra", subtitle: "Computação Gráfica", date: "2024", src: "/img/cg-revisao.png", url: "/archives/CG-revisao_algebra.pdf" }
+              ]
+            }
         },
         gameDev: {
             header: "Desenvolvedor de Jogos",
@@ -133,7 +160,34 @@ export const LocalizationEN: LocalizationTexts = {
         region: "Fortaleza, CE, Brazil",
         stacks: [StacksTypes.CPP ]
       },
-      label: "Academic"
+      label: "Academic",
+      content: {
+        eyebrow: "Education and research",
+        title: "Computer Science applied to software, graphics, and games",
+        intro: "Academic background connected to development, computing fundamentals, and technical learning materials.",
+        aboutTitle: "Academic profile",
+        aboutText: "Computer Science degree from UFC, with interest in software engineering, programming, computer graphics, and game development. This academic base strengthens technical decisions, problem analysis, and consistent solution design.",
+        areasTitle: "Interest areas",
+        skillsTitle: "Competencies",
+        materialsTitle: "Materials",
+        metrics: [
+          { value: "UFC", label: "Computer Science" },
+          { value: "2025.1", label: "Thesis completion" },
+          { value: "3", label: "Available materials" },
+          { value: "C++", label: "Algorithmic base" }
+        ],
+        areas: [
+          { title: "Software engineering", description: "Architecture, requirements, quality, and system maintenance." },
+          { title: "Computer graphics", description: "Algebra, transformations, rendering, and visual foundations." },
+          { title: "Programming and algorithms", description: "Data structures, logic, C++, and problem solving." }
+        ],
+        skills: ["C++", "Algorithms", "Data Structures", "Computer Graphics", "Linear Algebra", "Research", "Technical Writing", "Teaching"],
+        materials: [
+          { title: "Thesis", subtitle: "UFC", date: "2025.1", src: "/img/tcc.png", url: "/archives/TCC_2025.pdf" },
+          { title: "C++ Summary", subtitle: "Slides", date: "2025", src: "/img/cpp-resumo.png", url: "/archives/Resumo_CPP.pdf" },
+          { title: "Algebra Review", subtitle: "Computer Graphics", date: "2024", src: "/img/cg-revisao.png", url: "/archives/CG-revisao_algebra.pdf" }
+        ]
+      }
     },
     gameDev: {
       header: "Game Developer",
