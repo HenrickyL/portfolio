@@ -23,7 +23,7 @@ export const experiencesPT: Experience[] = [
     },
     {
         id: "xp-2025-springboot",
-        role: "Desenvolvedor Backend Java",
+        role: "Bolsista Desenvolvedor Backend Java",
         company: "FASTEF",
         startDate: "Mar 2025",
         endDate: "Set 2025",
@@ -35,7 +35,7 @@ export const experiencesPT: Experience[] = [
     },
     {
         id: "xp-2022-dotnet",
-        role: "Desenvolvedor Backend .NET",
+        role: "Bolsista Desenvolvedor Backend .NET",
         company: "FASTEF",
         startDate: "Out 2021",
         endDate: "Jan 2025",
@@ -96,7 +96,7 @@ export const experiencesEN: Experience[] = [
     },
     {
         id: "xp-2025-springboot",
-        role: "Java Backend Developer",
+        role: "Intern Java Backend Developer",
         company: "FASTEF",
         startDate: "Mar 2025",
         endDate: "Sep 2025",
@@ -108,7 +108,7 @@ export const experiencesEN: Experience[] = [
     },
     {
         id: "xp-2022-dotnet",
-        role: ".NET Backend Developer",
+        role: "Intern .NET Backend Developer",
         company: "FASTEF",
         startDate: "Oct 2021",
         endDate: "Jan 2025",
