@@ -9,6 +9,7 @@
     * Option: `docker compose -f docker/agent/docker-compose.yml up -d --build`
     * Run: `docker compose -f docker/agent/docker-compose.yml exec codex-agent sh`
     * call: `codex`
+    * option: `codex --dangerously-bypass-approvals-and-sandbox`
 
 
 
