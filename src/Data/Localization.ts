@@ -49,23 +49,24 @@ export const LocalizationPT: LocalizationTexts = {
         scholar: {
             header: "Acadêmico",
             info:{
-              title: "Bacharel em Ciência da Computação",
+              title: "Mestrando em Computação",
               region: "Brasil",
               stacks: [StacksTypes.CPP]
             },
             label: "Acadêmico",
             content: {
               eyebrow: "Formação e pesquisa",
-              title: "Ciência da Computação aplicada a software, gráficos e jogos",
-              intro: "Trajetória acadêmica conectada a desenvolvimento, fundamentos de computação e produção de materiais técnicos.",
+              title: "Formação em computação, pesquisa e desenvolvimento",
+              intro: "Trajetória acadêmica entre física, computação e pesquisa de pós-graduação.",
               aboutTitle: "Perfil acadêmico",
-              aboutText: "Formação em Ciência da Computação pela UFC, com interesse em engenharia de software, programação, computação gráfica e desenvolvimento de jogos. A base acadêmica fortalece decisões técnicas, análise de problemas e construção de soluções mais consistentes.",
+              aboutText: "Bacharel em Ciência da Computação pela UFC Quixadá. Interesse em engenharia de software, computação gráfica, jogos e pesquisa em computação.",
               areasTitle: "Áreas de interesse",
               skillsTitle: "Competências",
+              timelineTitle: "Trajetória acadêmica",
               materialsTitle: "Materiais",
               metrics: [
-                { value: "UFC", label: "Ciência da Computação" },
-                { value: "2025.1", label: "Conclusão da monografia" },
+                { value: "USP-IME", label: "Mestrado em Computação" },
+                { value: "2025.1", label: "Bacharelado concluído" },
                 { value: "3", label: "Materiais disponíveis" },
                 // { value: "C++", label: "Base em algoritmos" }
               ],
@@ -75,6 +76,49 @@ export const LocalizationPT: LocalizationTexts = {
                 { title: "Programação e algoritmos", description: "Estruturas de dados, lógica, C++ e resolução de problemas." }
               ],
               skills: ["C++", "Algoritmos", "Estruturas de Dados", "Computação Gráfica", "Álgebra Linear", "Pesquisa", "Escrita Técnica", "Didática"],
+              timeline: [
+                {
+                  id: "education-usp-masters",
+                  role: "Mestrado em Ciência da Computação",
+                  company: "Instituto de Matemática e Estatística — Universidade de São Paulo (IME-USP)",
+                  startDate: "Ago 2026",
+                  endDate: null,
+                  location: "São Paulo, SP, Brasil",
+                  description:
+                    "Ingresso no Programa de Pós-Graduação em Ciência da Computação, sob orientação da Profa. Dra. Leliane Nunes de Barros. Desenvolvimento de pesquisa na área de Computação.",
+                  tags: ["Pesquisa", "Pós-graduação", "Computação"],
+                  url: "",
+                },
+                {
+                  id: "education-ufc-computer-science",
+                  role: "Bacharelado em Ciência da Computação",
+                  company: "Universidade Federal do Ceará — Campus Quixadá",
+                  startDate: "Fev 2019",
+                  endDate: "Ago 2025",
+                  location: "Quixadá, CE, Brasil",
+                  description:
+                    "Graduação em Ciência da Computação com formação em algoritmos, engenharia de software, computação gráfica e desenvolvimento de software. Trabalho de Conclusão de Curso desenvolvido sob orientação da Profa. Dra. Maria Viviane de Menezes.",
+                  tags: [
+                    "Algoritmos",
+                    "Engenharia de Software",
+                    "Computação Gráfica",
+                    "Estrutura de Dados",
+                    "Planejamento", "IA"
+                  ],
+                  url: "",
+                },
+                {
+                  id: "education-ufc-physics",
+                  role: "Bacharelado em Física",
+                  company: "Universidade Federal do Ceará — UFC",
+                  startDate: "Mar 2016",
+                  endDate: "Dez 2018",
+                  location: "Fortaleza, CE, Brasil",
+                  description: "Graduação interrompida. Início da graduação em Física, com formação em matemática e fundamentos das ciências exatas. Posteriormente, migrou para o curso de Ciência da Computação.",
+                  tags: ["Física", "Matemática", "Álgebra Linear", "Cálculo", "Geometria Analítica", "Métodos Numéricos"],
+                  url: "",
+                }
+              ],
               materials: [
                 { title: "Monografia", subtitle: "UFC", date: "2025.1", src: "/img/tcc.png", url: "/archives/TCC_2025.pdf" },
                 { title: "Resumo C++", subtitle: "Material - Slide", date: "2025", src: "/img/cpp-resumo.png", url: "/archives/Resumo_CPP.pdf" },
@@ -156,23 +200,24 @@ export const LocalizationEN: LocalizationTexts = {
     scholar: {
       header: "Academic",
       info:{
-        title: "Bachelor in Computer Science",
+        title: "Master's Student in Computing",
         region: "Fortaleza, CE, Brazil",
         stacks: [StacksTypes.CPP ]
       },
       label: "Academic",
       content: {
         eyebrow: "Education and research",
-        title: "Computer Science applied to software, graphics, and games",
-        intro: "Academic background connected to development, computing fundamentals, and technical learning materials.",
+        title: "Education in computing, research, and development",
+        intro: "Academic path across physics, computing, and graduate research.",
         aboutTitle: "Academic profile",
-        aboutText: "Computer Science degree from UFC, with interest in software engineering, programming, computer graphics, and game development. This academic base strengthens technical decisions, problem analysis, and consistent solution design.",
+        aboutText: "Computer Science graduate from UFC Quixadá. Interests include software engineering, computer graphics, games, and computing research.",
         areasTitle: "Interest areas",
         skillsTitle: "Competencies",
+        timelineTitle: "Academic journey",
         materialsTitle: "Materials",
         metrics: [
-          { value: "UFC", label: "Computer Science" },
-          { value: "2025.1", label: "Thesis completion" },
+          { value: "USP-IME", label: "Master's in Computing" },
+          { value: "2025.1", label: "Bachelor's completed" },
           { value: "3", label: "Available materials" },
           { value: "C++", label: "Algorithmic base" }
         ],
@@ -182,6 +227,58 @@ export const LocalizationEN: LocalizationTexts = {
           { title: "Programming and algorithms", description: "Data structures, logic, C++, and problem solving." }
         ],
         skills: ["C++", "Algorithms", "Data Structures", "Computer Graphics", "Linear Algebra", "Research", "Technical Writing", "Teaching"],
+        timeline: [
+          {
+            id: "education-usp-masters",
+            role: "Master's Degree in Computer Science",
+            company: "Institute of Mathematics and Statistics — University of São Paulo (IME-USP)",
+            startDate: "Aug 2026",
+            endDate: null,
+            location: "São Paulo, SP, Brazil",
+            description:
+              "Admitted to the Graduate Program in Computer Science under the supervision of Prof. Dr. Leliane Nunes de Barros. Conducting research in the field of Computer Science.",
+            tags: ["Research", "Graduate Studies", "Computer Science"],
+            url: "",
+          },
+          {
+            id: "education-ufc-computer-science",
+            role: "Bachelor's Degree in Computer Science",
+            company: "Federal University of Ceará — Quixadá Campus",
+            startDate: "Feb 2019",
+            endDate: "Aug 2025",
+            location: "Quixadá, CE, Brazil",
+            description:
+              "Bachelor's degree in Computer Science with a strong foundation in algorithms, software engineering, computer graphics, and software development. Final undergraduate project completed under the supervision of Prof. Dr. Maria Viviane de Menezes.",
+            tags: [
+              "Algorithms",
+              "Software Engineering",
+              "Computer Graphics",
+              "Data Structures",
+              "Planning",
+              "Artificial Intelligence",
+            ],
+            url: "",
+          },
+          {
+            id: "education-ufc-physics",
+            role: "Bachelor's Degree in Physics",
+            company: "Federal University of Ceará (UFC)",
+            startDate: "Mar 2016",
+            endDate: "Dec 2018",
+            location: "Fortaleza, CE, Brazil",
+            description:
+              "Undergraduate studies discontinued. Began a Bachelor's degree in Physics, building a strong foundation in mathematics and the physical sciences before transitioning to Computer Science.",
+            tags: [
+              "Physics",
+              "Mathematics",
+              "Linear Algebra",
+              "Calculus",
+              "Analytical Geometry",
+              "Numerical Methods",
+            ],
+            url: "",
+          },
+        ],
         materials: [
           { title: "Thesis", subtitle: "UFC", date: "2025.1", src: "/img/tcc.png", url: "/archives/TCC_2025.pdf" },
           { title: "C++ Summary", subtitle: "Slides", date: "2025", src: "/img/cpp-resumo.png", url: "/archives/Resumo_CPP.pdf" },
