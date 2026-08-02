@@ -1,5 +1,6 @@
 "use client"
 import { Card } from "@/components/Card";
+import { Timeline } from "@/components/Timeline";
 import { useLocalization } from "@/hooks/LocalizationProvider";
 import { usePageInfo } from "@/hooks/PageInfoProvidere";
 import { useEffect } from "react";
@@ -77,6 +78,11 @@ const ScholarPage = ()=>{
                     ))}
                 </ScholarAreaListSty>
             </ScholarPanelSty>
+
+            <section>
+                <ScholarTitleSty>{content.timelineTitle}</ScholarTitleSty>
+                <Timeline.Root items={content.timeline} />
+            </section>
 
             <ScholarCardsSty>
                 <ScholarTitleSty>{content.materialsTitle}</ScholarTitleSty>

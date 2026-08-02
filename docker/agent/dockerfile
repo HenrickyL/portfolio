@@ -17,12 +17,14 @@ RUN npm ci || npm install
 # Codex CLI
 RUN npm install -g @openai/codex
 
-# usuário não-root
-RUN useradd -ms /bin/bash agent
+# # usuário não-root
+# RUN useradd -ms /bin/bash agent
 
-# permissões
-RUN chown -R agent:agent /workspace
+# # permissões
+# RUN chown -R agent:agent /workspace
 
-USER agent
+# USER agent
+
+USER root
 
 CMD ["sh"]

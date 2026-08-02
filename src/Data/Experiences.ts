@@ -6,10 +6,10 @@ export const experiencesPT: Experience[] = [
         role: "Analista de Sistemas Júnior (Backend Python)",
         company: "Fundação Cearense de Pesquisa e Cultura",
         startDate: "Jan 2026",
-        endDate: null,
+        endDate: "Jun 2026",
         location: "Remoto",
         description:
-            "Atuação no desenvolvimento backend utilizando Python e Django, participando da construção e manutenção de sistemas web, criação e consumo de APIs REST, modelagem de dados e implementação de regras de negócio.",
+            "Atuei com desenvolvimento e manutenção de aplicações backend com Python e Django, implementando APIs REST, regras de negócio, testes automatizados e melhorias de arquitetura, seguindo princípios como Clean Architecture, SOLID e boas práticas de engenharia de software.",
         tags: [
             "Python",
             "Django",
@@ -79,7 +79,7 @@ export const experiencesEN: Experience[] = [
         role: "Junior Systems Analyst (Python Backend)",
         company: "Fundação Cearense de Pesquisa e Cultura",
         startDate: "Jan 2026",
-        endDate: null,
+        endDate: "Jun 2026",
         location: "Remote",
         description:
             "Working on backend development using Python and Django, contributing to the development and maintenance of web systems, REST API integration, data modeling, and business rule implementation.",

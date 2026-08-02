@@ -58,10 +58,12 @@ type ScholarContent = {
     aboutText: string,
     areasTitle: string,
     skillsTitle: string,
+    timelineTitle: string,
     materialsTitle: string,
     metrics: ScholarMetric[],
     areas: ScholarArea[],
     skills: string[],
+    timeline: Experience[],
     materials: ScholarMaterial[]
 }
 
