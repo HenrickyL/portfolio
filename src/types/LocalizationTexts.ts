@@ -1,6 +1,6 @@
 import { Experience } from "./Experience"
 import { PerfilInfo } from "./PerfilInfo"
-import { Project } from "./Project"
+import { Project, ProjectSection } from "./Project"
 
 type HomeMetric = {
     value: string,
@@ -94,7 +94,8 @@ export type LocalizationTexts = {
         },
         projects: {
             header: string,
-            label: string
+            label: string,
+            sections: ProjectSection[]
         },
         contact: {
             header: string,

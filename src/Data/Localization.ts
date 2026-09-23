@@ -138,7 +138,22 @@ export const LocalizationPT: LocalizationTexts = {
         },
         projects: {
             header: "Projetos",
-            label: "Projetos"
+            label: "Projetos",
+            sections: [
+                {
+                    id: "frontend",
+                    title: "Frontend",
+                    projects: [
+                        {
+                            id: "game-engine-ts",
+                            name: "Game Engine",
+                            summary: "TypeScript",
+                            src: "/img/game-engine-ts.jpg",
+                            url: "http://game-engine-ts.vercel.app/",
+                        }
+                    ]
+                }
+            ]
         },
         contact: {
             header: "Contato",
@@ -297,7 +312,22 @@ export const LocalizationEN: LocalizationTexts = {
     },
     projects: {
       header: "Projects",
-      label: "Projects"
+      label: "Projects",
+      sections: [
+        {
+          id: "frontend",
+          title: "Frontend",
+          projects: [
+            {
+              id: "game-engine-ts",
+              name: "Game Engine",
+              summary: "TypeScript",
+              src: "/img/game-engine-ts.jpg",
+              url: "http://game-engine-ts.vercel.app/",
+            }
+          ]
+        }
+      ]
     },
     contact: {
       header: "Contact",
