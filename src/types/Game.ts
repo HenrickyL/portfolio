@@ -49,5 +49,6 @@ export type GameProject = {
     related: string[];
     media: GameMedia[];
     links: GameLink[];
+    linkDisabled?: boolean;
     page?: GamePage;
 };

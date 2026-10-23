@@ -5,7 +5,24 @@ export type GameYearGroup = {
     games: GameProject[];
 };
 
-const yearOf = (date: string) => date.match(/\d{4}/)?.[0] ?? date;
+const yearOf = (date: string) => date.match(/\d{4}/)?.[0] ?? "";
+
+export const sortGamesByYear = (games: GameProject[]): GameProject[] => {
+    return [...games].sort((a, b) => {
+        const yearA = yearOf(a.date);
+        const yearB = yearOf(b.date);
+        if (!yearA && !yearB) {
+            return 0;
+        }
+        if (!yearA) {
+            return 1;
+        }
+        if (!yearB) {
+            return -1;
+        }
+        return yearB.localeCompare(yearA);
+    });
+};
 
 export const groupGamesByYear = (games: GameProject[]): GameYearGroup[] => {
     const groups = new Map<string, GameProject[]>();

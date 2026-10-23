@@ -5,7 +5,7 @@ type GameDevProfile = LocalizationTexts["pages"]["gameDev"]["profile"];
 export const gameDevProfilePT: GameDevProfile = {
     eyebrow: "GameDev",
     title: "Portfólio de jogos",
-    intro: "Projetos separados por ano, com ficha, mídia e ferramentas de cada jogo.",
+    intro: "Projetos em ordem de ano, com ficha, mídia e ferramentas de cada jogo.",
     aboutTitle: "Perfil",
     aboutText: "Faço jogos e protótipos, de estudos em Java a projetos autorais. Uso Unity, C#, Java, Blender e C++.",
     skillsTitle: "Competências",
@@ -18,7 +18,7 @@ export const gameDevProfilePT: GameDevProfile = {
 export const gameDevProfileEN: GameDevProfile = {
     eyebrow: "GameDev",
     title: "Game portfolio",
-    intro: "Projects grouped by year, with notes, media, and tools for each game.",
+    intro: "Projects ordered by year, with notes, media, and tools for each game.",
     aboutTitle: "Profile",
     aboutText: "I build games and prototypes, from Java studies to original projects. I use Unity, C#, Java, Blender, and C++.",
     skillsTitle: "Skills",

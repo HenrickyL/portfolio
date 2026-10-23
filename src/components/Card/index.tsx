@@ -22,7 +22,11 @@ const Content = ({src: img_path, title, subtitle, date}:CardProps)=>{
     return(
         <>
             <CardImageSty>
-                <Image src={img_path} alt={title} fill />
+                {img_path.endsWith(".mp4") ? (
+                    <video src={`${img_path}#t=0.5`} muted preload="metadata" playsInline />
+                ) : (
+                    <Image src={img_path} alt={title} fill />
+                )}
             </CardImageSty>
             <CardContainer>
                 {date && <CardDateSty>{date}</CardDateSty>}

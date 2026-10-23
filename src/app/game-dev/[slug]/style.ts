@@ -142,7 +142,7 @@ export const GameToolSty = styled.span`
     }
 `;
 
-export const GameInfoLinkSty = styled.a`
+export const GameInfoLinkSty = styled.a<{ $disabled?: boolean }>`
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
@@ -154,6 +154,8 @@ export const GameInfoLinkSty = styled.a`
     background-color: ${p => p.theme.backgroundSnd};
     background-image: url(${p => p.theme.noise});
     font-size: 0.82rem;
+    opacity: ${p => p.$disabled ? 0.4 : 1};
+    pointer-events: ${p => p.$disabled ? "none" : "auto"};
 
     &:hover {
         color: ${p => p.theme.primaryLight};

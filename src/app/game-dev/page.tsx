@@ -1,13 +1,13 @@
 "use client";
 import { Card } from "@/components/Card";
-import { groupGamesByYear } from "@/helpers/groupGamesByYear";
+import { sortGamesByYear } from "@/helpers/groupGamesByYear";
 import { useLocalization } from "@/hooks/LocalizationProvider";
 import { usePageInfo } from "@/hooks/PageInfoProvidere";
 import { useEffect } from "react";
 import {
     GameDevPageSty,
+    GameCardGridSty,
     GameDevSectionSty,
-    GameDevYearSty,
     GameEyebrowSty,
     GameGridSty,
     GameHeroContentSty,
@@ -20,15 +20,14 @@ import {
     GameTagSty,
     GameTextSty,
     GameTitleSty,
-    GameYearBlockSty,
 } from "./style";
 
 const GameDevPage = () => {
     const { content: { pages: { gameDev } } } = useLocalization();
     const { setPageInfo } = usePageInfo();
     const { profile } = gameDev;
-    const groups = groupGamesByYear(gameDev.games);
-    const since = groups[groups.length - 1]?.year ?? "";
+    const games = sortGamesByYear(gameDev.games);
+    const since = games.map((game) => game.date.match(/\d{4}/)?.[0]).filter((year): year is string => Boolean(year)).sort()[0] ?? "";
 
     useEffect(() => {
         setPageInfo(gameDev.info);
@@ -70,24 +69,18 @@ const GameDevPage = () => {
             </GameGridSty>
 
             <GameDevSectionSty>
-                <GameTitleSty>{profile.projectsTitle}</GameTitleSty>
-                {groups.map((group) => (
-                    <GameYearBlockSty key={group.year}>
-                        <GameDevYearSty>{group.year}</GameDevYearSty>
-                        <div className="content">
-                            {group.games.map((game) => (
-                                <Card
-                                    key={game.id}
-                                    src={game.cover}
-                                    title={game.name}
-                                    subtitle={game.summary}
-                                    date={game.date}
-                                    url={`/game-dev/${game.id}`}
-                                />
-                            ))}
-                        </div>
-                    </GameYearBlockSty>
-                ))}
+                <GameCardGridSty>
+                    {games.map((game) => (
+                        <Card
+                            key={game.id}
+                            src={game.cover}
+                            title={game.name}
+                            subtitle={game.summary}
+                            date={game.date || undefined}
+                            url={`/game-dev/${game.id}`}
+                        />
+                    ))}
+                </GameCardGridSty>
             </GameDevSectionSty>
         </GameDevPageSty>
     );

@@ -138,6 +138,12 @@ export const GameTagSty = styled.span`
     line-height: 1.15;
 `;
 
+export const GameCardGridSty = styled.div`
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 20rem);
+    gap: 1rem;
+`;
+
 export const GameDevSectionSty = styled.section`
     display: flex;
     flex-direction: column;

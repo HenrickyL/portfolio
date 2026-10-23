@@ -101,6 +101,12 @@ const GameDetailPage = () => {
                             <span>{labels.link}</span>
                         </GameInfoLinkSty>
                     )}
+                    {game.linkDisabled && (
+                        <GameInfoLinkSty as="span" $disabled aria-disabled="true">
+                            <FaExternalLinkAlt />
+                            <span>{labels.link}</span>
+                        </GameInfoLinkSty>
+                    )}
                 </GameMetaSty>
             </GameTopSty>
             <GameBoardSty>

@@ -1,3 +1,5 @@
+import { moreGamesPT } from "@/Data/MoreGames";
+import { moreGamesEN } from "@/Data/MoreGamesEN";
 import { GameProject } from "@/types/Game";
 
 export const gamesPT: GameProject[] = [
@@ -13,6 +15,8 @@ export const gamesPT: GameProject[] = [
         media: [
             { kind: "image", src: "/projects/recipe-for-ruin/Recipe.png", alt: "Mesa com a carta Plant Gathering" },
             { kind: "video", src: "/projects/recipe-for-ruin/main.mp4", poster: "/projects/recipe-for-ruin/Recipe.png", alt: "Vídeo de Recipe for Ruin" },
+            { kind: "video", src: "/projects/recipe-for-ruin/v02.mp4", poster: "/projects/recipe-for-ruin/Recipe.png", alt: "Segunda versão de Recipe for Ruin" },
+            { kind: "video", src: "/projects/recipe-for-ruin/vfx.mp4", poster: "/projects/recipe-for-ruin/Recipe.png", alt: "Efeitos de Recipe for Ruin" },
         ],
         links: [
             {
@@ -53,15 +57,35 @@ export const gamesPT: GameProject[] = [
         name: "Clone de Clash Royale",
         summary: "Java",
         date: "2019",
-        cover: "/img/clash-royale-clone.png",
-        idea: "Clone de estudo feito em Java em 2019.",
+        cover: "/projects/clash-royale-clone/main.png",
+        idea: "Clone feito em 2019 para a disciplina de POO, em Java puro.",
         tools: ["Java"],
         related: [],
         media: [
-            { kind: "video", src: "/projects/clash-royale.mp4", alt: "Vídeo do clone" },
+            { kind: "image", src: "/projects/clash-royale-clone/main.png", alt: "Clone de Clash Royale" },
+            { kind: "video", src: "/projects/clash-royale-clone/clash-royale.mp4", poster: "/projects/clash-royale-clone/main.png", alt: "Vídeo do clone" },
         ],
         links: [],
+        page: {
+            kicker: "Java · 2019",
+            tags: ["Disciplina", "POO"],
+            categories: [],
+            synopsis: "",
+            overview: "Clone feito em 2019 para a disciplina de POO, em Java puro.",
+            about: [
+                { title: "Java puro", text: "" },
+                { title: "POO", text: "" },
+            ],
+            references: [],
+            specs: [
+                { field: "Linguagem", value: "Java" },
+                { field: "Disciplina", value: "POO" },
+                { field: "Ano", value: "2019" },
+            ],
+            credits: "",
+        },
     },
+    ...moreGamesPT,
 ];
 
 export const gamesEN: GameProject[] = [
@@ -77,6 +101,8 @@ export const gamesEN: GameProject[] = [
         media: [
             { kind: "image", src: "/projects/recipe-for-ruin/Recipe.png", alt: "Desk with the Plant Gathering card" },
             { kind: "video", src: "/projects/recipe-for-ruin/main.mp4", poster: "/projects/recipe-for-ruin/Recipe.png", alt: "Recipe for Ruin video" },
+            { kind: "video", src: "/projects/recipe-for-ruin/v02.mp4", poster: "/projects/recipe-for-ruin/Recipe.png", alt: "Second Recipe for Ruin video" },
+            { kind: "video", src: "/projects/recipe-for-ruin/vfx.mp4", poster: "/projects/recipe-for-ruin/Recipe.png", alt: "Recipe for Ruin effects" },
         ],
         links: [
             {
@@ -117,13 +143,33 @@ export const gamesEN: GameProject[] = [
         name: "Clash Royale Clone",
         summary: "Java",
         date: "2019",
-        cover: "/img/clash-royale-clone.png",
-        idea: "A study clone built with Java in 2019.",
+        cover: "/projects/clash-royale-clone/main.png",
+        idea: "A 2019 clone for an OOP course, written in plain Java.",
         tools: ["Java"],
         related: [],
         media: [
-            { kind: "video", src: "/projects/clash-royale.mp4", alt: "Clone video" },
+            { kind: "image", src: "/projects/clash-royale-clone/main.png", alt: "Clash Royale clone" },
+            { kind: "video", src: "/projects/clash-royale-clone/clash-royale.mp4", poster: "/projects/clash-royale-clone/main.png", alt: "Clone video" },
         ],
         links: [],
+        page: {
+            kicker: "Java · 2019",
+            tags: ["Course", "OOP"],
+            categories: [],
+            synopsis: "",
+            overview: "A 2019 clone for an OOP course, written in plain Java.",
+            about: [
+                { title: "Plain Java", text: "" },
+                { title: "OOP", text: "" },
+            ],
+            references: [],
+            specs: [
+                { field: "Language", value: "Java" },
+                { field: "Course", value: "OOP" },
+                { field: "Year", value: "2019" },
+            ],
+            credits: "",
+        },
     },
+    ...moreGamesEN,
 ];
