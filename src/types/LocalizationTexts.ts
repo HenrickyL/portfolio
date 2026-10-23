@@ -1,6 +1,41 @@
 import { Experience } from "./Experience"
+import { GameProject } from "./Game"
 import { PerfilInfo } from "./PerfilInfo"
 import { Project, ProjectSection } from "./Project"
+
+type GameDevLabels = {
+    back: string
+    idea: string
+    tools: string
+    related: string
+    links: string
+    missing: string
+    previous: string
+    next: string
+    open: string
+    close: string
+    date: string
+    media: string
+    link: string
+    synopsis: string
+    mechanics: string
+    references: string
+    specs: string
+    credits: string
+}
+
+type GameDevProfile = {
+    eyebrow: string
+    title: string
+    intro: string
+    aboutTitle: string
+    aboutText: string
+    skillsTitle: string
+    skills: string[]
+    projectsTitle: string
+    gamesLabel: string
+    sinceLabel: string
+}
 
 type HomeMetric = {
     value: string,
@@ -91,6 +126,9 @@ export type LocalizationTexts = {
             header: string
             info: PerfilInfo,
             label: string
+            games: GameProject[]
+            labels: GameDevLabels
+            profile: GameDevProfile
         },
         projects: {
             header: string,
