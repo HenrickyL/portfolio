@@ -115,6 +115,12 @@ export const HomeSideSty = styled.aside`
       align-self: flex-start;
     }
   }
+
+  @media screen and (max-width: 680px){
+    & > div:last-child{
+      align-self: center;
+    }
+  }
 `;
 
 export const HomeMetricGridSty = styled.div`

@@ -90,6 +90,10 @@ const GlobalStyles = createGlobalStyle`
   flex-wrap: wrap; 
   gap: 1rem;
   justify-content: flex-start;
+
+  @media screen and (max-width: 680px) {
+    justify-content: center;
+  }
 }
 
 
