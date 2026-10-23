@@ -6,7 +6,7 @@ export const gamesPT: GameProject[] = [
     {
         id: "recipe-for-ruin",
         name: "Recipe for Ruin",
-        summary: "Jogo",
+        summary: "Unity",
         date: "2025.2",
         cover: "/img/Recipe.png",
         idea: "Jogo de receitas e recursos. A mesa reúne cartas de ação, como Plant Gathering, e recursos como Labor para produção, construção e crafting.",
@@ -17,6 +17,7 @@ export const gamesPT: GameProject[] = [
             { kind: "video", src: "/projects/recipe-for-ruin/main.mp4", poster: "/projects/recipe-for-ruin/Recipe.png", alt: "Vídeo de Recipe for Ruin" },
             { kind: "video", src: "/projects/recipe-for-ruin/v02.mp4", poster: "/projects/recipe-for-ruin/Recipe.png", alt: "Segunda versão de Recipe for Ruin" },
             { kind: "video", src: "/projects/recipe-for-ruin/vfx.mp4", poster: "/projects/recipe-for-ruin/Recipe.png", alt: "Efeitos de Recipe for Ruin" },
+            { kind: "video", src: "/projects/recipe-for-ruin/2026-10-23%2012-40-48.mp4", poster: "/projects/recipe-for-ruin/Recipe.png", alt: "Gravação de Recipe for Ruin" },
         ],
         links: [
             {
@@ -92,7 +93,7 @@ export const gamesEN: GameProject[] = [
     {
         id: "recipe-for-ruin",
         name: "Recipe for Ruin",
-        summary: "Game",
+        summary: "Unity",
         date: "2025.2",
         cover: "/img/Recipe.png",
         idea: "A game of recipes and resources. The desk gathers action cards, such as Plant Gathering, and resources such as Labor for production, construction, and crafting.",
@@ -103,6 +104,7 @@ export const gamesEN: GameProject[] = [
             { kind: "video", src: "/projects/recipe-for-ruin/main.mp4", poster: "/projects/recipe-for-ruin/Recipe.png", alt: "Recipe for Ruin video" },
             { kind: "video", src: "/projects/recipe-for-ruin/v02.mp4", poster: "/projects/recipe-for-ruin/Recipe.png", alt: "Second Recipe for Ruin video" },
             { kind: "video", src: "/projects/recipe-for-ruin/vfx.mp4", poster: "/projects/recipe-for-ruin/Recipe.png", alt: "Recipe for Ruin effects" },
+            { kind: "video", src: "/projects/recipe-for-ruin/2026-10-23%2012-40-48.mp4", poster: "/projects/recipe-for-ruin/Recipe.png", alt: "Recipe for Ruin recording" },
         ],
         links: [
             {

@@ -35,7 +35,9 @@ export const moreGamesEN: GameProject[] = [
             video("/projects/game-engine-cpp/breakdown.mp4", "Breakdown"),
             video("/projects/game-engine-cpp/phisics.mp4", "Physics"),
         ],
-        links: [],
+        links: [
+            { label: "GitHub", href: "https://github.com/HenrickyL/game-engine-2d-cpp" },
+        ],
         page: sheet(
             ["Engine", "C++"],
             "A C++ game engine with the titled games and a physics simulation.",
@@ -48,11 +50,16 @@ export const moreGamesEN: GameProject[] = [
         name: "Yumi no Sekai",
         summary: "Unity",
         date: "2022",
-        cover: "/projects/yumi%20no%20sekai/editor.mp4",
+        cover: "/projects/yumi%20no%20sekai/main.png",
         idea: "A hexagonal terrain simulator.",
         tools: ["Unity"],
         related: [],
-        media: [video("/projects/yumi%20no%20sekai/editor.mp4", "Yumi no Sekai editor")],
+        media: [
+            image("/projects/yumi%20no%20sekai/main.png", "Yumi no Sekai terrain"),
+            image("/projects/yumi%20no%20sekai/editor.png", "Units in the editor"),
+            video("/projects/yumi%20no%20sekai/editor.mp4", "Yumi no Sekai editor"),
+            video("/projects/yumi%20no%20sekai/overview.mp4", "Yumi no Sekai overview"),
+        ],
         links: [],
         page: sheet(
             ["Unity", "Simulation"],
