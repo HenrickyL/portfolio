@@ -1,3 +1,4 @@
+import { bindVideoFrame, holdVideoFrame } from "@/helpers/videoFrame";
 import Image from "next/image";
 import {
     CardArrow,
@@ -22,7 +23,18 @@ const Content = ({src: img_path, title, subtitle, date}:CardProps)=>{
     return(
         <>
             <CardImageSty>
-                <Image src={img_path} alt={title} fill />
+                {img_path.endsWith(".mp4") ? (
+                    <video
+                        src={img_path}
+                        muted
+                        preload="auto"
+                        playsInline
+                        ref={bindVideoFrame}
+                        onCanPlay={(event) => holdVideoFrame(event.currentTarget)}
+                    />
+                ) : (
+                    <Image src={img_path} alt={title} fill />
+                )}
             </CardImageSty>
             <CardContainer>
                 {date && <CardDateSty>{date}</CardDateSty>}

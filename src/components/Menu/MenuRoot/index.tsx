@@ -3,6 +3,7 @@ import { ReactElement, useEffect, useMemo, useState } from "react";
 import { usePathname } from "next/navigation";
 import { Indicator, MenuRootSty } from "./style"
 import { MenuContext } from "@/hooks/Menu";
+import { isMenuPath } from "@/helpers/isMenuPath";
 
 type MenuChildProps = {
     href: string,
@@ -18,7 +19,7 @@ interface MenuRootProp{
 
 export const MenuRoot = ({children}:MenuRootProp)=>{
     const pathname = usePathname();
-    const activeChild = children.find((child) => child.props.href === pathname) ?? children[0];
+    const activeChild = children.find((child) => isMenuPath(child.props.href, pathname)) ?? children[0];
     const menuKey = useMemo(
         () => children.map((child) => `${child.props.href}:${child.props.title}`).join("|"),
         [children]
@@ -38,7 +39,7 @@ export const MenuRoot = ({children}:MenuRootProp)=>{
     };
 
     useEffect(() => {
-        const currentChild = children.find((child) => child.props.href === pathname) ?? children[0];
+        const currentChild = children.find((child) => isMenuPath(child.props.href, pathname)) ?? children[0];
         if (currentChild.props.index === activeIndex && currentChild.props.title === activeTitle) return;
 
         setActiveItem(currentChild.props.index, currentChild.props.title);
