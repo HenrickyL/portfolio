@@ -6,11 +6,17 @@ export const CardImageSty = styled.div`
     width: 100%;
     height: 100%;
     overflow: hidden;
-    & img{
+    & img,
+    & video {
         width: 100%;
         height: 100%;
         object-fit: cover;
         transition: transform 0.3s ease;
+    }
+
+    & video {
+        position: absolute;
+        inset: 0;
     }
 `
 
@@ -99,7 +105,8 @@ export const CardSty = styled.div<CardStyProps>`
             color: ${p=>p.theme.primaryLight};
         }
 
-        ${CardImageSty} img{
+        ${CardImageSty} img,
+        ${CardImageSty} video {
             transform: scale(1.1);
         }
     }

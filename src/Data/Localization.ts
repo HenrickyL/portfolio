@@ -1,5 +1,7 @@
 import { LocalizationTexts } from "@/types/LocalizationTexts";
 import { experiencesEN, experiencesPT } from "./Experiences";
+import { gameDevProfileEN, gameDevProfilePT } from "./GameDevProfile";
+import { gamesEN, gamesPT } from "./Games";
 import { StacksTypes } from "@/types/stacks";
 
 export const LocalizationPT: LocalizationTexts = {
@@ -131,10 +133,32 @@ export const LocalizationPT: LocalizationTexts = {
             info:{
               title: "Desenvolvedor de Jogos",
               region: "Brasil",
-              stacks: [ StacksTypes.CSharp, StacksTypes.Unity, StacksTypes.Blender, StacksTypes.CPP]
+              stacks: [ StacksTypes.CSharp, StacksTypes.Unity, StacksTypes.Blender, StacksTypes.CPP, StacksTypes.Java]
             },
-            label: "GameDev"
-
+            label: "GameDev",
+            games: gamesPT,
+            profile: gameDevProfilePT,
+            labels: {
+                back: "Voltar",
+                idea: "Ideia",
+                tools: "Ferramentas",
+                related: "Sobre o jogo",
+                links: "Links",
+                missing: "Jogo não encontrado.",
+                previous: "Anterior",
+                next: "Próximo",
+                open: "Abrir mídia",
+                close: "Fechar",
+                date: "Ano",
+                media: "Mídia",
+                link: "Link",
+                synopsis: "Sinopse",
+                overview: "Sobre",
+                mechanics: "Mecânicas",
+                references: "Referências",
+                specs: "Detalhes técnicos",
+                credits: "Participação",
+            },
         },
         projects: {
             header: "Projetos",
@@ -150,6 +174,19 @@ export const LocalizationPT: LocalizationTexts = {
                             summary: "TypeScript",
                             src: "/img/game-engine-ts.jpg",
                             url: "http://game-engine-ts.vercel.app/",
+                        }
+                    ]
+                },
+                {
+                    id: "blender",
+                    title: "Blender",
+                    projects: [
+                        {
+                            id: "blender",
+                            name: "Blender",
+                            summary: "Modelagem",
+                            src: "/projects/blender/table.png",
+                            url: "/game-dev/blender",
                         }
                     ]
                 }
@@ -306,9 +343,32 @@ export const LocalizationEN: LocalizationTexts = {
       info:{
         title: "Game Developer",
         region: "Fortaleza, CE, Brazil",
-        stacks: [ StacksTypes.CSharp, StacksTypes.Unity, StacksTypes.Blender, StacksTypes.CPP]
+        stacks: [ StacksTypes.CSharp, StacksTypes.Unity, StacksTypes.Blender, StacksTypes.CPP, StacksTypes.Java]
       },
-      label: "GameDev"
+      label: "GameDev",
+      games: gamesEN,
+      profile: gameDevProfileEN,
+      labels: {
+        back: "Back",
+        idea: "Idea",
+        tools: "Tools",
+        related: "About the game",
+        links: "Links",
+        missing: "Game not found.",
+        previous: "Previous",
+        next: "Next",
+        open: "Open media",
+        close: "Close",
+        date: "Year",
+        media: "Media",
+        link: "Link",
+        synopsis: "Synopsis",
+        overview: "About",
+        mechanics: "Mechanics",
+        references: "References",
+        specs: "Technical details",
+        credits: "Role",
+      },
     },
     projects: {
       header: "Projects",
@@ -324,6 +384,19 @@ export const LocalizationEN: LocalizationTexts = {
               summary: "TypeScript",
               src: "/img/game-engine-ts.jpg",
               url: "http://game-engine-ts.vercel.app/",
+            }
+          ]
+        },
+        {
+          id: "blender",
+          title: "Blender",
+          projects: [
+            {
+              id: "blender",
+              name: "Blender",
+              summary: "Modeling",
+              src: "/projects/blender/table.png",
+              url: "/game-dev/blender",
             }
           ]
         }
