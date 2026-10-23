@@ -21,15 +21,23 @@ export const TimelineLineSty = styled.span<{total: number, $isVisible: boolean}>
 		pointer-events: none;
 `
 
-export const TimelineItemsSty = styled.div`
+export const TimelineItemsSty = styled.div<{ $stack?: boolean }>`
     position: relative;
-	display: flex;
+	display: ${p => p.$stack ? "none" : "flex"};
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
 	gap: 3.5rem;
 	z-index: 1;
 	padding: 0 0 2rem 0;
+	width: 100%;
+
+	@media screen and (max-width: 680px){
+		display: ${p => p.$stack ? "flex" : "none"};
+		flex-direction: column;
+		align-items: stretch;
+		gap: 1.25rem;
+	}
 `
 
 export const TimeLineItemsContainerSty = styled.div<{ $alternate?: boolean }>`
@@ -56,5 +64,6 @@ export const TimelineRootSty = styled.div`
 
 	@media screen and (max-width: 680px){
 		margin-top: 0.75rem;
+		max-width: 100%;
 	}
 `;

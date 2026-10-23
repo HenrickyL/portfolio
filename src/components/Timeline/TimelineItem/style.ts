@@ -252,6 +252,10 @@ export const TimelineItemWrapperSty = styled.div<{index: number, $isVisible: boo
     `}
 
     @media screen and (max-width: 680px){
+        width: 100%;
+        min-width: 0;
+        max-width: none;
+
         ${TimelineItemSty}{
             padding-left: 1.9rem;
 

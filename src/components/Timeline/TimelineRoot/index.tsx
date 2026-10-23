@@ -64,6 +64,19 @@ export const TimelineRoot = ({ items }: TimelineRootProps) => {
 					)}
 				</TimeLineItemsContainerSty>
 			</TimelineItemsSty>
+			<TimelineItemsSty $stack>
+				<TimeLineItemsContainerSty>
+					{items.map((xp, index) =>
+						<TimelineItem
+							key={xp.id}
+							$alternate={false}
+							experience={xp}
+							index={index}
+							$isVisible={isVisible}
+						/>
+					)}
+				</TimeLineItemsContainerSty>
+			</TimelineItemsSty>
 		</TimelineRootSty>
 	)
 };
