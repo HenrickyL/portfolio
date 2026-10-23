@@ -25,6 +25,17 @@ type GameDevLabels = {
     credits: string
 }
 
+type GameDevFocus = {
+    value: string
+    label: string
+}
+
+type GameDevSection = {
+    id: string
+    title: string
+    text: string
+}
+
 type GameDevProfile = {
     eyebrow: string
     title: string
@@ -34,8 +45,9 @@ type GameDevProfile = {
     skillsTitle: string
     skills: string[]
     projectsTitle: string
-    gamesLabel: string
-    sinceLabel: string
+    featuredLabel: string
+    focus: GameDevFocus[]
+    sections: GameDevSection[]
 }
 
 type HomeMetric = {

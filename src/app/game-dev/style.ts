@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import styled from "styled-components";
 
 export const GameDevPageSty = styled.main`
@@ -10,7 +11,7 @@ export const GameDevPageSty = styled.main`
 
 export const GameHeroSty = styled.section`
     display: grid;
-    grid-template-columns: minmax(0, 1.3fr) minmax(11rem, 0.7fr);
+    grid-template-columns: minmax(0, 1.15fr) minmax(16rem, 0.85fr);
     gap: 1rem;
     align-items: stretch;
     width: 100%;
@@ -25,11 +26,17 @@ export const GameHeroContentSty = styled.div`
     flex-direction: column;
     justify-content: center;
     gap: 1rem;
-    padding: 0.5rem 0 1rem;
+    min-height: 23rem;
+    padding: 1.5rem 0;
 
     h1 {
         max-width: 40rem;
         line-height: 1.05;
+    }
+
+    @media screen and (max-width: 680px) {
+        min-height: auto;
+        padding: 0.75rem 0;
     }
 `;
 
@@ -53,11 +60,13 @@ export const GameLeadSty = styled.p`
 
 export const GameMetricGridSty = styled.div`
     display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.75rem;
-    align-content: center;
+    align-self: center;
+    width: 100%;
 
-    @media screen and (max-width: 920px) {
-        grid-template-columns: 1fr 1fr;
+    @media screen and (max-width: 520px) {
+        grid-template-columns: 1fr;
     }
 `;
 
@@ -107,10 +116,22 @@ export const GamePanelSty = styled.div`
     background-image: url(${p => p.theme.noise});
 `;
 
-export const GameTitleSty = styled.h2`
+export const GameTitleSty = styled.h2<{ $rule?: boolean }>`
+    display: flex;
+    align-items: center;
+    gap: 1rem;
     color: ${p => p.theme.text};
     font-size: 1.35rem;
     line-height: 1.25;
+
+    ${p => p.$rule && `
+        &::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.14);
+        }
+    `}
 `;
 
 export const GameTextSty = styled.p`
@@ -140,38 +161,79 @@ export const GameTagSty = styled.span`
 
 export const GameCardGridSty = styled.div`
     display: grid;
-    grid-template-columns: repeat(auto-fill, 20rem);
+    grid-template-columns: repeat(3, minmax(0, 20rem));
     gap: 1rem;
+
+    > * {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+        min-width: 0;
+    }
+
+    @media screen and (max-width: 680px) {
+        grid-template-columns: minmax(0, 20rem);
+    }
 `;
 
 export const GameDevSectionSty = styled.section`
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    gap: 0.75rem;
+`;
 
-    .content {
-        gap: 1rem;
+export const GameSectionLeadSty = styled.p`
+    max-width: 40rem;
+    margin-top: -0.35rem;
+    color: ${p => p.theme.text2};
+    font-size: 0.96rem;
+    line-height: 1.55;
+`;
+
+export const GameFeatureSty = styled(Link)`
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(16rem, 0.75fr);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    background-color: ${p => p.theme.backgroundSnd};
+    background-image: url(${p => p.theme.noise});
+
+    @media screen and (max-width: 920px) {
+        grid-template-columns: 1fr;
     }
 `;
 
-export const GameYearBlockSty = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+export const GameFeatureMediaSty = styled.div`
+    position: relative;
+    min-height: 16rem;
+    background: ${p => p.theme.black};
+
+    img {
+        object-fit: cover;
+    }
 `;
 
-export const GameDevYearSty = styled.h2`
+export const GameFeatureCopySty = styled.div`
     display: flex;
-    align-items: center;
-    gap: 1rem;
-    color: ${p => p.theme.text};
-    font-size: 1.35rem;
-    line-height: 1.25;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.85rem;
+    padding: 1.5rem;
 
-    &::after {
-        content: "";
-        flex: 1;
-        height: 1px;
-        background: rgba(255, 255, 255, 0.14);
+    h2 {
+        font-size: 1.8rem;
+        line-height: 1.15;
+    }
+
+    p {
+        color: ${p => p.theme.text2};
+        font-size: 0.96rem;
+        line-height: 1.6;
+    }
+
+    span {
+        color: ${p => p.theme.primaryLight};
+        font-size: 0.88rem;
     }
 `;
