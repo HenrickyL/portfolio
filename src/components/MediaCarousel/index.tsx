@@ -170,8 +170,22 @@ export const MediaCarousel = ({
                                 src={current.src}
                                 poster={current.poster}
                                 controls
+                                controlsList="novolume"
                                 autoPlay
+                                muted
                                 playsInline
+                                onLoadedMetadata={(event) => {
+                                    event.currentTarget.muted = true;
+                                    event.currentTarget.volume = 0;
+                                }}
+                                onVolumeChange={(event) => {
+                                    const video = event.currentTarget;
+                                    if (video.muted && video.volume === 0) {
+                                        return;
+                                    }
+                                    video.muted = true;
+                                    video.volume = 0;
+                                }}
                             />
                         ) : (
                             <Image src={current.src} alt={current.alt} fill sizes="90vw" />

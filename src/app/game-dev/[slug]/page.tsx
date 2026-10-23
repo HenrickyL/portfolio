@@ -1,10 +1,11 @@
 "use client";
 import { MediaCarousel } from "@/components/MediaCarousel";
-import { iconForTool } from "@/helpers/toolIcons";
+import { iconSrcForTool } from "@/helpers/toolIcons";
 import { FaArrowLeft, FaExternalLinkAlt } from "react-icons/fa";
 import { useLocalization } from "@/hooks/LocalizationProvider";
 import { usePageInfo } from "@/hooks/PageInfoProvidere";
 import { GameMedia, GameSpec } from "@/types/Game";
+import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useEffect } from "react";
 import {
@@ -13,20 +14,24 @@ import {
     GameBoardSty,
     GameDetailPageSty,
     GameHeaderSty,
+    GameGenreListSty,
+    GameGenreTrackSty,
     GameInfoLinkSty,
     GameMechanicSty,
     GameMetaSty,
     GamePanelTitleSty,
+    GamePathSty,
     GameReferenceLineSty,
+    GameSheetFootSty,
     GameSheetSty,
     GameSpecGridSty,
     GameSpecSty,
     GameTagSty,
     GameTextSty,
     GameTitleRowSty,
+    GameToolSty,
     GameToolsSty,
     GameTopSty,
-    GameYearSty,
 } from "./style";
 
 const mediaOf = (cover: string, name: string, media: GameMedia[]): GameMedia[] => {
@@ -38,8 +43,8 @@ const mediaOf = (cover: string, name: string, media: GameMedia[]): GameMedia[] =
 };
 
 const shownSpecs = (specs: GameSpec[]): GameSpec[] => {
-    const kept = ["Status", "Engine", "Linguagem", "Language", "Gênero", "Genre"];
-    return specs.filter((spec) => kept.includes(spec.field)).slice(0, 4);
+    const kept = ["Status", "Engine", "Linguagem", "Language"];
+    return specs.filter((spec) => kept.includes(spec.field));
 };
 
 const GameDetailPage = () => {
@@ -69,6 +74,8 @@ const GameDetailPage = () => {
     const synopsis = game.page?.synopsis || game.idea;
     const mechanics = game.page?.about.slice(0, 2) ?? [];
     const specs = shownSpecs(game.page?.specs ?? []);
+    const genreField = game.page?.specs.find((spec) => spec.field === "Gênero" || spec.field === "Genre");
+    const genreTags = game.page?.tags.length ? game.page.tags : genreField ? [genreField.value] : [];
     const references = game.page?.references.map((note) => note.title).join(" · ");
 
     return (
@@ -78,26 +85,19 @@ const GameDetailPage = () => {
                     <GameBackLink href="/game-dev" aria-label={labels.back}>
                         <FaArrowLeft />
                     </GameBackLink>
-                    <GameHeaderSty>
-                        <h1>{game.name}</h1>
-                    </GameHeaderSty>
+                    <GamePathSty>
+                        <Link href="/game-dev">{gameDev.label}</Link>
+                        <span>/</span>
+                        <span>{game.name}</span>
+                    </GamePathSty>
                 </GameTitleRowSty>
+                <GameHeaderSty>
+                    <h1>{game.name}</h1>
+                </GameHeaderSty>
                 <GameMetaSty>
                     {game.page?.tags.map((tag) => (
                         <GameTagSty key={tag}>{tag}</GameTagSty>
                     ))}
-                    <GameYearSty>
-                        <strong>{game.date}</strong>
-                        <span>{labels.date}</span>
-                    </GameYearSty>
-                    {game.tools.length > 0 && (
-                        <GameToolsSty>
-                            {game.tools.map((tool) => {
-                                const ToolIcon = iconForTool(tool);
-                                return <ToolIcon key={tool} title={tool} />;
-                            })}
-                        </GameToolsSty>
-                    )}
                     {game.links[0] && (
                         <GameInfoLinkSty href={game.links[0].href} target="_blank" rel="noopener noreferrer">
                             <FaExternalLinkAlt />
@@ -116,17 +116,33 @@ const GameDetailPage = () => {
                     closeLabel={labels.close}
                 />
                 <GameSheetSty>
-                    {specs.length > 0 && (
+                    {(specs.length > 0 || genreTags.length > 0) && (
                         <GameBlockSty>
                             <GamePanelTitleSty>{labels.specs}</GamePanelTitleSty>
-                            <GameSpecGridSty>
-                                {specs.map((spec) => (
-                                    <GameSpecSty key={spec.field}>
-                                        <dt>{spec.field}</dt>
-                                        <dd>{spec.value}</dd>
-                                    </GameSpecSty>
-                                ))}
-                            </GameSpecGridSty>
+                            {specs.length > 0 && (
+                                <GameSpecGridSty>
+                                    {specs.map((spec) => (
+                                        <GameSpecSty key={spec.field}>
+                                            <dt>{spec.field}</dt>
+                                            <dd>{spec.value}</dd>
+                                        </GameSpecSty>
+                                    ))}
+                                </GameSpecGridSty>
+                            )}
+                            {genreTags.length > 0 && (
+                                <GameGenreListSty>
+                                    <GameGenreTrackSty>
+                                        {[...genreTags, ...genreTags].map((tag, index) => (
+                                            <GameTagSty key={`${tag}-${index}`}>{tag}</GameTagSty>
+                                        ))}
+                                    </GameGenreTrackSty>
+                                </GameGenreListSty>
+                            )}
+                        </GameBlockSty>
+                    )}
+                    {synopsis && (
+                        <GameBlockSty>
+                            <GameTextSty>{synopsis}</GameTextSty>
                         </GameBlockSty>
                     )}
                     {mechanics.length > 0 && (
@@ -140,17 +156,27 @@ const GameDetailPage = () => {
                             ))}
                         </GameBlockSty>
                     )}
-                    {synopsis && (
-                        <GameBlockSty>
-                            <GamePanelTitleSty>{labels.synopsis}</GamePanelTitleSty>
-                            <GameTextSty>{synopsis}</GameTextSty>
-                        </GameBlockSty>
-                    )}
-                    {references && (
+                    <GameSheetFootSty>
                         <GameReferenceLineSty>
-                            {labels.references}: {references}
+                            {references ? `${labels.references}: ${references}` : ""}
                         </GameReferenceLineSty>
-                    )}
+                        {game.tools.length > 0 && (
+                            <GameToolsSty>
+                                {game.tools.map((tool) => {
+                                    const src = iconSrcForTool(tool);
+                                    if (!src) {
+                                        return null;
+                                    }
+                                    return (
+                                        <GameToolSty key={tool}>
+                                            <img src={src} alt={tool} />
+                                            <em>{tool}</em>
+                                        </GameToolSty>
+                                    );
+                                })}
+                            </GameToolsSty>
+                        )}
+                    </GameSheetFootSty>
                 </GameSheetSty>
             </GameBoardSty>
         </GameDetailPageSty>

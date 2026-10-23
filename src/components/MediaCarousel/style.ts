@@ -85,7 +85,8 @@ export const Track = styled.div`
 export const Thumb = styled.button<{ $active?: boolean }>`
     position: relative;
     flex: 0 0 calc((100% - 0.9rem) / 3);
-    height: 4.4rem;
+    aspect-ratio: 16 / 9;
+    height: auto;
     overflow: hidden;
     border-radius: 8px;
     border: 2px solid ${p => p.$active ? p.theme.primaryLight : "transparent"};

@@ -1,6 +1,11 @@
 "use client";
 import Link from "next/link";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const genreMove = keyframes`
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+`;
 
 export const GameDetailPageSty = styled.main`
     display: flex;
@@ -49,6 +54,23 @@ export const GameHeaderSty = styled.header`
     }
 `;
 
+export const GamePathSty = styled.nav`
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    min-width: 0;
+    color: ${p => p.theme.text3};
+    font-size: 0.84rem;
+
+    a:hover {
+        color: ${p => p.theme.primaryLight};
+    }
+
+    span:last-child {
+        color: ${p => p.theme.text2};
+    }
+`;
+
 export const GameMetaSty = styled.div`
     display: flex;
     align-items: center;
@@ -68,39 +90,46 @@ export const GameTagSty = styled.span`
     font-size: 0.78rem;
 `;
 
-export const GameYearSty = styled.span`
-    display: inline-flex;
-    align-items: baseline;
-    gap: 0.35rem;
-    min-height: 1.7rem;
-    padding: 0.2rem 0.6rem;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background-color: ${p => p.theme.backgroundSnd};
-    background-image: url(${p => p.theme.noise});
-
-    strong {
-        color: ${p => p.theme.primaryLight};
-        font-size: 0.95rem;
-    }
-
-    span {
-        color: ${p => p.theme.text3};
-        font-size: 0.72rem;
-    }
+export const GameToolsSty = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.45rem;
+    flex: 0 0 auto;
 `;
 
-export const GameToolsSty = styled.div`
-    display: inline-flex;
-    align-items: center;
-    gap: 0.7rem;
-    min-height: 1.7rem;
-    padding: 0 0.65rem;
-    border-radius: 8px;
-    border: 1px solid rgba(127, 88, 255, 0.28);
-    color: ${p => p.theme.primaryLight};
-    background: rgba(127, 88, 255, 0.1);
-    font-size: 1rem;
+export const GameToolSty = styled.span`
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 1.85rem;
+    height: 1.85rem;
+
+    img {
+        width: 1.45rem;
+        height: 1.45rem;
+        object-fit: contain;
+    }
+
+    em {
+        position: absolute;
+        right: 0;
+        bottom: calc(100% + 0.35rem);
+        z-index: 2;
+        padding: 0.15rem 0.4rem;
+        border-radius: 4px;
+        color: ${p => p.theme.text};
+        background: rgba(0, 0, 0, 0.82);
+        font-size: 0.72rem;
+        font-style: normal;
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    &:hover em {
+        opacity: 1;
+    }
 `;
 
 export const GameInfoLinkSty = styled.a`
@@ -138,11 +167,10 @@ export const GameSheetSty = styled.aside`
     gap: 0.85rem;
     min-width: 0;
     min-height: 0;
-    padding: 0.95rem 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    background-color: ${p => p.theme.backgroundSnd};
-    background-image: url(${p => p.theme.noise});
+    padding: 0.85rem 0.95rem 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.03);
     overflow: auto;
 `;
 
@@ -167,19 +195,19 @@ export const GamePanelTitleSty = styled.h2`
 `;
 
 export const GameTextSty = styled.p`
-    color: ${p => p.theme.text2};
-    font-size: 0.92rem;
-    line-height: 1.45;
+    color: ${p => p.theme.text};
+    font-size: 0.98rem;
+    line-height: 1.55;
 `;
 
 export const GameMechanicSty = styled.p`
-    color: ${p => p.theme.text2};
-    font-size: 0.88rem;
-    line-height: 1.35;
+    color: ${p => p.theme.text3};
+    font-size: 0.84rem;
+    line-height: 1.4;
 
     strong {
-        color: ${p => p.theme.text};
-        font-weight: 700;
+        color: ${p => p.theme.text2};
+        font-weight: 600;
     }
 `;
 
@@ -202,14 +230,43 @@ export const GameSpecSty = styled.div`
 
     dd {
         margin: 0;
-        color: ${p => p.theme.text};
-        font-size: 0.88rem;
+        color: ${p => p.theme.text2};
+        font-size: 0.86rem;
     }
 `;
 
-export const GameReferenceLineSty = styled.p`
+export const GameGenreListSty = styled.div`
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    mask-image: linear-gradient(90deg, #000 0%, #000 90%, transparent);
+
+    &:hover > div {
+        animation-play-state: paused;
+    }
+`;
+
+export const GameGenreTrackSty = styled.div`
+    display: flex;
+    flex: 0 0 auto;
+    gap: 0.4rem;
+    width: max-content;
+    animation: ${genreMove} 14s linear infinite;
+`;
+
+export const GameSheetFootSty = styled.div`
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 0.75rem;
     margin-top: auto;
+    padding-top: 0.35rem;
+`;
+
+export const GameReferenceLineSty = styled.p`
+    min-width: 0;
     color: ${p => p.theme.text3};
-    font-size: 0.78rem;
+    font-size: 0.75rem;
     line-height: 1.35;
 `;
