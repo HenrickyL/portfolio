@@ -1,6 +1,6 @@
 import { Noto_Sans_Duployan } from "next/font/google";
 // import "./globals.css";
-import { Metadata } from "next";
+import { Metadata, Viewport } from "next";
 import StyledComponentsRegistry from "@/lib/registry";
 import { Providers } from "@/hooks";
 import { LayoutComponent } from "@/components/Layout";
@@ -14,6 +14,12 @@ const noto = Noto_Sans_Duployan({
 export const metadata: Metadata = {
   title: "Henricky Dev",
   description: "Meu portfólio pessoal.",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
 };
 
 

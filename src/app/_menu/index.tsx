@@ -71,9 +71,18 @@ const MainNavigationSty = styled.div`
 
 
     @media screen and (max-width: 680px){
-        &{
-            margin-bottom: 1.8rem;
-        }
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 20;
+        width: auto;
+        margin: 0;
+        gap: 0;
+        padding: 0.2rem 0.5rem calc(0.2rem + env(safe-area-inset-bottom, 0px));
+        background-color: ${prop => prop.theme.background};
+        background-image: url(${prop => prop.theme.noise});
+        border-top: 1px solid ${prop => prop.theme.contrastLight};
     }
 `
 

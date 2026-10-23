@@ -13,11 +13,9 @@ export const FooterRootSty = styled.footer`
     color: ${p=>p.theme.text2};
 
     @media screen and (max-width: 680px){
-        &{
-            position: absolute;
-            bottom: 0;
-            padding: 8px 12px;
-            font-size: 11px;
-        }
+        position: static;
+        grid-area: footer;
+        padding: 12px 12px 8px;
+        font-size: 11px;
     }
 `

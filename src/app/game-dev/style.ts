@@ -173,6 +173,7 @@ export const GameCardGridSty = styled.div`
 
     @media screen and (max-width: 680px) {
         grid-template-columns: minmax(0, 20rem);
+        justify-content: center;
     }
 `;
 

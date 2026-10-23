@@ -17,6 +17,16 @@ const STY = styled.div<ThemeSwapProp>`
   right: 8px;
   z-index: 5;
 
+  @media screen and (max-width: 680px){
+    position: static;
+    grid-area: theme;
+    align-self: center;
+    justify-self: end;
+    bottom: auto;
+    right: auto;
+    padding: 0.75rem 0.75rem 0 0;
+  }
+
   button{
     width: 2rem;
     height: 2rem;
