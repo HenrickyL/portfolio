@@ -28,7 +28,9 @@ export type GameSpec = {
 export type GamePage = {
     kicker: string;
     tags: string[];
+    categories: string[];
     synopsis: string;
+    overview: string;
     about: GameNote[];
     references: GameNote[];
     specs: GameSpec[];

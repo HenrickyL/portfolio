@@ -18,6 +18,7 @@ type GameDevLabels = {
     media: string
     link: string
     synopsis: string
+    overview: string
     mechanics: string
     references: string
     specs: string

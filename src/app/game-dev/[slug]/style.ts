@@ -12,10 +12,13 @@ export const GameDetailPageSty = styled.main`
     flex-direction: column;
     gap: 0.8rem;
     width: 100%;
-    max-height: 100%;
+    height: 100%;
+    min-height: 0;
+    overflow: hidden;
 
     @media screen and (max-width: 800px) {
         height: auto;
+        overflow: visible;
     }
 `;
 
@@ -84,10 +87,17 @@ export const GameTagSty = styled.span`
     min-height: 1.7rem;
     padding: 0.2rem 0.6rem;
     border-radius: 999px;
-    border: 1px solid rgba(127, 88, 255, 0.28);
-    color: ${p => p.theme.primaryLight};
-    background: rgba(127, 88, 255, 0.1);
+    border: 1px solid rgba(127, 88, 255, 0.45);
+    color: #d7c4ff;
+    background: rgba(127, 88, 255, 0.16);
     font-size: 0.78rem;
+    white-space: nowrap;
+`;
+
+export const GameCategorySty = styled(GameTagSty)`
+    border-color: rgba(255, 176, 122, 0.5);
+    color: #ffc89a;
+    background: rgba(255, 154, 82, 0.12);
 `;
 
 export const GameToolsSty = styled.div`
@@ -154,6 +164,8 @@ export const GameBoardSty = styled.section`
     display: grid;
     grid-template-columns: minmax(0, 1.45fr) minmax(16rem, 0.85fr);
     gap: 0.85rem;
+    flex: 1;
+    min-height: 0;
     align-items: stretch;
 
     @media screen and (max-width: 800px) {
@@ -164,14 +176,30 @@ export const GameBoardSty = styled.section`
 export const GameSheetSty = styled.aside`
     display: flex;
     flex-direction: column;
-    gap: 0.85rem;
+    gap: 0.75rem;
     min-width: 0;
     min-height: 0;
+    height: 100%;
     padding: 0.85rem 0.95rem 0.75rem;
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 4px;
     background: rgba(255, 255, 255, 0.03);
-    overflow: auto;
+    overflow: hidden;
+
+    @media screen and (max-width: 800px) {
+        height: auto;
+        overflow: visible;
+    }
+`;
+
+export const GameSheetBodySty = styled.div`
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 0.85rem;
+    min-height: 0;
+    overflow-y: auto;
+    padding-right: 0.15rem;
 `;
 
 export const GameBlockSty = styled.section`
@@ -198,6 +226,25 @@ export const GameTextSty = styled.p`
     color: ${p => p.theme.text};
     font-size: 0.98rem;
     line-height: 1.55;
+`;
+
+export const GameMechanicGridSty = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+`;
+
+export const GameMechanicTagSty = styled.span`
+    display: inline-flex;
+    align-items: center;
+    min-height: 1.7rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: ${p => p.theme.text2};
+    background: rgba(255, 255, 255, 0.05);
+    font-size: 0.78rem;
+    line-height: 1.2;
 `;
 
 export const GameMechanicSty = styled.p`
@@ -237,10 +284,11 @@ export const GameSpecSty = styled.div`
 
 export const GameGenreListSty = styled.div`
     display: flex;
-    width: 100%;
+    flex: 1;
+    min-width: 0;
     overflow: hidden;
     white-space: nowrap;
-    mask-image: linear-gradient(90deg, #000 0%, #000 90%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
 
     &:hover > div {
         animation-play-state: paused;
@@ -257,9 +305,10 @@ export const GameGenreTrackSty = styled.div`
 
 export const GameSheetFootSty = styled.div`
     display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 0.75rem;
+    align-items: center;
+    gap: 0.7rem;
+    flex: 0 0 auto;
+    min-width: 0;
     margin-top: auto;
     padding-top: 0.35rem;
 `;
