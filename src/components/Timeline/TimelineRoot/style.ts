@@ -30,13 +30,13 @@ export const TimelineItemsSty = styled.div<{ $stack?: boolean }>`
 	gap: 3.5rem;
 	z-index: 1;
 	padding: 0 0 2rem 0;
-	width: 100%;
 
 	@media screen and (max-width: 680px){
 		display: ${p => p.$stack ? "flex" : "none"};
 		flex-direction: column;
 		align-items: stretch;
 		gap: 1.25rem;
+		width: 100%;
 	}
 `
 

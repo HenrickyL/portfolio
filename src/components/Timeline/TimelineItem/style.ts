@@ -267,6 +267,10 @@ export const TimelineItemWrapperSty = styled.div<{index: number, $isVisible: boo
         ${TimelineItemTextBoxSty}{
             padding: 0.9rem;
 
+            &::after{
+                content: none;
+            }
+
             h2{
                 font-size: 1rem;
             }
