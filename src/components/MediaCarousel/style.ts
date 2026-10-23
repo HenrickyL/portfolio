@@ -19,8 +19,17 @@ export const Stage = styled.div`
     border: 1px solid rgba(255, 255, 255, 0.08);
     background: ${p => p.theme.black};
 
-    img {
+    img,
+    video {
         object-fit: cover;
+    }
+
+    video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
     }
 `;
 
@@ -92,8 +101,17 @@ export const Thumb = styled.button<{ $active?: boolean }>`
     border: 2px solid ${p => p.$active ? p.theme.primaryLight : "transparent"};
     background: ${p => p.theme.black};
 
-    img {
+    img,
+    video {
         object-fit: cover;
+    }
+
+    video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
     }
 
     &:hover {

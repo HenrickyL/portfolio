@@ -1,4 +1,5 @@
 "use client";
+import { bindVideoFrame, holdVideoFrame } from "@/helpers/videoFrame";
 import { GameMedia } from "@/types/Game";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -97,7 +98,21 @@ export const MediaCarousel = ({
     return (
         <CarouselRoot>
             <Stage>
-                {stagePreview && (
+                {focused.kind === "video" ? (
+                    <video
+                        key={focused.src}
+                        src={focused.src}
+                        muted
+                        preload="auto"
+                        playsInline
+                        ref={bindVideoFrame}
+                        onCanPlay={(event) => holdVideoFrame(event.currentTarget)}
+                        onVolumeChange={(event) => {
+                            event.currentTarget.muted = true;
+                            event.currentTarget.volume = 0;
+                        }}
+                    />
+                ) : stagePreview && (
                     <Image src={stagePreview} alt={focused.alt} fill sizes="70vw" />
                 )}
                 <StageHit type="button" aria-label={openLabel} onClick={() => openAt(focus)} />
@@ -133,7 +148,6 @@ export const MediaCarousel = ({
                 </StripButton>
                 <Track>
                     {shown.map(({ item, itemIndex }) => {
-                        const preview = item.kind === "video" ? item.poster : item.src;
                         return (
                             <Thumb
                                 key={`${item.src}-${itemIndex}`}
@@ -142,8 +156,21 @@ export const MediaCarousel = ({
                                 aria-label={openLabel}
                                 onClick={() => setFocus(itemIndex)}
                             >
-                                {preview && (
-                                    <Image src={preview} alt={item.alt} fill sizes="160px" />
+                                {item.kind === "video" ? (
+                                    <video
+                                        src={item.src}
+                                        muted
+                                        preload="auto"
+                                        playsInline
+                                        ref={bindVideoFrame}
+                                        onCanPlay={(event) => holdVideoFrame(event.currentTarget)}
+                                        onVolumeChange={(event) => {
+                                            event.currentTarget.muted = true;
+                                            event.currentTarget.volume = 0;
+                                        }}
+                                    />
+                                ) : (
+                                    <Image src={item.src} alt={item.alt} fill sizes="160px" />
                                 )}
                                 {item.kind === "video" && (
                                     <ThumbPlay>

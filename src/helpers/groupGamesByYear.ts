@@ -7,20 +7,28 @@ export type GameYearGroup = {
 
 const yearOf = (date: string) => date.match(/\d{4}/)?.[0] ?? "";
 
+export const periodValue = (date: string): number | null => {
+    const match = date.match(/(\d{4})(?:\.(\d+))?/);
+    if (!match) {
+        return null;
+    }
+    return Number(match[1]) * 10 + Number(match[2] ?? 0);
+};
+
 export const sortGamesByYear = (games: GameProject[]): GameProject[] => {
     return [...games].sort((a, b) => {
-        const yearA = yearOf(a.date);
-        const yearB = yearOf(b.date);
-        if (!yearA && !yearB) {
+        const yearA = periodValue(a.date);
+        const yearB = periodValue(b.date);
+        if (yearA === null && yearB === null) {
             return 0;
         }
-        if (!yearA) {
+        if (yearA === null) {
             return 1;
         }
-        if (!yearB) {
+        if (yearB === null) {
             return -1;
         }
-        return yearB.localeCompare(yearA);
+        return yearB - yearA;
     });
 };
 

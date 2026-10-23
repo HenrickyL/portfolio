@@ -1,6 +1,6 @@
 "use client";
 import { Card } from "@/components/Card";
-import { sortGamesByYear } from "@/helpers/groupGamesByYear";
+import { periodValue, sortGamesByYear } from "@/helpers/groupGamesByYear";
 import { useLocalization } from "@/hooks/LocalizationProvider";
 import { usePageInfo } from "@/hooks/PageInfoProvidere";
 import { useEffect } from "react";
@@ -26,8 +26,18 @@ const GameDevPage = () => {
     const { content: { pages: { gameDev } } } = useLocalization();
     const { setPageInfo } = usePageInfo();
     const { profile } = gameDev;
-    const games = sortGamesByYear(gameDev.games);
-    const since = games.map((game) => game.date.match(/\d{4}/)?.[0]).filter((year): year is string => Boolean(year)).sort()[0] ?? "";
+    const games = sortGamesByYear(gameDev.games.filter((game) => game.id !== "blender"));
+    const since = games.reduce<string>((oldest, game) => {
+        const current = periodValue(game.date);
+        const previous = periodValue(oldest);
+        if (current === null) {
+            return oldest;
+        }
+        if (previous === null || current < previous) {
+            return game.date;
+        }
+        return oldest;
+    }, "");
 
     useEffect(() => {
         setPageInfo(gameDev.info);
@@ -43,7 +53,7 @@ const GameDevPage = () => {
                 </GameHeroContentSty>
                 <GameMetricGridSty>
                     <GameMetricCardSty>
-                        <strong>{gameDev.games.length}</strong>
+                        <strong>{games.length}</strong>
                         <span>{profile.gamesLabel}</span>
                     </GameMetricCardSty>
                     <GameMetricCardSty>

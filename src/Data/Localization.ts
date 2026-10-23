@@ -176,6 +176,19 @@ export const LocalizationPT: LocalizationTexts = {
                             url: "http://game-engine-ts.vercel.app/",
                         }
                     ]
+                },
+                {
+                    id: "blender",
+                    title: "Blender",
+                    projects: [
+                        {
+                            id: "blender",
+                            name: "Blender",
+                            summary: "Modelagem",
+                            src: "/projects/blender/table.png",
+                            url: "/game-dev/blender",
+                        }
+                    ]
                 }
             ]
         },
@@ -371,6 +384,19 @@ export const LocalizationEN: LocalizationTexts = {
               summary: "TypeScript",
               src: "/img/game-engine-ts.jpg",
               url: "http://game-engine-ts.vercel.app/",
+            }
+          ]
+        },
+        {
+          id: "blender",
+          title: "Blender",
+          projects: [
+            {
+              id: "blender",
+              name: "Blender",
+              summary: "Modeling",
+              src: "/projects/blender/table.png",
+              url: "/game-dev/blender",
             }
           ]
         }
