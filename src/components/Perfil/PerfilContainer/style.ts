@@ -16,8 +16,11 @@ export const PerfilCardSty = styled.div`
     gap: 8px;
 
 
-     /* @media screen and (max-width: 680px){
-        &{
-        }
-    } */
+    @media screen and (max-width: 680px){
+        min-width: 0;
+        min-height: 0;
+        max-height: none;
+        max-width: 20rem;
+        padding: 1rem 0.85rem 0.85rem;
+    }
 `

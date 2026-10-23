@@ -7,4 +7,9 @@ export const PerfilImageSty = styled(Image)`
     max-width: 18rem;
     border-radius: 12px;
     background-image: url(${(props) => props.theme.noise});
+
+    @media screen and (max-width: 680px){
+        width: 62%;
+        max-width: 11rem;
+    }
 `

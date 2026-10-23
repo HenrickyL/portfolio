@@ -14,6 +14,12 @@ const GlobalStyles = createGlobalStyle`
     -webkit-user-drag: none; /* Dragable */
   }
 
+  html {
+    @media screen and (max-width: 680px) {
+      overflow-x: clip;
+    }
+  }
+
   body {
     color: ${prop=>prop.theme.text};
     background-color: ${(props) => props.theme.background};;
@@ -22,6 +28,15 @@ const GlobalStyles = createGlobalStyle`
     width: 100vw;
     height: 100dvh;
     overflow: hidden;
+
+    @media screen and (max-width: 680px) {
+      width: 100%;
+      height: auto;
+      min-height: 100dvh;
+      overflow-x: clip;
+      overflow-y: auto;
+      --shell-menu-space: calc(5.25rem + env(safe-area-inset-bottom, 0px));
+    }
     background-image: url(${(props) => props.theme.noise});
     /* background-size: 110%; */
   }

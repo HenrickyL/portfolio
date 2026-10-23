@@ -13,6 +13,11 @@ export const MenuRootSty =styled.nav`
     background-color: ${prop=>prop.theme.backgroundSnd};
     /* border: 1px solid ${prop=>prop.theme.contrastLight}; */
     margin-top:4px;
+
+    @media screen and (max-width: 680px){
+        margin-top: 0;
+        max-width: 100%;
+    }
 `
 
 const swing = keyframes`

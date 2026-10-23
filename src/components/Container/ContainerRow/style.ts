@@ -9,12 +9,10 @@ export const ContainerRowSty = styled.div`
     min-height: 0;
     overflow: hidden;
     @media screen and (max-width: 680px){
-        &{
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            overflow-y: auto;
-            margin-top: 1rem;
-        }
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        overflow: visible;
+        margin-top: 0.5rem;
     }
 `

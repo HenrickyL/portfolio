@@ -9,4 +9,12 @@ export const ContainerRootSty = styled.main`
     width: 100%;
 
     padding: 8px;
+
+    @media screen and (max-width: 680px){
+        grid-area: main;
+        flex: none;
+        height: auto;
+        min-height: auto;
+        overflow: visible;
+    }
 `
